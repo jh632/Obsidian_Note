@@ -1,0 +1,10 @@
+{
+  "cssTheme": "Minimal",
+  "theme": "moonstone",
+  "accentColor": "#b60ed8",
+  "interfaceFontFamily": "Maple Mono NF CN",
+  "textFontFamily": "Maple Mono NF CN",
+  "monospaceFontFamily": "Maple Mono NF CN",
+  "baseFontSizeAction": true,
+  "baseFontSize": 16
+}

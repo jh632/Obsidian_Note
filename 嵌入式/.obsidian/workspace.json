@@ -1,0 +1,224 @@
+{
+  "main": {
+    "id": "d5333e01b2b2be0b",
+    "type": "split",
+    "children": [
+      {
+        "id": "571f39cdd38428c8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2a083bef7b1e252b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "daily_todo/2026-05-14.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2026-05-14"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ff74812c64b97fc6",
+    "type": "split",
+    "children": [
+      {
+        "id": "1a7855a3af62ed3f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "872857ae02b723db",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": true
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "cb325159859a9d31",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "c75b1e683e538be3",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "1bb7cd42510f910a",
+    "type": "split",
+    "children": [
+      {
+        "id": "c456414f5fc0fd28",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d2e6eec0609b7654",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "embed_note/lvgl_note/lvgl_config.md",
+                "collapseAll": true,
+                "extraContext": true,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "lvgl_config 的反向链接列表"
+            }
+          },
+          {
+            "id": "44391800aa06e134",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "embed_note/lvgl_note/lvgl_config.md",
+                "linksCollapsed": true,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "lvgl_config 的出链列表"
+            }
+          },
+          {
+            "id": "9b0360fd8fb02f43",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "0bb2221da56eda6c",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "ffb80a151c15d298",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "daily_todo/2026-05-14.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "2026-05-14 的大纲"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 211.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "daily-notes:打开/创建今天的日记": false,
+      "switcher:打开快速切换": false,
+      "canvas:新建白板": false,
+      "templates:插入模板": false,
+      "graph:查看关系图谱": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "872857ae02b723db",
+  "lastOpenFiles": [
+    "embed_note/通信协议/modbus.md",
+    "embed_note/esp_idf/blueteeth.md",
+    "daily_todo/2026-05-14.md",
+    "embed_note/rtos_note/侵入式链表.md",
+    "未命名.base",
+    "daily_todo/2026-05-13.md",
+    "daily_todo/模板.md",
+    "daily_todo/日记模版.md",
+    "daily_todo",
+    "workspace/myinfo/蒋瀚_嵌入式软件工程师_简历.md",
+    "embed_note/通信协议",
+    "embed_note/git_note/常用git命令.md",
+    "embed_note/esp_idf/固件打包.md",
+    "embed_note/git_note",
+    "workspace/myinfo",
+    "workspace/未命名.md",
+    "todolist.md",
+    "workspace/test/s3自带芯片rssi测试.md",
+    "Pasted image 20260512173040.png",
+    "Pasted image 20260512163454.png",
+    "Pasted image 20260512172941.png",
+    "Pasted image 20260512163302.png",
+    "workspace/todo",
+    "embed_note/lvgl_note/lvgl内存config.md",
+    "embed_note/lvgl_note/lvgl_config.md",
+    "Pasted image 20260512173437.png",
+    "embed_note/esp_idf",
+    "embed_note/未命名.md",
+    "workspace/test",
+    "workspace",
+    "未命名 2.base",
+    "欢迎.md",
+    "创建链接.md",
+    "未命名.canvas",
+    "lvgl note/lvgl内存配置.md"
+  ]
+}
