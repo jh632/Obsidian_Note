@@ -1,4 +1,5 @@
 [
   "obsidian-tasks-plugin",
-  "shiki-highlighter"
+  "shiki-highlighter",
+  "obsidian-git"
 ]
