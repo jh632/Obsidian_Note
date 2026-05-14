@@ -154,15 +154,36 @@ void key_interrupt_init(void)
 `GPIO_INT_TYPE_BOTH_EDGES` 表示双边沿中断。
 
 ### 7 api汇总
-| API                           | 必须程度 | 含义           |
-| ----------------------------- | ---: | ------------ |
-| `GPIO_setPinConfig()`         |  必须会 | 配置 pin mux   |
-| `GPIO_setDirectionMode()`     |  必须会 | 配置输入/输出      |
-| `GPIO_setPadConfig()`         |  必须会 | 配置上拉、开漏、标准模式 |
-| `GPIO_setQualificationMode()` |  必须会 | 配置输入同步/滤波    |
-| `GPIO_writePin()`             |  必须会 | 写输出电平        |
-| `GPIO_readPin()`              |  必须会 | 读输入电平        |
-| `GPIO_togglePin()`            |  会看懂 | 翻转输出         |
-| `GPIO_setInterruptPin()`      |   了解 | GPIO 映射到外部中断 |
-| `GPIO_setInterruptType()`     |   了解 | 配置中断边沿       |
-| `GPIO_enableInterrupt()`      |   了解 | 使能 GPIO 中断   |
+| API                           | 必须程度 | 含义           |     |
+| ----------------------------- | ---: | ------------ | --- |
+| `GPIO_setPinConfig()`         |  必须会 | 配置 pin mux   |     |
+| `GPIO_setDirectionMode()`     |  必须会 | 配置输入/输出      |     |
+| `GPIO_setPadConfig()`         |  必须会 | 配置上拉、开漏、标准模式 |     |
+| `GPIO_setQualificationMode()` |  必须会 | 配置输入同步/滤波    |     |
+| `GPIO_writePin()`             |  必须会 | 写输出电平        |     |
+| `GPIO_readPin()`              |  必须会 | 读输入电平        |     |
+| `GPIO_togglePin()`            |  会看懂 | 翻转输出         |     |
+| `GPIO_setInterruptPin()`      |   了解 | GPIO 映射到外部中断 |     |
+| `GPIO_setInterruptType()`     |   了解 | 配置中断边沿       |     |
+| `GPIO_enableInterrupt()`      |   了解 | 使能 GPIO 中断   |     |
+
+# 2 I2C
+## 2.1 I2C基础api
+### 2.1.1初始化类
+```c
+I2C_disableModule(I2CA_BASE);
+
+I2C_initController(I2CA_BASE, DEVICE_SYSCLK_FREQ, 400000, I2C_DUTYCYCLE_50);
+I2C_setConfig(I2CA_BASE, I2C_CONTROLLER_SEND_MODE);
+I2C_setTargetAddress(I2CA_BASE, 0x50);
+
+I2C_enableModule(I2CA_BASE);
+```
+
+| API                      | 作用               |
+| ------------------------ | ---------------- |
+| `I2C_disableModule()`    | 配置前先关闭模块         |
+| `I2C_initController()`   | 设置 I2C 主机模式时钟    |
+| `I2C_setConfig()`        | 配置发送/接收、主机/从机等模式 |
+| `I2C_setTargetAddress()` | 设置目标从机地址         |
+| `I2C_enableModule()`     | 使能 I2C 模块        |
