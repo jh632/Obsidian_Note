@@ -540,4 +540,19 @@ TX Complete Interrupt
     ↓
 释放 mailbox / 更新状态
 ```
+*ERR*
+```
+CAN Error Interrupt
+    ↓
+记录错误状态
+    ↓
+通知 CAN Monitor Task
+    ↓
+处理 bus-off、error-passive、重初始化
+```
 ### 3.2任务分配
+| 任务                 | 职责                 | 优先级建议 |
+| ------------------ | ------------------ | ----- |
+| `can_rx_task`      | 处理接收报文、协议解析、分发     | 高     |
+| `can_tx_task`      | 处理发送队列、统一发送        | 中高    |
+| `can_monitor_task` | 错误状态、bus-off 恢复、统计 | 中/低   |
