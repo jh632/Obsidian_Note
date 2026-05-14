@@ -509,3 +509,35 @@ TEC = Transmit Error CounterREC = Receive Error Counter
 11. 电磁干扰严重
 12. 收发器损坏
 ```
+
+## 3 can在RTOS中的任务设计
+### 3.1标准架构
+*RX*
+```c
+CAN RX Interrupt
+    ↓
+读取 CAN FIFO / Message RAM
+    ↓
+投递 can_frame_t 到 rx_queue
+    ↓
+CAN RX Task
+    ↓
+过滤、解析、分发到应用模块
+```
+*TX*
+```
+Application Task
+    ↓
+can_send_async()
+    ↓
+投递 can_tx_msg_t 到 tx_queue
+    ↓
+CAN TX Task
+    ↓
+调用底层 CAN driver 发送
+    ↓
+TX Complete Interrupt
+    ↓
+释放 mailbox / 更新状态
+```
+### 3.2任务分配
