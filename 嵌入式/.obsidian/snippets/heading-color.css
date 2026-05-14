@@ -1,0 +1,25 @@
+/* 阅读模式标题颜色 */
+.markdown-preview-view h1 {
+    color: #d97706;
+}
+
+.markdown-preview-view h2 {
+    color: #2563eb;
+}
+
+.markdown-preview-view h3 {
+    color: #16a34a;
+}
+
+/* 编辑模式标题颜色 */
+.markdown-source-view.mod-cm6 .cm-header-1 {
+    color: #d97706;
+}
+
+.markdown-source-view.mod-cm6 .cm-header-2 {
+    color: #2563eb;
+}
+
+.markdown-source-view.mod-cm6 .cm-header-3 {
+    color: #16a34a;
+}

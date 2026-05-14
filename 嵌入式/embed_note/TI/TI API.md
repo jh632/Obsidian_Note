@@ -81,13 +81,88 @@ GPIO_setPinConfig(GPIO_32_CANA_TX);
 
 void i2c_gpio_init(void)
 {
+	//配置sda/scl
     GPIO_setPinConfig(GPIO_104_I2CA_SDA);
     GPIO_setPinConfig(GPIO_105_I2CA_SCL);
-
+	
+	//配置上拉电阻
     GPIO_setPadConfig(I2C_SDA_GPIO, GPIO_PIN_TYPE_PULLUP);
     GPIO_setPadConfig(I2C_SCL_GPIO, GPIO_PIN_TYPE_PULLUP);
-
+	
+	//异步输入
     GPIO_setQualificationMode(I2C_SDA_GPIO, GPIO_QUAL_ASYNC);
     GPIO_setQualificationMode(I2C_SCL_GPIO, GPIO_QUAL_ASYNC);
 }
 ```
+### 5 can引脚配置
+```c
+#define CAN_RX_GPIO 33
+#define CAN_TX_GPIO 32
+
+void can_gpio_init(void)
+{
+    GPIO_setPinConfig(GPIO_33_CANA_RX);
+    GPIO_setPinConfig(GPIO_32_CANA_TX);
+
+    GPIO_setQualificationMode(CAN_RX_GPIO, GPIO_QUAL_ASYNC);
+}
+```
+
+### 6 GPIO 中断配置
+GPIO 中断通常不是所有 GPIO 直接进 CPU，而是通过外部中断通道或 X-BAR/XINT 机制映射。
+
+基础流程：
+
+```
+1. GPIO 配成输入
+2. 配置 pad 和 qualification
+3. 选择外部中断通道
+4. 配置上升沿/下降沿/双边沿
+5. 注册 ISR
+6. 使能中断
+7. ISR 中清标志、通知任务
+```
+
+简化伪代码：
+
+```c
+#define KEY_GPIO 32
+
+__interrupt void xint1_isr(void)
+{
+    // 1. 清中断标志
+    // 2. 通知任务或置标志
+    // 3. ACK PIE group
+}
+
+void key_interrupt_init(void)
+{
+    GPIO_setPinConfig(GPIO_32_GPIO32);
+    GPIO_setDirectionMode(KEY_GPIO, GPIO_DIR_MODE_IN);
+    GPIO_setPadConfig(KEY_GPIO, GPIO_PIN_TYPE_PULLUP);
+    GPIO_setQualificationMode(KEY_GPIO, GPIO_QUAL_3SAMPLE);
+
+    GPIO_setInterruptPin(KEY_GPIO, GPIO_INT_XINT1);
+    GPIO_setInterruptType(GPIO_INT_XINT1, GPIO_INT_TYPE_FALLING_EDGE);
+    GPIO_enableInterrupt(GPIO_INT_XINT1);
+}
+```
+
+官方 GPIO API 中，
+`GPIO_INT_TYPE_FALLING_EDGE` 表示下降沿中断
+`GPIO_INT_TYPE_RISING_EDGE` 表示上升沿中断
+`GPIO_INT_TYPE_BOTH_EDGES` 表示双边沿中断。
+
+### 7 api汇总
+| API                           | 必须程度 | 含义           |
+| ----------------------------- | ---: | ------------ |
+| `GPIO_setPinConfig()`         |  必须会 | 配置 pin mux   |
+| `GPIO_setDirectionMode()`     |  必须会 | 配置输入/输出      |
+| `GPIO_setPadConfig()`         |  必须会 | 配置上拉、开漏、标准模式 |
+| `GPIO_setQualificationMode()` |  必须会 | 配置输入同步/滤波    |
+| `GPIO_writePin()`             |  必须会 | 写输出电平        |
+| `GPIO_readPin()`              |  必须会 | 读输入电平        |
+| `GPIO_togglePin()`            |  会看懂 | 翻转输出         |
+| `GPIO_setInterruptPin()`      |   了解 | GPIO 映射到外部中断 |
+| `GPIO_setInterruptType()`     |   了解 | 配置中断边沿       |
+| `GPIO_enableInterrupt()`      |   了解 | 使能 GPIO 中断   |
