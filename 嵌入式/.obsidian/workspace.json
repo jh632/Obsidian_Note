@@ -186,10 +186,10 @@
   },
   "active": "2a083bef7b1e252b",
   "lastOpenFiles": [
-    "daily_todo/2026-05-14.md",
-    "embed_note/通信协议/can总线.md",
-    "embed_note/git_note/常用git命令.md",
     "embed_note/通信协议/modbus.md",
+    "embed_note/通信协议/can总线.md",
+    "daily_todo/2026-05-14.md",
+    "embed_note/git_note/常用git命令.md",
     "embed_note/esp_idf/blueteeth.md",
     "embed_note/rtos_note/侵入式链表.md",
     "未命名.base",
