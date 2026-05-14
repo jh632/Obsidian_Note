@@ -64,14 +64,14 @@
 
 ### 3.3 事件 Event
 
-| TI-RTOS | FreeRTOS | 说明 |
-| :-- | :-- | :-- |
-| `Event_create()` | `xEventGroupCreate()` / `xEventGroupCreateStatic()` | 创建事件组 |
-| `Event_delete()` | `vEventGroupDelete()` | 删除事件组 |
-| `Event_post(event, bits)` | `xEventGroupSetBits(event, bits)` | 置位事件 bit |
-| `Event_pend(event, andMask, orMask, timeout)` | `xEventGroupWaitBits()` | 等待一个或多个 bit |
-| `Event_pend(..., BIOS_WAIT_FOREVER)` | `xEventGroupWaitBits(..., portMAX_DELAY)` | 无限等待 |
-| `Event_pend(..., BIOS_NO_WAIT)` | `xEventGroupWaitBits(..., 0)` | 非阻塞检查 |
+| TI-RTOS                                       | FreeRTOS                                            | 说明          |
+| :-------------------------------------------- | :-------------------------------------------------- | :---------- |
+| `Event_create()`                              | `xEventGroupCreate()` / `xEventGroupCreateStatic()` | 创建事件组       |
+| `Event_delete()`                              | `vEventGroupDelete()`                               | 删除事件组       |
+| `Event_post(event, bits)`                     | `xEventGroupSetBits(event, bits)`                   | 置位事件 bit    |
+| `Event_pend(event, andMask, orMask, timeout)` | `xEventGroupWaitBits()`                             | 等待一个或多个 bit |
+| `Event_pend(..., BIOS_WAIT_FOREVER)`          | `xEventGroupWaitBits(..., portMAX_DELAY)`           | 无限等待        |
+| `Event_pend(..., BIOS_NO_WAIT)`               | `xEventGroupWaitBits(..., 0)`                       | 非阻塞检查       |
 
 **面试要点**
 
