@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "workspace/USB挂载U盘实现ota升级方案.md",
+                "file": "embed_note/通信协议/can总线.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "USB挂载U盘实现ota升级方案"
+              "title": "can总线"
             }
           }
         ]
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "workspace/USB挂载U盘实现ota升级方案.md",
+                "file": "embed_note/通信协议/can总线.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "USB挂载U盘实现ota升级方案 的大纲"
+              "title": "can总线 的大纲"
             }
           }
         ],
@@ -186,8 +186,8 @@
   },
   "active": "2a083bef7b1e252b",
   "lastOpenFiles": [
-    "embed_note/通信协议/can总线.md",
     "workspace/USB挂载U盘实现ota升级方案.md",
+    "embed_note/通信协议/can总线.md",
     "embed_note/rtos_note/TI RTOS和Free RTOS.md",
     "embed_note/rtos_note/侵入式链表.md",
     "embed_note/嵌入式八股文.md",
