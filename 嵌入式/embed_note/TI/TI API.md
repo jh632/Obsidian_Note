@@ -244,3 +244,99 @@ bool eeprom_write(uint16_t mem_addr,
     return true;
 }
 ```
+
+### 2.2.2 EEPROM读取函数
+```c
+bool eeprom_read(uint16_t mem_addr,
+                 uint8_t *data,
+                 uint16_t len)
+{
+    I2C_setTargetAddress(I2CA_BASE, EEPROM_I2C_ADDR);
+
+    // 先发送 EEPROM 内部地址
+    I2C_setConfig(I2CA_BASE, I2C_CONTROLLER_SEND_MODE);
+    I2C_putData(I2CA_BASE, (mem_addr >> 8) & 0xFF);//低八位读取地址
+    I2C_putData(I2CA_BASE, mem_addr & 0xFF);//高八位读取地址
+    I2C_sendStartCondition(I2CA_BASE);
+
+    // repeated start 后切换成接收
+    I2C_setConfig(I2CA_BASE, I2C_CONTROLLER_RECEIVE_MODE);
+    I2C_sendStartCondition(I2CA_BASE);
+
+    for (uint16_t i = 0; i < len; i++) {
+        // 等待接收完成，实际代码要检查 RX 状态或 FIFO 状态
+        data[i] = I2C_getData(I2CA_BASE);
+    }
+
+    I2C_sendStopCondition(I2CA_BASE);
+
+    return true;
+}
+```
+
+**核心** :
+```
+读之前先写内部地址
+中间用 repeated start
+最后一个字节后 NACK + STOP
+```
+
+### 2.2.3 EEPROM任务设计
+1. 简单方案 互斥锁保护I2C
+```c
+bool eeprom_write_safe(uint16_t addr, const uint8_t *data, uint16_t len)
+{
+    mutex_lock(i2c_mutex);
+
+    bool ok = eeprom_write(addr, data, len);
+
+    mutex_unlock(i2c_mutex);
+
+    return ok;
+}
+```
+
+2. 对于多任务读写,设计EEPROM_TASK
+```c
+其他任务不直接操作 I2C
+只发送 EEPROM 请求
+EEPROM Task 串行执行读写
+```
+
+```c
+typedef enum {
+    EEPROM_REQ_READ,
+    EEPROM_REQ_WRITE,
+} eeprom_req_type_t;
+
+typedef struct {
+    eeprom_req_type_t type;
+    uint16_t addr;
+    uint8_t *buf;
+    uint16_t len;
+    void (*done_cb)(bool ok);
+} eeprom_req_t;
+```
+
+```c
+void eeprom_task(void *arg)
+{
+    eeprom_req_t req;
+
+    while (1) {
+        queue_receive(eeprom_req_queue, &req, WAIT_FOREVER);
+
+        bool ok = false;
+
+        if (req.type == EEPROM_REQ_READ) {
+            ok = eeprom_read(req.addr, req.buf, req.len);
+        } else {
+            ok = eeprom_write(req.addr, req.buf, req.len);
+        }
+
+        if (req.done_cb != NULL) {
+            req.done_cb(ok);
+        }
+    }
+}
+```
