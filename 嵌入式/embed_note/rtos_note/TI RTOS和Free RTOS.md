@@ -271,6 +271,87 @@ ISR -> xTaskNotifyFromISR() -> 高优先级任务处理
 2. 再处理 `Clock`，重点确认回调上下文。
 3. 最后处理 `Swi`、`Hwi`、`Queue` 这些非 1:1 模块，通常需要改设计，不只是改 API。
 
+### 5.5 如果我只熟悉 FreeRTOS，该怎么理解这些“没有直接对应 API”的模块？
+
+#### `Hwi`
+
+- `Hwi` 可以理解成 TI-RTOS 对 **硬件中断** 的对象化封装。
+- 它负责的事，在 FreeRTOS 里通常不是 RTOS 内核统一管理的，而是交给 **NVIC + 芯片 HAL + 启动文件**。
+- 常见用法是：
+  - `Hwi_create()` 绑定中断号和 ISR。
+  - 中断来了先进 `Hwi`。
+  - ISR 里只做短操作，比如读状态、清中断、唤醒后续处理。
+- 用 FreeRTOS 视角记忆：
+  - **TI `Hwi` = FreeRTOS 外围的“中断注册和中断入口管理”那层东西。**
+
+#### `Swi`
+
+- `Swi` 是 **software interrupt**，也就是软中断、下半部。
+- 它位于 `Hwi` 和 `Task` 之间，优先级通常 **低于硬中断，高于普通任务**。
+- 它的核心价值是：
+  - 不在硬中断里做太多事。
+  - 但又希望比普通任务更快得到调度。
+- 常见用法是：
+  - `Hwi` 里只采样、清标志，然后 `Swi_post()`。
+  - 真正的轻量处理放到 `Swi` 回调里。
+- 它**不是任务**，所以不能按普通任务的思路随意阻塞。
+- 用 FreeRTOS 视角记忆：
+  - **TI `Swi` 常约等于 FreeRTOS 里的 “ISR 唤醒高优先级任务” 这一类 deferred work 设计。**
+  - 典型替代思路：`xTaskNotifyFromISR()`、`vTaskNotifyGiveFromISR()`、`xSemaphoreGiveFromISR()`。
+
+#### `Queue`
+
+- TI-RTOS 的 `Queue` 不是 FreeRTOS 的 `Queue`。
+- TI 这边的 `Queue` 更像 **侵入式双向链表容器**，主要用途是挂对象，而不是在任务间拷贝消息。
+- 常见用法是：
+  - 对象里内嵌一个队列节点。
+  - `Queue_put()` 把对象挂到链表。
+  - `Queue_get()` / `Queue_remove()` 把对象摘出来。
+- 用 FreeRTOS 视角记忆：
+  - **TI `Queue_*` 更像 RT-Thread/Linux 内核链表。**
+  - **FreeRTOS `xQueue*` 才是消息队列。**
+- 面试里最好直接说清楚：
+  - TI `Queue` 是容器。
+  - FreeRTOS `Queue` 是通信对象。
+
+#### `GateHwi` / `GateSwi` / `GateMutex`
+
+- `Gate*` 可以统一理解成 **保护临界区的手段**，只是保护层级不同。
+- `GateMutex`：
+  - 更像 FreeRTOS 的 mutex。
+  - 用法上接近 `xSemaphoreTake(mutex, ...)` / `xSemaphoreGive(mutex)`。
+- `GateHwi`：
+  - 进入时先关中断，退出时恢复。
+  - 用处类似 FreeRTOS 的 `taskENTER_CRITICAL()` / `taskEXIT_CRITICAL()`。
+- `GateSwi`：
+  - 主要是防止 `Swi` 这一层并发。
+  - 因为 FreeRTOS 没有独立 `Swi` 层，所以没有完全同级的公开 API。
+- 用 FreeRTOS 视角记忆：
+  - `GateMutex` -> mutex
+  - `GateHwi` -> critical section
+  - `GateSwi` -> 没有直接等价，因为 FreeRTOS 没有独立 softirq 层
+
+#### `HeapMem` / `HeapBuf`
+
+- `HeapMem` 可以理解成 **通用堆分配器**。
+- `HeapBuf` 可以理解成 **固定块内存池**。
+- `HeapBuf` 特别适合：
+  - 固定大小消息块
+  - 控制块
+  - 对实时性和碎片敏感的场景
+- 用 FreeRTOS 视角记忆：
+  - `HeapMem` 更接近 `pvPortMalloc()` / `vPortFree()`
+  - `HeapBuf` 在 FreeRTOS 里通常需要自己实现，内核没有标准同名对象
+
+#### 最短理解法
+
+- `Hwi`：硬中断对象管理
+- `Swi`：比 task 更快的“下半部处理”
+- `Queue`：侵入式链表容器，不是消息队列
+- `GateHwi`：短临界区关中断
+- `GateMutex`：任务级互斥
+- `HeapBuf`：固定块内存池
+
 ## 6. 最短记忆版
 
 - `Task_*` -> `xTask* / vTask*`
