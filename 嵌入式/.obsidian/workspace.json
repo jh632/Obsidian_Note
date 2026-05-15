@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "embed_note/TI/TI API.md",
+                "file": "embed_note/lvgl_note/lvgl_config.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TI API"
+              "title": "lvgl_config"
             }
           }
         ]
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "embed_note/TI/TI API.md",
+                "file": "embed_note/lvgl_note/lvgl_config.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "TI API 的大纲"
+              "title": "lvgl_config 的大纲"
             }
           }
         ],
@@ -186,8 +186,10 @@
   },
   "active": "2a083bef7b1e252b",
   "lastOpenFiles": [
-    "daily_todo/2026-05-14.md",
+    "embed_note/lvgl_note/lvgl内存config.md",
+    "embed_note/git_note/常用git命令.md",
     "embed_note/TI/TI API.md",
+    "daily_todo/2026-05-14.md",
     "embed_note/rtos_note/TI RTOS和Free RTOS.md",
     "embed_note/TI",
     "embed_note/通信协议/can总线.md",
@@ -195,7 +197,6 @@
     "draft",
     "embed_note/通信协议/modbus.md",
     "embed_note/嵌入式八股文.md",
-    "embed_note/git_note/常用git命令.md",
     "embed_note/esp_idf/blueteeth.md",
     "embed_note/rtos_note/侵入式链表.md",
     "未命名.base",
@@ -216,7 +217,6 @@
     "Pasted image 20260512172941.png",
     "Pasted image 20260512163302.png",
     "workspace/todo",
-    "embed_note/lvgl_note/lvgl内存config.md",
     "embed_note/lvgl_note/lvgl_config.md",
     "Pasted image 20260512173437.png",
     "embed_note/esp_idf",
