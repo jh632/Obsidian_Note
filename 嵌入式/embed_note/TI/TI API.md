@@ -221,7 +221,7 @@ static bool eeprom_write_page(uint16_t mem_addr,
 }
 ```
 
-实际业务中会遇到跨页读写,需要封装一个处理跨页写入的api
+实际业务中会遇到跨页写入,需要封装一个处理跨页写入的api
 ```c
 bool eeprom_write(uint16_t mem_addr,
                   const uint8_t *data,

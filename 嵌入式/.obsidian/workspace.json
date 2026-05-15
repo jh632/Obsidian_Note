@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "embed_note/TI/TI API.md",
+                "file": "embed_note/嵌入式八股文.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TI API"
+              "title": "嵌入式八股文"
             }
           }
         ]
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "embed_note/TI/TI API.md",
+                "file": "embed_note/嵌入式八股文.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "TI API 的大纲"
+              "title": "嵌入式八股文 的大纲"
             }
           }
         ],
@@ -186,9 +186,9 @@
   },
   "active": "2a083bef7b1e252b",
   "lastOpenFiles": [
+    "embed_note/TI/TI API.md",
     "daily_todo/2026-05-15.md",
     "daily_todo/模板.md",
-    "embed_note/TI/TI API.md",
     "embed_note/rtos_note/TI RTOS和Free RTOS.md",
     "embed_note/esp_idf/ota升级方案.md",
     "daily_todo/2026-05-14.md",
