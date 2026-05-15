@@ -563,4 +563,173 @@ CAN Error Interrupt
 | -------- | -------------------- | ----------------- |
 | **DCAN** | Classic CAN          | 传统 CAN 2.0 通信     |
 | **MCAN** | CAN FD / Classic CAN | 新项目、高吞吐、CAN FD 通信 |
-### 4.2 
+### 4.2 demo
+```c
+#include "driverlib.h"
+#include "device.h"
+
+#define CAN_BASE            CANA_BASE
+#define CAN_BITRATE         500000U
+
+#define TX_MSG_OBJ_ID       1U
+#define RX_MSG_OBJ_ID       2U
+
+#define TX_CAN_ID           0x101U
+#define RX_CAN_ID           0x201U
+
+#define CAN_DLC             8U
+
+volatile uint32_t txMsgCount = 0;
+volatile uint32_t rxMsgCount = 0;
+volatile uint32_t canErrorFlag = 0;
+
+uint16_t txData[CAN_DLC];
+uint16_t rxData[CAN_DLC];
+
+__interrupt void canAISR(void);
+
+static void initCANAWithInterrupt(void)
+{
+    CAN_initModule(CAN_BASE);
+
+    CAN_setBitRate(CAN_BASE,
+                   DEVICE_SYSCLK_FREQ,
+                   CAN_BITRATE,
+                   20U);
+
+    //
+    // 开启 CAN 模块中断：
+    // IE0    : CAN interrupt line 0
+    // ERROR  : 错误中断
+    // STATUS : 状态中断
+    //
+    CAN_enableInterrupt(CAN_BASE,
+                        CAN_INT_IE0 |
+                        CAN_INT_ERROR |
+                        CAN_INT_STATUS);
+
+    Interrupt_register(INT_CANA0, &canAISR);
+    Interrupt_enable(INT_CANA0);
+
+    CAN_enableGlobalInterrupt(CAN_BASE,
+                              CAN_GLOBAL_INT_CANINT0);
+
+    //
+    // TX object
+    //
+    CAN_setupMessageObject(CAN_BASE,
+                           TX_MSG_OBJ_ID,
+                           TX_CAN_ID,
+                           CAN_MSG_FRAME_STD,
+                           CAN_MSG_OBJ_TYPE_TX,
+                           0U,
+                           CAN_MSG_OBJ_TX_INT_ENABLE,
+                           CAN_DLC);
+
+    //
+    // RX object
+    //
+    CAN_setupMessageObject(CAN_BASE,
+                           RX_MSG_OBJ_ID,
+                           RX_CAN_ID,
+                           CAN_MSG_FRAME_STD,
+                           CAN_MSG_OBJ_TYPE_RX,
+                           0U,
+                           CAN_MSG_OBJ_RX_INT_ENABLE,
+                           CAN_DLC);
+
+    CAN_startModule(CAN_BASE);
+}
+
+void main(void)
+{
+    Device_init();
+
+    Interrupt_initModule();
+    Interrupt_initVectorTable();
+
+    initCANAWithInterrupt();
+
+    EINT;
+    ERTM;
+
+    txData[0] = 0x11;
+    txData[1] = 0x22;
+    txData[2] = 0x33;
+    txData[3] = 0x44;
+    txData[4] = 0x55;
+    txData[5] = 0x66;
+    txData[6] = 0x77;
+    txData[7] = 0x88;
+
+    while(1)
+    {
+        if(canErrorFlag)
+        {
+            //
+            // 工程里不要直接 ESTOP，应该读取状态、尝试恢复或上报错误。
+            //
+            asm(" ESTOP0");
+        }
+
+        CAN_sendMessage(CAN_BASE,
+                        TX_MSG_OBJ_ID,
+                        CAN_DLC,
+                        txData);
+
+        DEVICE_DELAY_US(1000000);
+
+        txData[0]++;
+    }
+}
+
+__interrupt void canAISR(void)
+{
+    uint32_t status;
+
+    status = CAN_getInterruptCause(CAN_BASE);
+
+    if(status == CAN_INT_INT0ID_STATUS)
+    {
+        //
+        // 状态中断：读取 CAN 状态。
+        // 注意：读取状态也会清除部分状态中断来源。
+        //
+        status = CAN_getStatus(CAN_BASE);
+
+        //
+        // 官方示例里会排除 TXOK/RXOK 后判断是否有错误。
+        // 这里给一个简化处理。
+        //
+        if((status & ~(CAN_STATUS_TXOK | CAN_STATUS_RXOK)) != 0U)
+        {
+            canErrorFlag = 1;
+        }
+    }
+    else if(status == TX_MSG_OBJ_ID)
+    {
+        CAN_clearInterruptStatus(CAN_BASE, TX_MSG_OBJ_ID);
+        txMsgCount++;
+        canErrorFlag = 0;
+    }
+    else if(status == RX_MSG_OBJ_ID)
+    {
+        CAN_readMessage(CAN_BASE, RX_MSG_OBJ_ID, rxData);
+
+        CAN_clearInterruptStatus(CAN_BASE, RX_MSG_OBJ_ID);
+        rxMsgCount++;
+        canErrorFlag = 0;
+    }
+    else
+    {
+        //
+        // Spurious interrupt
+        //
+    }
+
+    CAN_clearGlobalInterruptStatus(CAN_BASE,
+                                   CAN_GLOBAL_INT_CANINT0);
+
+    Interrupt_clearACKGroup(INTERRUPT_ACK_GROUP9);
+}
+```

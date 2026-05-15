@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "embed_note/通信协议/can总线.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -186,14 +186,14 @@
   },
   "active": "2a083bef7b1e252b",
   "lastOpenFiles": [
-    "workspace/USB挂载U盘实现ota升级方案.md",
+    "embed_note/通信协议/modbus.md",
     "embed_note/通信协议/can总线.md",
+    "workspace/USB挂载U盘实现ota升级方案.md",
     "embed_note/rtos_note/TI RTOS和Free RTOS.md",
     "embed_note/rtos_note/侵入式链表.md",
     "embed_note/嵌入式八股文.md",
     "embed_note/TI/TI API.md",
     "daily_todo/2026-05-15.md",
-    "embed_note/通信协议/modbus.md",
     "daily_todo/模板.md",
     "embed_note/esp_idf/ota升级方案.md",
     "daily_todo/2026-05-14.md",
