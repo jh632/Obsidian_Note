@@ -6,7 +6,7 @@
   "textFontFamily": "Maple Mono NF CN",
   "monospaceFontFamily": "Maple Mono NF CN",
   "baseFontSizeAction": true,
-  "baseFontSize": 16,
+  "baseFontSize": 21,
   "enabledCssSnippets": [
     "heading-color"
   ]

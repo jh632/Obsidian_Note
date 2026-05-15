@@ -187,3 +187,60 @@ I2C_enableModule(I2CA_BASE);
 | `I2C_setConfig()`        | 配置发送/接收、主机/从机等模式 |
 | `I2C_setTargetAddress()` | 设置目标从机地址         |
 | `I2C_enableModule()`     | 使能 I2C 模块        |
+## 2.2 I2Ceeprom demo
+### 2.2.1 EEPROM 写入函数
+```c
+#define EEPROM_I2C_ADDR     0x50
+#define EEPROM_PAGE_SIZE    64
+#define EEPROM_WRITE_TIMEOUT_MS 10
+
+static bool eeprom_write_page(uint16_t mem_addr,
+                              const uint8_t *data,
+                              uint16_t len)
+{
+    if (len == 0 || len > EEPROM_PAGE_SIZE) {
+        return false;
+    }
+
+    I2C_setTargetAddress(I2CA_BASE, EEPROM_I2C_ADDR);
+    I2C_setConfig(I2CA_BASE, I2C_CONTROLLER_SEND_MODE);
+
+    // 发送 EEPROM 内部地址
+    I2C_putData(I2CA_BASE, (mem_addr >> 8) & 0xFF);
+    I2C_putData(I2CA_BASE, mem_addr & 0xFF);
+
+    // 发送数据
+    for (uint16_t i = 0; i < len; i++) {
+        I2C_putData(I2CA_BASE, data[i]);
+    }
+
+    I2C_sendStartCondition(I2CA_BASE);
+    I2C_sendStopCondition(I2CA_BASE);
+
+    return eeprom_wait_ready(EEPROM_WRITE_TIMEOUT_MS);
+}
+```
+
+实际业务中会遇到跨页读写,需要封装一个处理跨页写入的api
+```c
+bool eeprom_write(uint16_t mem_addr,
+                  const uint8_t *data,
+                  uint16_t len)
+{
+    while (len > 0) {
+        uint16_t page_offset = mem_addr % EEPROM_PAGE_SIZE;
+        uint16_t page_remain = EEPROM_PAGE_SIZE - page_offset;
+        uint16_t chunk_len = len < page_remain ? len : page_remain;
+
+        if (!eeprom_write_page(mem_addr, data, chunk_len)) {
+            return false;
+        }
+
+        mem_addr += chunk_len;
+        data += chunk_len;
+        len -= chunk_len;
+    }
+
+    return true;
+}
+```
