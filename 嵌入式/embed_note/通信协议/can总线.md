@@ -556,3 +556,11 @@ CAN Error Interrupt
 | `can_rx_task`      | 处理接收报文、协议解析、分发     | 高     |
 | `can_tx_task`      | 处理发送队列、统一发送        | 中高    |
 | `can_monitor_task` | 错误状态、bus-off 恢复、统计 | 中/低   |
+## 4 TI C2000 F28P65x 对can的支持
+### 4.1 C2000 F28P65x上的can模块
+
+| 模块       | 类型                   | 主要用途              |
+| -------- | -------------------- | ----------------- |
+| **DCAN** | Classic CAN          | 传统 CAN 2.0 通信     |
+| **MCAN** | CAN FD / Classic CAN | 新项目、高吞吐、CAN FD 通信 |
+### 4.2 
