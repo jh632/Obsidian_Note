@@ -154,15 +154,189 @@ void key_interrupt_init(void)
 `GPIO_INT_TYPE_BOTH_EDGES` 表示双边沿中断。
 
 ### 7 api汇总
-| API                           | 必须程度 | 含义           |
-| ----------------------------- | ---: | ------------ |
-| `GPIO_setPinConfig()`         |  必须会 | 配置 pin mux   |
-| `GPIO_setDirectionMode()`     |  必须会 | 配置输入/输出      |
-| `GPIO_setPadConfig()`         |  必须会 | 配置上拉、开漏、标准模式 |
-| `GPIO_setQualificationMode()` |  必须会 | 配置输入同步/滤波    |
-| `GPIO_writePin()`             |  必须会 | 写输出电平        |
-| `GPIO_readPin()`              |  必须会 | 读输入电平        |
-| `GPIO_togglePin()`            |  会看懂 | 翻转输出         |
-| `GPIO_setInterruptPin()`      |   了解 | GPIO 映射到外部中断 |
-| `GPIO_setInterruptType()`     |   了解 | 配置中断边沿       |
-| `GPIO_enableInterrupt()`      |   了解 | 使能 GPIO 中断   |
+| API                           | 必须程度 | 含义           |     |
+| ----------------------------- | ---: | ------------ | --- |
+| `GPIO_setPinConfig()`         |  必须会 | 配置 pin mux   |     |
+| `GPIO_setDirectionMode()`     |  必须会 | 配置输入/输出      |     |
+| `GPIO_setPadConfig()`         |  必须会 | 配置上拉、开漏、标准模式 |     |
+| `GPIO_setQualificationMode()` |  必须会 | 配置输入同步/滤波    |     |
+| `GPIO_writePin()`             |  必须会 | 写输出电平        |     |
+| `GPIO_readPin()`              |  必须会 | 读输入电平        |     |
+| `GPIO_togglePin()`            |  会看懂 | 翻转输出         |     |
+| `GPIO_setInterruptPin()`      |   了解 | GPIO 映射到外部中断 |     |
+| `GPIO_setInterruptType()`     |   了解 | 配置中断边沿       |     |
+| `GPIO_enableInterrupt()`      |   了解 | 使能 GPIO 中断   |     |
+
+# 2 I2C
+## 2.1 I2C基础api
+### 2.1.1初始化类
+```c
+I2C_disableModule(I2CA_BASE);
+
+I2C_initController(I2CA_BASE, DEVICE_SYSCLK_FREQ, 400000, I2C_DUTYCYCLE_50);
+I2C_setConfig(I2CA_BASE, I2C_CONTROLLER_SEND_MODE);
+I2C_setTargetAddress(I2CA_BASE, 0x50);
+
+I2C_enableModule(I2CA_BASE);
+```
+
+| API                      | 作用               |
+| ------------------------ | ---------------- |
+| `I2C_disableModule()`    | 配置前先关闭模块         |
+| `I2C_initController()`   | 设置 I2C 主机模式时钟    |
+| `I2C_setConfig()`        | 配置发送/接收、主机/从机等模式 |
+| `I2C_setTargetAddress()` | 设置目标从机地址         |
+| `I2C_enableModule()`     | 使能 I2C 模块        |
+## 2.2 I2Ceeprom demo
+### 2.2.1 EEPROM 写入函数
+```c
+#define EEPROM_I2C_ADDR     0x50
+#define EEPROM_PAGE_SIZE    64
+#define EEPROM_WRITE_TIMEOUT_MS 10
+
+static bool eeprom_write_page(uint16_t mem_addr,
+                              const uint8_t *data,
+                              uint16_t len)
+{
+    if (len == 0 || len > EEPROM_PAGE_SIZE) {
+        return false;
+    }
+
+    I2C_setTargetAddress(I2CA_BASE, EEPROM_I2C_ADDR);
+    I2C_setConfig(I2CA_BASE, I2C_CONTROLLER_SEND_MODE);
+
+    // 发送 EEPROM 内部地址
+    I2C_putData(I2CA_BASE, (mem_addr >> 8) & 0xFF);
+    I2C_putData(I2CA_BASE, mem_addr & 0xFF);
+
+    // 发送数据
+    for (uint16_t i = 0; i < len; i++) {
+        I2C_putData(I2CA_BASE, data[i]);
+    }
+
+    I2C_sendStartCondition(I2CA_BASE);
+    I2C_sendStopCondition(I2CA_BASE);
+
+    return eeprom_wait_ready(EEPROM_WRITE_TIMEOUT_MS);
+}
+```
+
+实际业务中会遇到跨页写入,需要封装一个处理跨页写入的api
+```c
+bool eeprom_write(uint16_t mem_addr,
+                  const uint8_t *data,
+                  uint16_t len)
+{
+    while (len > 0) {
+        uint16_t page_offset = mem_addr % EEPROM_PAGE_SIZE;
+        uint16_t page_remain = EEPROM_PAGE_SIZE - page_offset;
+        uint16_t chunk_len = len < page_remain ? len : page_remain;
+
+        if (!eeprom_write_page(mem_addr, data, chunk_len)) {
+            return false;
+        }
+
+        mem_addr += chunk_len;
+        data += chunk_len;
+        len -= chunk_len;
+    }
+
+    return true;
+}
+```
+
+### 2.2.2 EEPROM读取函数
+```c
+bool eeprom_read(uint16_t mem_addr,
+                 uint8_t *data,
+                 uint16_t len)
+{
+    I2C_setTargetAddress(I2CA_BASE, EEPROM_I2C_ADDR);
+
+    // 先发送 EEPROM 内部地址
+    I2C_setConfig(I2CA_BASE, I2C_CONTROLLER_SEND_MODE);
+    I2C_putData(I2CA_BASE, (mem_addr >> 8) & 0xFF);//低八位读取地址
+    I2C_putData(I2CA_BASE, mem_addr & 0xFF);//高八位读取地址
+    I2C_sendStartCondition(I2CA_BASE);
+
+    // repeated start 后切换成接收
+    I2C_setConfig(I2CA_BASE, I2C_CONTROLLER_RECEIVE_MODE);
+    I2C_sendStartCondition(I2CA_BASE);
+
+    for (uint16_t i = 0; i < len; i++) {
+        // 等待接收完成，实际代码要检查 RX 状态或 FIFO 状态
+        data[i] = I2C_getData(I2CA_BASE);
+    }
+
+    I2C_sendStopCondition(I2CA_BASE);
+
+    return true;
+}
+```
+
+**核心** :
+```
+读之前先写内部地址
+中间用 repeated start
+最后一个字节后 NACK + STOP
+```
+
+### 2.2.3 EEPROM任务设计
+1. 简单方案 互斥锁保护I2C
+```c
+bool eeprom_write_safe(uint16_t addr, const uint8_t *data, uint16_t len)
+{
+    mutex_lock(i2c_mutex);
+
+    bool ok = eeprom_write(addr, data, len);
+
+    mutex_unlock(i2c_mutex);
+
+    return ok;
+}
+```
+
+2. 对于多任务读写,设计EEPROM_TASK
+```c
+其他任务不直接操作 I2C
+只发送 EEPROM 请求
+EEPROM Task 串行执行读写
+```
+
+```c
+typedef enum {
+    EEPROM_REQ_READ,
+    EEPROM_REQ_WRITE,
+} eeprom_req_type_t;
+
+typedef struct {
+    eeprom_req_type_t type;
+    uint16_t addr;
+    uint8_t *buf;
+    uint16_t len;
+    void (*done_cb)(bool ok);
+} eeprom_req_t;
+```
+
+```c
+void eeprom_task(void *arg)
+{
+    eeprom_req_t req;
+
+    while (1) {
+        queue_receive(eeprom_req_queue, &req, WAIT_FOREVER);
+
+        bool ok = false;
+
+        if (req.type == EEPROM_REQ_READ) {
+            ok = eeprom_read(req.addr, req.buf, req.len);
+        } else {
+            ok = eeprom_write(req.addr, req.buf, req.len);
+        }
+
+        if (req.done_cb != NULL) {
+            req.done_cb(ok);
+        }
+    }
+}
+```
