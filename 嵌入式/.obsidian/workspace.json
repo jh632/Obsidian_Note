@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily_todo/2026-05-15.md",
+                "file": "daily_todo/2026-05-18.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-05-15"
+              "title": "2026-05-18"
             }
           }
         ],
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily_todo/2026-05-15.md",
+                "file": "daily_todo/2026-05-18.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2026-05-15 的大纲"
+              "title": "2026-05-18 的大纲"
             }
           }
         ],
@@ -203,6 +203,7 @@
   "active": "8e1090776d637dbb",
   "lastOpenFiles": [
     "daily_todo/2026-05-15.md",
+    "daily_todo/2026-05-18.md",
     "workspace/test/s3自带芯片rssi测试.md",
     "embed_note/esp_idf/ota升级方案.md",
     "embed_note/通信协议/modbus.md",
