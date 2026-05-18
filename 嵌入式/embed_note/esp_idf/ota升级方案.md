@@ -50,9 +50,8 @@ esp_ota_set_boot_partition(update_partition);esp_restart();
 ```
 `官方分区表文档说明，data/ota 分区用于存储当前选中的 OTA app slot 信息，通常大小应为 0x2000 字节。`
 ## 1.3 ota分区大小如何估算
-1.编译后信息估算
+
 ```
 Total image size: 1777048 bytes (.bin may be padded larger)
 ```
-粗略估计
-2.
+# 2 espidf ota升级api
