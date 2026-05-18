@@ -1,0 +1,178 @@
+{
+  "main": {
+    "id": "1b40e98db157b76f",
+    "type": "split",
+    "children": [
+      {
+        "id": "ecf34c0755a8c4bb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2c3767687566e498",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "embed_note/通信协议/can总线.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "can总线"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3ab72fc946d8bba1",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "7620da68ca910fbf",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical",
+            "autoReveal": false
+          },
+          "icon": "lucide-folder-closed",
+          "title": "文件列表"
+        }
+      },
+      {
+        "id": "45e9fa4305951a5b",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          },
+          "icon": "lucide-search",
+          "title": "搜索"
+        }
+      },
+      {
+        "id": "2ae0a31b8e23fddb",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-tags",
+          "title": "标签"
+        }
+      },
+      {
+        "id": "78e3aa29ea6541b9",
+        "type": "leaf",
+        "state": {
+          "type": "all-properties",
+          "state": {
+            "sortOrder": "frequency",
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-archive",
+          "title": "添加笔记属性"
+        }
+      },
+      {
+        "id": "1f74a376ea507f62",
+        "type": "leaf",
+        "state": {
+          "type": "bookmarks",
+          "state": {},
+          "icon": "lucide-bookmark",
+          "title": "书签"
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "4b1c1d7d8bbecd5b",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "0880bb5da3781557",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "embed_note/rtos_note/TI RTOS和Free RTOS.md",
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-coming-in",
+          "title": "反向链接"
+        }
+      },
+      {
+        "id": "b7ddf6a2c923c1c7",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "file": "embed_note/TI/TI API.md",
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-going-out",
+          "title": "出链"
+        }
+      },
+      {
+        "id": "617c5ffb531557be",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "embed_note/TI/TI API.md",
+            "followCursor": false,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-list",
+          "title": "大纲"
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "2c3767687566e498",
+  "lastOpenFiles": [
+    "embed_note/通信协议/can总线.md",
+    "embed_note/rtos_note/TI RTOS和Free RTOS.md",
+    "embed_note/TI/TI API.md"
+  ]
+}
