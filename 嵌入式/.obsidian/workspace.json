@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily_todo/2026-05-19.md",
+                "file": "embed_note/esp_idf/nvs api.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-05-19"
+              "title": "nvs api"
             }
           }
         ],
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily_todo/2026-05-19.md",
+                "file": "embed_note/esp_idf/nvs api.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2026-05-19 的大纲"
+              "title": "nvs api 的大纲"
             }
           },
           {
@@ -212,8 +212,9 @@
   },
   "active": "8e1090776d637dbb",
   "lastOpenFiles": [
-    "daily_todo/2026-05-18.md",
     "daily_todo/2026-05-19.md",
+    "embed_note/esp_idf/nvs api.md",
+    "daily_todo/2026-05-18.md",
     "daily_todo/2026-05-15.md",
     "embed_note/esp_idf/esp 挂载USB.md",
     "embed_note/esp_idf/ota升级方案.md",
@@ -252,7 +253,6 @@
     "Pasted image 20260512173437.png",
     "embed_note/esp_idf",
     "workspace/test",
-    "欢迎.md",
     "未命名.canvas"
   ]
 }
