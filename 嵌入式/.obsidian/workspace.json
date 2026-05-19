@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "embed_note/esp_idf/usb.md",
+                "file": "workspace/USB挂载U盘实现ota升级方案.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "usb"
+              "title": "USB挂载U盘实现ota升级方案"
             }
           },
           {
@@ -170,13 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "embed_note/esp_idf/usb.md",
+                "file": "workspace/USB挂载U盘实现ota升级方案.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "usb 的大纲"
+              "title": "USB挂载U盘实现ota升级方案 的大纲"
             }
           },
           {
@@ -211,8 +211,8 @@
   },
   "active": "2a083bef7b1e252b",
   "lastOpenFiles": [
-    "workspace/USB挂载U盘实现ota升级方案.md",
     "embed_note/esp_idf/usb.md",
+    "workspace/USB挂载U盘实现ota升级方案.md",
     "embed_note/lvgl_note/lvgl内存config.md",
     "未命名.canvas",
     "未命名.base",
