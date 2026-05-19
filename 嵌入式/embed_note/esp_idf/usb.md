@@ -60,3 +60,114 @@ USB 是总线协议。
 - Endpoint
     - 数据收发通道
 ## 2.2 Endpoint是什么
+Endpoint 不是“物理引脚”，而是逻辑通道。
+常见端点类型：
+- Control
+- Bulk
+- Interrupt
+- Isochronous
+### Control Endpoint
+- 用于枚举、控制请求
+- 每个 USB 设备必有 EP0
+### Bulk Endpoint
+
+- 大块数据，可靠传输
+- 典型用于：
+    - CDC 数据
+    - MSC 存储读写
+### Interrupt Transfer
+`USB 通信是**主机(PC)说了算**，设备无法主动发送数据。中断传输的机制是：设备在初始化时告诉主机“我需要每隔 **N 毫秒** 被询问一次”。主机会严格遵守这个时间间隔，准时来查询设备是否有数据要发。`
+
+|传输类型|保证可靠性？|保证实时性/带宽？|数据流向|典型数据量|典型设备|
+|---|---|---|---|---|---|
+|**控制 (Control)**|**是** (有重试)|否 (优先级最低)|双向|小 (< 64字节)|**所有设备** (用于枚举和配置)|
+|**批量 (Bulk)**|**是** (有重试)|**否** (会堵车)|单向|大|U盘、打印机、串口|
+|**中断 (Interrupt)**|**是** (有重试)|**是** (保证最大延迟)|单向|小 (几字节 ~ 几KB)|鼠标、键盘|
+|**等时 (Isochronous)**|**否** (无重试，丢则丢)|**是** (保证带宽)|单向|大|麦克风、摄像头|
+### Isochronous Transfer(等时传输)
+
+## 2.3 类驱动是什么
+USB 类驱动就是“标准化角色”。
+比如：
+- 你声明自己是 MSC
+- 电脑就知道按 U 盘来跟你说话
+这就是为什么“USB 模式切换”通常意味着**重新枚举**。  
+因为你不是“功能开关变了”，而是“设备身份变了”。
+
+# 3.ESP32 上的 USB 软件栈
+esp_tinyusb是对Tinyusb的封装
+[hathach/tinyusb: An open source cross-platform USB stack for embedded system](https://github.com/hathach/tinyusb)
+## 3.1 Tinyusb干了什么
+TinyUSB 是底层 USB 设备协议栈。  
+ESP-IDF 里的 esp_tinyusb 是它的上层封装。
+你现在最关键的 API：
+`esp_err_t tinyusb_driver_install(const tinyusb_config_t *config);`
+本地头文件已经写得很清楚：
+- 初始化 USB 驱动
+- 准备描述符
+- 初始化 TinyUSB stack
+- 创建并启动 USB 事件任务
+见 tinyusb.h (line 146)
+这句话非常关键：
+**tinyusb_driver_install() 已经会创建 TinyUSB 任务。**
+## 3.2 设备事件
+- TINYUSB_EVENT_ATTACHED
+- TINYUSB_EVENT_DETACHED
+见 tinyusb.h (line 105)
+
+它们表示：
+- 设备被主机接上
+- 设备从主机断开
+这不是 CDC 专属，也不是 MSC 专属，是**USB 设备级**事件。
+# 4.CDC模式怎么理解
+## 4.1 cdc是什么
+CDC 最常见的用途就是虚拟串口。  
+电脑上看起来像 COM 口，但底层并不是 UART 协议，而是 USB CDC 类。
+## 4.2 cdc典型坑
+### 坑 1：把字节流当报文
+
+CDC 收到的是字节流，不是天然分帧消息。
+
+所以必须自己做：
+
+- 半包拼接
+- 粘包拆分
+- 帧头同步
+**一个重要的细节：缓冲区**
+
+虽然CDC传输的是字节流，但TinyUSB底层会将字节流拆分成多个USB数据包进行传输。为了提高效率，TinyUSB内部以及ESP-IDF等框架通常会使用**缓冲区（Buffer）**来暂存数据。
+
+例如，你可能遇到在回调函数里每次最多只能读取64字节的情况，这通常就是底层缓冲区大小限制导致的[](https://bbs.elecfans.com/jishu_2433730_1_1.html#lastpost)。但这属于底层实现的优化，不影响你从逻辑上将其视为连续的字节流进行读写。
+### 坑 2：DTR 不是装饰
+
+很多上位机串口工具只有真正打开串口后才拉 DTR。  
+你如果用 DTR 判断“业务是否可发”，逻辑是对的。
+
+### 坑 3：CDC 不能拿来推导 MSC 状态
+
+CDC 的连接状态只代表 CDC。  
+切到 MSC 后，CDC 那套状态就不该再拿来当 USB 总真相。
+
+## 5.MSC怎么理解
+# 5.1 MSC本质是什么
+MSC = Mass Storage Class。  
+你不是“真的变成一块磁盘”，而是**模拟一块磁盘协议设备**。
+
+电脑认为自己在访问 U 盘。  
+实际上背后可能是：
+- SPI Flash
+- SD 卡
+- RAM Disk
+你现在项目里是 SPI Flash FAT 分区。
+## 5.2 存储所有权
+```c
+TINYUSB_MSC_STORAGE_MOUNT_USB
+TINYUSB_MSC_STORAGE_MOUNT_APP
+```
+它的语义是：
+- MOUNT_USB
+    - 存储现在归主机
+    - 电脑在用它
+- MOUNT_APP
+    - 存储现在归应用
+    - ESP32 自己在用它
