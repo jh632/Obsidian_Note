@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "embed_note/esp_idf/nvs api.md",
+                "file": "daily_todo/2026-05-19.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "nvs api"
+              "title": "2026-05-19"
             }
           }
         ],
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "embed_note/esp_idf/nvs api.md",
+                "file": "daily_todo/2026-05-19.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "nvs api 的大纲"
+              "title": "2026-05-19 的大纲"
             }
           },
           {
@@ -212,8 +212,8 @@
   },
   "active": "8e1090776d637dbb",
   "lastOpenFiles": [
-    "daily_todo/2026-05-19.md",
     "embed_note/esp_idf/nvs api.md",
+    "daily_todo/2026-05-19.md",
     "daily_todo/2026-05-18.md",
     "daily_todo/2026-05-15.md",
     "embed_note/esp_idf/esp 挂载USB.md",

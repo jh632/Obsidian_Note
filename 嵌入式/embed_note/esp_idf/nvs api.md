@@ -32,11 +32,11 @@
 | `nvs_get_used_entry_count()` | 获取当前命名空间已用条目数 | 看当前 namespace 占用情况 | 调试辅助 |
 | `nvs_find_key()` | 查询 key 是否存在及类型 | 在不直接读取值时做存在性判断 | 相对不如 `nvs_get_xxx()` 常用 |
 
-| 常见返回值 | Brief | 常见场景 | 备注 |
-|---|---|---|---|
-| `ESP_OK` | 操作成功 | 读写/打开/提交正常完成 | 最常见成功返回 |
-| `ESP_ERR_NVS_NOT_FOUND` | key 或 namespace 不存在 | 第一次启动、配置尚未写入 | 常按“使用默认值”处理 |
-| `ESP_ERR_NVS_INVALID_LENGTH` | 读取缓冲区长度不够 | `nvs_get_str()` / `nvs_get_blob()` | 常先查长度再读 |
-| `ESP_ERR_NVS_NO_FREE_PAGES` | NVS 分区无可用页 | 分区满、分区表变化 | 常擦除后重新初始化 |
-| `ESP_ERR_NVS_NEW_VERSION_FOUND` | NVS 数据版本不兼容 | 升级后旧数据格式不兼容 | 常擦除后重新初始化 |
-| `ESP_ERR_INVALID_ARG` | 参数非法 | 空指针、长度非法等 | 基础参数检查错误 |
+| 常见返回值                           | Brief               | 常见场景                               | 备注          |
+| ------------------------------- | ------------------- | ---------------------------------- | ----------- |
+| `ESP_OK`                        | 操作成功                | 读写/打开/提交正常完成                       | 最常见成功返回     |
+| `ESP_ERR_NVS_NOT_FOUND`         | key 或 namespace 不存在 | 第一次启动、配置尚未写入                       | 常按“使用默认值”处理 |
+| `ESP_ERR_NVS_INVALID_LENGTH`    | 读取缓冲区长度不够           | `nvs_get_str()` / `nvs_get_blob()` | 常先查长度再读     |
+| `ESP_ERR_NVS_NO_FREE_PAGES`     | NVS 分区无可用页          | 分区满、分区表变化                          | 常擦除后重新初始化   |
+| `ESP_ERR_NVS_NEW_VERSION_FOUND` | NVS 数据版本不兼容         | 升级后旧数据格式不兼容                        | 常擦除后重新初始化   |
+| `ESP_ERR_INVALID_ARG`           | 参数非法                | 空指针、长度非法等                          | 基础参数检查错误    |
