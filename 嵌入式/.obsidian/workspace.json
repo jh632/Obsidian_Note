@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "embed_note/esp_idf/ota升级方案.md",
+                "file": "embed_note/lvgl_note/lvgl内存config.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ota升级方案"
+              "title": "lvgl内存config"
             }
           },
           {
@@ -27,16 +27,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "workspace/ota升级状态机.md",
+                "file": "embed_note/esp_idf/ota升级方案.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ota升级状态机"
+              "title": "ota升级方案"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -171,13 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "workspace/ota升级状态机.md",
+                "file": "embed_note/lvgl_note/lvgl内存config.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "ota升级状态机 的大纲"
+              "title": "lvgl内存config 的大纲"
             }
           },
           {
@@ -210,15 +209,19 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "8e1090776d637dbb",
+  "active": "2a083bef7b1e252b",
   "lastOpenFiles": [
-    "daily_todo/2026-05-19.md",
+    "未命名.canvas",
+    "embed_note/lvgl_note/lvgl内存config.md",
+    "未命名.base",
+    "embed_note/esp_idf/ota升级方案.md",
+    "embed_note/esp_idf/esp 挂载USB.md",
+    "embed_note/esp_idf/blueteeth.md",
     "workspace/ota升级状态机.md",
+    "daily_todo/2026-05-19.md",
     "embed_note/esp_idf/nvs api.md",
     "daily_todo/2026-05-18.md",
     "daily_todo/2026-05-15.md",
-    "embed_note/esp_idf/esp 挂载USB.md",
-    "embed_note/esp_idf/ota升级方案.md",
     "embed_note/esp_idf/固件打包.md",
     "workspace/test/s3自带芯片rssi测试.md",
     "embed_note/通信协议/modbus.md",
@@ -227,20 +230,16 @@
     "embed_note/rtos_note/TI RTOS和Free RTOS.md",
     "daily_todo/2026-05-14.md",
     "embed_note/嵌入式八股文.md",
-    "embed_note/esp_idf/blueteeth.md",
     "embed_note/lvgl_note/lvgl_config.md",
     "workspace/myinfo/蒋瀚_嵌入式软件工程师_简历.md",
     "workspace/USB挂载U盘实现ota升级方案.md",
     "embed_note/rtos_note/侵入式链表.md",
     "draft/草稿本.md",
     "daily_todo/模板.md",
-    "embed_note/lvgl_note/lvgl内存config.md",
     "embed_note/git_note/常用git命令.md",
     "embed_note/TI",
     "draft",
-    "未命名.base",
     "daily_todo/2026-05-13.md",
-    "daily_todo/日记模版.md",
     "daily_todo",
     "embed_note/通信协议",
     "embed_note/git_note",
@@ -252,7 +251,6 @@
     "workspace/todo",
     "Pasted image 20260512173437.png",
     "embed_note/esp_idf",
-    "workspace/test",
-    "未命名.canvas"
+    "workspace/test"
   ]
 }
