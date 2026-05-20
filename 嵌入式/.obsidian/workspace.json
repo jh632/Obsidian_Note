@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "workspace/音乐盒作业.md",
+                "file": "workspace/wifi设备接口文档.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "音乐盒作业"
+              "title": "wifi设备接口文档"
             }
           },
           {
@@ -170,13 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "workspace/音乐盒作业.md",
+                "file": "workspace/wifi设备接口文档.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "音乐盒作业 的大纲"
+              "title": "wifi设备接口文档 的大纲"
             }
           },
           {
@@ -211,6 +211,7 @@
   },
   "active": "2a083bef7b1e252b",
   "lastOpenFiles": [
+    "workspace/ota升级状态机.md",
     "workspace/wifi设备接口文档.md",
     "workspace/音乐盒作业.md",
     "daily_todo/2026-05-20.md",
@@ -224,7 +225,6 @@
     "未命名.base",
     "embed_note/esp_idf/esp 挂载USB.md",
     "embed_note/esp_idf/blueteeth.md",
-    "workspace/ota升级状态机.md",
     "daily_todo/2026-05-18.md",
     "daily_todo/2026-05-15.md",
     "embed_note/esp_idf/固件打包.md",
