@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "workspace/wifi设备接口文档.md",
+                "file": "workspace/音乐盒作业.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "wifi设备接口文档"
+              "title": "音乐盒作业"
             }
           },
           {
@@ -170,13 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "workspace/wifi设备接口文档.md",
+                "file": "workspace/音乐盒作业.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "wifi设备接口文档 的大纲"
+              "title": "音乐盒作业 的大纲"
             }
           },
           {
@@ -211,8 +211,9 @@
   },
   "active": "2a083bef7b1e252b",
   "lastOpenFiles": [
-    "daily_todo/2026-05-20.md",
     "workspace/wifi设备接口文档.md",
+    "workspace/音乐盒作业.md",
+    "daily_todo/2026-05-20.md",
     "daily_todo/2026-05-19.md",
     "embed_note/esp_idf/ota升级方案.md",
     "embed_note/esp_idf/nvs api.md",
@@ -238,7 +239,6 @@
     "workspace/myinfo/蒋瀚_嵌入式软件工程师_简历.md",
     "embed_note/rtos_note/侵入式链表.md",
     "draft/草稿本.md",
-    "daily_todo/模板.md",
     "embed_note/TI",
     "draft",
     "daily_todo",
