@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "workspace/wifi设备接口文档.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
@@ -211,8 +211,10 @@
   },
   "active": "2a083bef7b1e252b",
   "lastOpenFiles": [
-    "workspace/ota升级状态机.md",
+    "workspace/wifi需求疑问.md",
+    "未命名.md",
     "workspace/wifi设备接口文档.md",
+    "workspace/ota升级状态机.md",
     "workspace/音乐盒作业.md",
     "daily_todo/2026-05-20.md",
     "daily_todo/2026-05-19.md",
@@ -237,8 +239,6 @@
     "embed_note/嵌入式八股文.md",
     "embed_note/lvgl_note/lvgl_config.md",
     "workspace/myinfo/蒋瀚_嵌入式软件工程师_简历.md",
-    "embed_note/rtos_note/侵入式链表.md",
-    "draft/草稿本.md",
     "embed_note/TI",
     "draft",
     "daily_todo",
