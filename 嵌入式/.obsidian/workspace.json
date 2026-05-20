@@ -213,6 +213,7 @@
   "lastOpenFiles": [
     "workspace/wifi需求疑问.md",
     "workspace/wifi设备接口文档.md",
+    "workspace/USB挂载U盘实现ota升级方案.md",
     "未命名.md",
     "workspace/ota升级状态机.md",
     "workspace/音乐盒作业.md",
@@ -220,7 +221,6 @@
     "daily_todo/2026-05-19.md",
     "embed_note/esp_idf/ota升级方案.md",
     "embed_note/esp_idf/nvs api.md",
-    "workspace/USB挂载U盘实现ota升级方案.md",
     "embed_note/esp_idf/usb.md",
     "embed_note/lvgl_note/lvgl内存config.md",
     "未命名.canvas",
