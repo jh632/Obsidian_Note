@@ -305,12 +305,13 @@ void device_mdns_broadcast_start() {
 
 •      消息总览
 
-|字段|类型|必填|说明|示例值 / 备注|
-|---|---|---|---|---|
-|device_id|string|✓|设备唯一序列号|"SN123456789"|
-|req_id|int|✓|请求序列号，用于匹配响应|1|
-|cmd|string|✓|命令名称|"register"|
-|params|object|可选|命令参数，结构随 cmd 变化|{"model":"H10","fw_version":"2.1.3"}|
+| 字段        | 类型     | 必填  | 说明              | 示例值 / 备注                             |
+| --------- | ------ | --- | --------------- | ------------------------------------ |
+| device_id | string | ✓   | 设备唯一序列号         | "SN123456789"                        |
+| req_id    | int    | ✓   | 请求序列号，用于匹配响应    | 1                                    |
+| cmd       | string | ✓   | 命令名称            | "register"                           |
+| params    | object | 可选  | 命令参数，结构随 cmd 变化 | {"model":"H10","fw_version":"2.1.3"} |
+|           |        |     |                 |                                      |
 
 **示例 JSON：**
 
