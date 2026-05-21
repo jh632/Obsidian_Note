@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily_todo/2026-05-20.md",
+                "file": "workspace/wifi设备接口文档.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-05-20"
+              "title": "wifi设备接口文档"
             }
           },
           {
@@ -170,13 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily_todo/2026-05-20.md",
+                "file": "workspace/wifi设备接口文档.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2026-05-20 的大纲"
+              "title": "wifi设备接口文档 的大纲"
             }
           },
           {
@@ -211,10 +211,11 @@
   },
   "active": "2a083bef7b1e252b",
   "lastOpenFiles": [
+    "workspace/wifi需求疑问.md",
+    "daily_todo/2026-05-21.md",
+    "daily_todo/2026-05-20.md",
     "workspace/音乐盒作业.md",
     "workspace/wifi设备接口文档.md",
-    "workspace/wifi需求疑问.md",
-    "daily_todo/2026-05-20.md",
     "daily_todo/2026-05-19.md",
     "daily_todo/2026-05-18.md",
     "daily_todo/2026-05-15.md",
@@ -238,7 +239,6 @@
     "embed_note/TI/TI API.md",
     "embed_note/rtos_note/TI RTOS和Free RTOS.md",
     "embed_note/嵌入式八股文.md",
-    "embed_note/lvgl_note/lvgl_config.md",
     "embed_note/TI",
     "draft",
     "daily_todo",
