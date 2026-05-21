@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "workspace/wifi需求疑问.md",
+                "file": "workspace/wifi设备接口文档.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "wifi需求疑问"
+              "title": "wifi设备接口文档"
             }
           },
           {
@@ -170,13 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "workspace/wifi需求疑问.md",
+                "file": "workspace/wifi设备接口文档.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "wifi需求疑问 的大纲"
+              "title": "wifi设备接口文档 的大纲"
             }
           },
           {
@@ -211,8 +211,8 @@
   },
   "active": "2a083bef7b1e252b",
   "lastOpenFiles": [
-    "workspace/wifi设备接口文档.md",
     "workspace/wifi需求疑问.md",
+    "workspace/wifi设备接口文档.md",
     "workspace/音乐盒作业.md",
     "embed_note/嵌入式八股文.md",
     "embed_note/TI/TI API.md",
