@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "workspace/音乐盒作业.md",
-                "mode": "source",
+                "file": "workspace/wifi需求疑问.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "音乐盒作业"
+              "title": "wifi需求疑问"
             }
           },
           {
@@ -170,13 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "workspace/音乐盒作业.md",
+                "file": "workspace/wifi需求疑问.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "音乐盒作业 的大纲"
+              "title": "wifi需求疑问 的大纲"
             }
           },
           {
@@ -211,13 +211,13 @@
   },
   "active": "2a083bef7b1e252b",
   "lastOpenFiles": [
+    "workspace/wifi设备接口文档.md",
+    "workspace/wifi需求疑问.md",
+    "workspace/音乐盒作业.md",
     "embed_note/嵌入式八股文.md",
     "embed_note/TI/TI API.md",
-    "workspace/wifi需求疑问.md",
-    "workspace/wifi设备接口文档.md",
     "daily_todo/2026-05-21.md",
     "daily_todo/2026-05-20.md",
-    "workspace/音乐盒作业.md",
     "daily_todo/2026-05-19.md",
     "daily_todo/2026-05-18.md",
     "daily_todo/2026-05-15.md",
