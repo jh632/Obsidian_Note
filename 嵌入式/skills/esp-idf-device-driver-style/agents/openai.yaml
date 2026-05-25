@@ -1,0 +1,7 @@
+interface:
+  display_name: "ESP-IDF Device Driver Style"
+  short_description: "ESP-IDF driver style rules"
+  default_prompt: "Use $esp-idf-device-driver-style when editing ESP-IDF dev_* drivers in GERB_GSI."
+
+policy:
+  allow_implicit_invocation: true

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "workspace/wifi设备接口文档.md",
-                "mode": "preview",
+                "file": "embed_note/git_note/常用git命令.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "wifi设备接口文档"
+              "title": "常用git命令"
             }
           },
           {
@@ -27,15 +27,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "embed_note/esp_idf/ota升级方案.md",
+                "file": "embed_note/git_note/常用git命令.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ota升级方案"
+              "title": "常用git命令"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -170,23 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "workspace/wifi设备接口文档.md",
+                "file": "embed_note/git_note/常用git命令.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "wifi设备接口文档 的大纲"
-            }
-          },
-          {
-            "id": "1926825b22bd9602",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
+              "title": "常用git命令 的大纲"
             }
           }
         ],
@@ -205,53 +196,52 @@
       "graph:查看关系图谱": false,
       "command-palette:打开命令面板": false,
       "bases:新建数据库": false,
-      "obsidian-git:Open Git source control": false,
       "terminal:Open terminal": false
     }
   },
-  "active": "2a083bef7b1e252b",
+  "active": "8e1090776d637dbb",
   "lastOpenFiles": [
-    "workspace/wifi需求疑问.md",
-    "workspace/wifi设备接口文档.md",
-    "workspace/音乐盒作业.md",
+    "embed_note/工具链/clang-format-Linux内核风格.md",
+    "skills/surgical-code-edit/SKILL.md",
+    "skills/obsidian-note/SKILL.md",
+    "embed_note/工具链",
+    "skills/esp-idf-device-driver-style/SKILL.md",
+    "embed_note/esp_idf/ota升级方案.md",
+    "skills/surgical-code-edit",
+    "skills/obsidian-note",
+    "skills/esp-idf-device-driver-style/agents/openai.yaml",
+    "skills/esp-idf-device-driver-style/agents",
+    "skills/esp-idf-device-driver-style",
+    "未命名.md",
+    "skills",
+    "embed_note/git_note/常用git命令.md",
+    "embed_note/嵌入式存储器体系速查笔记.md",
     "embed_note/嵌入式八股文.md",
-    "embed_note/TI/TI API.md",
+    "workspace/wifi设备接口文档.md",
+    "workspace/wifi需求疑问.md",
     "daily_todo/2026-05-21.md",
+    "embed_note/esp_idf/nvs api.md",
+    "embed_note/esp_idf/esp 挂载USB.md",
+    "workspace/USB挂载U盘实现ota升级方案.md",
+    "workspace/音乐盒作业.md",
+    "embed_note/TI/TI API.md",
     "daily_todo/2026-05-20.md",
     "daily_todo/2026-05-19.md",
     "daily_todo/2026-05-18.md",
     "daily_todo/2026-05-15.md",
     "daily_todo/2026-05-14.md",
     "daily_todo/2026-05-13.md",
-    "workspace/USB挂载U盘实现ota升级方案.md",
-    "未命名.md",
     "workspace/ota升级状态机.md",
-    "embed_note/esp_idf/ota升级方案.md",
-    "embed_note/esp_idf/nvs api.md",
     "embed_note/esp_idf/usb.md",
     "embed_note/lvgl_note/lvgl内存config.md",
     "未命名.canvas",
     "未命名.base",
-    "embed_note/esp_idf/esp 挂载USB.md",
-    "embed_note/esp_idf/blueteeth.md",
-    "embed_note/esp_idf/固件打包.md",
-    "workspace/test/s3自带芯片rssi测试.md",
-    "embed_note/通信协议/modbus.md",
-    "embed_note/通信协议/can总线.md",
-    "embed_note/rtos_note/TI RTOS和Free RTOS.md",
     "embed_note/TI",
     "draft",
-    "daily_todo",
-    "embed_note/通信协议",
-    "embed_note/git_note",
-    "workspace/myinfo",
     "Pasted image 20260512173040.png",
     "Pasted image 20260512163454.png",
     "Pasted image 20260512172941.png",
     "Pasted image 20260512163302.png",
-    "workspace/todo",
-    "Pasted image 20260512173437.png",
-    "embed_note/esp_idf",
-    "workspace/test"
+    "Pasted image 20260512173437.png"
   ]
 }
