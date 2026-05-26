@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "embed_note/esp_idf/ota升级方案.md",
-                "mode": "source",
+                "file": "workspace/ota升级状态机.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ota升级方案"
+              "title": "ota升级状态机"
             }
           }
         ],
@@ -187,6 +187,12 @@
   },
   "active": "64ac926083db1274",
   "lastOpenFiles": [
+    "embed_note/嵌入式八股文.md",
+    "embed_note/esp_idf/usb.md",
+    "embed_note/esp_idf/ota升级方案.md",
+    "daily_todo/2026-05-19.md",
+    "daily_todo/2026-05-18.md",
+    "workspace/USB挂载U盘实现ota升级方案.md",
     "embed_note/通信协议/can总线.md",
     "embed_note/rtos_note/TI RTOS和Free RTOS.md",
     "embed_note/TI/TI API.md"
