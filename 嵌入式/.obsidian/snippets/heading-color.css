@@ -1,131 +1,39 @@
-/* =========================================================
-   Minimal readable headings
-   目标：标题稍微更大、更清晰，但不过度夸张
-   适合：Obsidian Minimal 主题 / 技术笔记 / Daily Todo
-   ========================================================= */
-
-/* ---------- 全局标题变量 ---------- */
-body {
-    --jh-h1-size: 1.85em;
-    --jh-h2-size: 1.48em;
-    --jh-h3-size: 1.24em;
-    --jh-h4-size: 1.08em;
-
-    --jh-heading-weight: 700;
-    --jh-heading-line-height: 1.32;
-    --jh-heading-letter-spacing: -0.01em;
-}
-
-/* ---------- 阅读模式标题 ---------- */
-.markdown-preview-view h1,
-.markdown-preview-view h2,
-.markdown-preview-view h3,
-.markdown-preview-view h4 {
-    font-weight: var(--jh-heading-weight);
-    line-height: var(--jh-heading-line-height);
-    letter-spacing: var(--jh-heading-letter-spacing);
-}
-
-/* H1：页面主标题，略大，但不做海报风 */
-.markdown-preview-view h1 {
-    font-size: var(--jh-h1-size);
-    margin-top: 1.65em;
-    margin-bottom: 0.8em;
-    padding-bottom: 0.28em;
-    border-bottom: 1px solid var(--background-modifier-border);
-}
-
-/* H2：章节标题，技术笔记里最常用 */
-.markdown-preview-view h2 {
-    font-size: var(--jh-h2-size);
-    margin-top: 1.45em;
-    margin-bottom: 0.65em;
-}
-
-/* H3：小节标题 */
-.markdown-preview-view h3 {
-    font-size: var(--jh-h3-size);
-    margin-top: 1.25em;
-    margin-bottom: 0.5em;
-}
-
-/* H4：尽量接近正文，只用于局部分类 */
-.markdown-preview-view h4 {
-    font-size: var(--jh-h4-size);
-    margin-top: 1.1em;
-    margin-bottom: 0.45em;
-}
-
-/* ---------- 编辑模式标题 ---------- */
-.markdown-source-view.mod-cm6 .cm-header {
-    font-weight: var(--jh-heading-weight);
-    line-height: var(--jh-heading-line-height);
-    letter-spacing: var(--jh-heading-letter-spacing);
-}
-
-.markdown-source-view.mod-cm6 .cm-header-1 {
-    font-size: var(--jh-h1-size);
-}
-
-.markdown-source-view.mod-cm6 .cm-header-2 {
-    font-size: var(--jh-h2-size);
-}
-
-.markdown-source-view.mod-cm6 .cm-header-3 {
-    font-size: var(--jh-h3-size);
-}
-
-.markdown-source-view.mod-cm6 .cm-header-4 {
-    font-size: var(--jh-h4-size);
-}
-
-/* ---------- 标题颜色：克制增强 ---------- */
 /* 浅色模式 */
 .theme-light {
-    --jh-h1-color: #1f2937;
-    --jh-h2-color: #374151;
-    --jh-h3-color: #4b5563;
-    --jh-h4-color: #6b7280;
+    --my-h1-color: #2563eb;
+    --my-h2-color: #374151;
+    --my-h3-color: #4b5563;
 }
 
 /* 深色模式 */
 .theme-dark {
-    --jh-h1-color: #f3f4f6;
-    --jh-h2-color: #e5e7eb;
-    --jh-h3-color: #d1d5db;
-    --jh-h4-color: #9ca3af;
+    --my-h1-color: #93c5fd;
+    --my-h2-color: #e5e7eb;
+    --my-h3-color: #d1d5db;
 }
 
-/* 阅读模式颜色 */
+/* 阅读模式 */
 .markdown-preview-view h1 {
-    color: var(--jh-h1-color);
+    color: var(--my-h1-color);
 }
 
 .markdown-preview-view h2 {
-    color: var(--jh-h2-color);
+    color: var(--my-h2-color);
 }
 
 .markdown-preview-view h3 {
-    color: var(--jh-h3-color);
+    color: var(--my-h3-color);
 }
 
-.markdown-preview-view h4 {
-    color: var(--jh-h4-color);
-}
-
-/* 编辑模式颜色 */
+/* 编辑模式 */
 .markdown-source-view.mod-cm6 .cm-header-1 {
-    color: var(--jh-h1-color);
+    color: var(--my-h1-color);
 }
 
 .markdown-source-view.mod-cm6 .cm-header-2 {
-    color: var(--jh-h2-color);
+    color: var(--my-h2-color);
 }
 
 .markdown-source-view.mod-cm6 .cm-header-3 {
-    color: var(--jh-h3-color);
-}
-
-.markdown-source-view.mod-cm6 .cm-header-4 {
-    color: var(--jh-h4-color);
+    color: var(--my-h3-color);
 }
