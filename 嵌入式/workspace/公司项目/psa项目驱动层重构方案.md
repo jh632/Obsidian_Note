@@ -22,31 +22,47 @@
 ### 2.1 目录重组
   
  将分散的驱动目录扁平化为统一结构：
-  components/device/
-  ├── include/
-  │ ├── dev_bme280.h
-  │ ├── dev_spo2.h
-  │ ├── dev_rtc.h
-  │ ├── dev_sdcard.h
-  │ ├── dev_mpu6050.h (新)
-  │ ├── dev_tmp117.h (新)
-  │ ├── dev_max30009.h (新)
-  │ ├── dev_gh3220.h (新)
-  │ ├── dev_axp2101.h (新)
-  │ ├── dev_oled.h (新)
-  │ └── dev_init.h (新)
-  └── src/
-      ├── dev_bme280.c
-      ├── dev_spo2.c
-      ├── dev_rtc.c
-      ├── dev_sdcard.c
-      ├── dev_mpu6050.c (新)
-      ├── dev_tmp117.c (新)
-      ├── dev_max30009.c (新)
-      ├── dev_gh3220.c (新)
-      ├── dev_axp2101.c (新)
-      ├── dev_oled.c (新)
-      └── dev_init.c (新)
+components/device/
+  │
+  ├── CMakeLists.txt                          # 组件构建脚本
+  │
+  ├── include/                          
+  │   ├── dev_bme280.h                       
+  │   ├── dev_spo2.h                     
+  │   ├── dev_rtc.h                         
+  │   ├── dev_sdcard.h                   
+  │   ├── dev_mpu6050.h      
+  │   ├── dev_tmp117.h               
+  │   ├── dev_max30009.h                
+  │   ├── dev_gh3220.h                     
+  │   ├── dev_axp2101.h              
+  │   ├── dev_oled.h              
+  │   ├── dev_key.h                          
+  │   └── dev_init.h                       
+  │
+  ├── src/                                    # === 实现文件 ===
+  │   │
+  │   ├── dev_bme280.c                    
+  │   ├── dev_spo2.c                
+  │   ├── dev_rtc.c                
+  │   ├── dev_sdcard.c                    
+  │   ├── dev_mpu6050.c             
+  │   ├── dev_tmp117.c                 
+  │   ├── dev_max30009.c        
+  │   ├── dev_axp2101.c            
+  │   ├── dev_oled.c           
+  │   ├── dev_key.c                   
+  │   ├── dev_init.c                  
+  │   └── dev_gh3220/                       
+  │       ├── dev_gh3220.c                  
+  │       ├── dev_gh3220_hook.h               # [重构] 
+  │       │
+  │       └── arithmetic                        
+  │           ├── algo-lib/                   # 闭源算法库 
+  │           ├── demo_kernel_code/           # 开源内核层
+  │           └── demo_algo_code/             # 开源算法调用层
+
+
 ### 2.2 驱动统一改造
 每个旧单例驱动按 GERB 模式重写：
 
@@ -382,7 +398,7 @@ typedef struct {
 float max30009_adc_to_ohms(int32_t adc_val, float bioz_gain, float imag_apk);
 float max30009_ohms_to_conductivity_us(float ohms);
   ```
-  ### 3.8 **dev_oled**(需重构)
+  ### 3.8 **dev_lcd**(需重构)
   只做板级驱动封装,完成qspi屏幕驱动提供lvgl适配所需api(C05300)
   ```c
 #include "esp_lcd_types.h"
@@ -449,7 +465,33 @@ API 不变。
 - 业务逻辑混杂在代码中
 - 取消multi_button的依赖,同GERB项目的按键驱动
 - 业务逻辑留给上层
-### 3.10 dev_init - 板级唯一初始化
+### 3.11 **dev_gh3220**(需重构)
+现有架构分层:
+driver_gh3220/
+├── algo-lib/                          # [闭源]6个.a静态库+模型权重
+│   ├── HR/HRV/SPO2/ECG/NADT/COMMON    # 算法库
+│   └── algo_params/                   # 12个权重/配置文件
+│
+├── demo_kernel_code/                  # [开源SDK] 汇顶内核层
+│   ├── driver/                        # SPI/I2C底层接口抽象
+│   │   ├── gh_drv_interface.c         # 总线读写 + 延时 + 复位
+│   │   └── gh_drv_control.c           # 寄存器控制
+│   ├── kernel/                        # 数据协议 + 状态机
+│   │   ├── gh_demo.c                  # 主状态机 (1774行, 佩戴测在此)
+│   │   ├── gh_demo_protocol.c         # 内部协议解析
+│   │   └── gh_demo_reg_array.c        # 寄存器配置表
+│   └── module/                        # 传感器模块 (ECG/AGC)
+│
+├── demo_algo_code/                    # [开源SDK] 算法调用层
+│   ├── goodix_algo_call/src/          # 各算法调用封装 (HR/SPO2/ECG/...)
+│   └── goodix_algo_application/src/
+│       └── gh3x2x_demo_algo_hook.c    # ★ 算法结果回调 → s_sensor_value
+│
+└── driver_user/                       # [项目代码] BSP适配层
+├── gh3220.h                       # 对外接口
+└── gh3220.c                       # SPI/GPIO/中断适配 + 佩戴采样控制
+
+### 3.11 dev_init - 板级唯一初始化
 dev_init.h
 
 ```c
