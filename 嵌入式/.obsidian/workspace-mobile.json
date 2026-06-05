@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "workspace/ota升级状态机.md",
+                "file": "workspace/psa项目驱动层重构方案.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ota升级状态机"
+              "title": "psa项目驱动层重构方案"
             }
           }
         ],
@@ -187,14 +187,41 @@
   },
   "active": "64ac926083db1274",
   "lastOpenFiles": [
+    "workspace/ota升级状态机.md",
+    "工具链/opencode-commands.md",
+    "工具链",
+    "workspace/音乐盒作业.md",
+    "workspace/wifi需求疑问.md",
+    "workspace/wifi设备接口文档.md",
+    "workspace/psa项目驱动层重构方案.md",
+    "workspace/AI热量工具计划书.md",
+    "skills/esp-idf-device-driver-style/agents/openai.yaml",
+    "skills/surgical-code-edit/SKILL.md",
+    "skills/obsidian-note/SKILL.md",
+    "skills/esp-idf-device-driver-style/SKILL.md",
+    "skills/esp-idf-device-driver-style/agents",
+    "skills/surgical-code-edit",
+    "skills/obsidian-note",
+    "skills/esp-idf-device-driver-style",
+    "skills",
+    "embed_note/算法/滤波实现/高斯滤波.md",
+    "embed_note/算法/滤波实现/均值滤波.md",
+    "embed_note/算法/滤波实现/卡尔曼滤波.md",
+    "embed_note/算法/滤波实现/中值滤波.md",
+    "embed_note/算法/滤波实现/S-G滤波.md",
+    "embed_note/算法/滤波实现/EWMA.md",
+    "embed_note/算法/滤波实现",
+    "embed_note/算法/消抖算法的选择.md",
+    "embed_note/算法",
+    "embed_note/工具链/Claude-Code.md",
+    "embed_note/工具链/clang-format-Linux内核风格.md",
+    "embed_note/工具链",
+    "embed_note/嵌入式存储器体系速查笔记.md",
+    "daily_todo/2026-05-26.md",
+    "daily_todo/2026-05-25.md",
+    "daily_todo/2026-05-21.md",
+    "daily_todo/2026-05-20.md",
     "embed_note/嵌入式八股文.md",
-    "embed_note/esp_idf/usb.md",
-    "embed_note/esp_idf/ota升级方案.md",
-    "daily_todo/2026-05-19.md",
-    "daily_todo/2026-05-18.md",
-    "workspace/USB挂载U盘实现ota升级方案.md",
-    "embed_note/通信协议/can总线.md",
-    "embed_note/rtos_note/TI RTOS和Free RTOS.md",
-    "embed_note/TI/TI API.md"
+    "embed_note/esp_idf/usb.md"
   ]
 }
