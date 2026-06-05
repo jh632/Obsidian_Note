@@ -1,0 +1,87 @@
+{
+  "userName": "",
+  "permissionMode": "yolo",
+  "model": "opus[1m]",
+  "thinkingBudget": "medium",
+  "effortLevel": "max",
+  "serviceTier": "default",
+  "enableAutoTitleGeneration": true,
+  "titleGenerationModel": "",
+  "excludedTags": [],
+  "mediaFolder": "",
+  "systemPrompt": "",
+  "persistentExternalContextPaths": [],
+  "sharedEnvironmentVariables": "",
+  "envSnippets": [],
+  "customContextLimits": {},
+  "keyboardNavigation": {
+    "scrollUpKey": "w",
+    "scrollDownKey": "s",
+    "focusInputKey": "i"
+  },
+  "requireCommandOrControlEnterToSend": false,
+  "locale": "en",
+  "providerConfigs": {
+    "claude": {
+      "safeMode": "acceptEdits",
+      "cliPath": "",
+      "cliPathsByHost": {},
+      "loadUserSettings": true,
+      "enableChrome": false,
+      "enableBangBash": false,
+      "enableOpus1M": true,
+      "enableSonnet1M": false,
+      "customModels": "",
+      "lastModel": "opus[1m]",
+      "environmentVariables": "",
+      "environmentHash": ""
+    },
+    "codex": {
+      "enabled": false,
+      "safeMode": "workspace-write",
+      "cliPath": "",
+      "cliPathsByHost": {},
+      "customModels": "",
+      "reasoningSummary": "detailed",
+      "environmentVariables": "",
+      "environmentHash": "",
+      "installationMethodsByHost": {
+        "device:1289efd4-b39b-475c-82b7-4670a4d56231": "native-windows"
+      },
+      "wslDistroOverridesByHost": {}
+    },
+    "opencode": {
+      "cliPath": "",
+      "cliPathsByHost": {},
+      "enabled": false,
+      "environmentHash": "",
+      "environmentVariables": "OPENCODE_ENABLE_EXA=1",
+      "modelAliases": {},
+      "preferredThinkingByModel": {},
+      "selectedMode": "",
+      "thinkingOptionsByModel": {},
+      "visibleModels": []
+    }
+  },
+  "settingsProvider": "claude",
+  "savedProviderModel": {
+    "claude": "opus[1m]"
+  },
+  "savedProviderEffort": {
+    "claude": "max"
+  },
+  "savedProviderServiceTier": {},
+  "savedProviderThinkingBudget": {
+    "claude": "medium"
+  },
+  "savedProviderPermissionMode": {
+    "claude": "yolo"
+  },
+  "lastCustomModel": "",
+  "maxTabs": 3,
+  "tabBarPosition": "input",
+  "enableAutoScroll": true,
+  "deferMathRenderingDuringStreaming": true,
+  "chatViewPlacement": "right-sidebar",
+  "hiddenProviderCommands": {}
+}
