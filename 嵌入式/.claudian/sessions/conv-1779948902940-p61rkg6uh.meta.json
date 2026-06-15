@@ -4,20 +4,20 @@
   "title": "Greet user",
   "titleGenerationStatus": "success",
   "createdAt": 1779948902953,
-  "updatedAt": 1780042545078,
-  "lastResponseAt": 1780042545078,
+  "updatedAt": 1781534399853,
+  "lastResponseAt": 1781534399853,
   "sessionId": "e63dfd44-569b-4590-9aea-8dd3f41ce575",
   "providerState": {
     "providerSessionId": "e63dfd44-569b-4590-9aea-8dd3f41ce575"
   },
   "usage": {
     "model": "opus[1m]",
-    "inputTokens": 34238,
+    "inputTokens": 181,
     "cacheCreationInputTokens": 0,
-    "cacheReadInputTokens": 0,
+    "cacheReadInputTokens": 53760,
     "contextWindow": 1000000,
-    "contextTokens": 34238,
-    "percentage": 3,
+    "contextTokens": 53941,
+    "percentage": 5,
     "contextWindowIsAuthoritative": true
   }
 }
