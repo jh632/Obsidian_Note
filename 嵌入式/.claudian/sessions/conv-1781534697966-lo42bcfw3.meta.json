@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781534697966-lo42bcfw3",
+  "providerId": "claude",
+  "title": "Summarize LVGL display principles",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781534697973,
+  "updatedAt": 1781535766470,
+  "lastResponseAt": 1781535766470,
+  "sessionId": "b9db4506-3ad2-4e7f-9478-24ee3bfdf17b",
+  "providerState": {
+    "providerSessionId": "b9db4506-3ad2-4e7f-9478-24ee3bfdf17b"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 93,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 78592,
+    "contextWindow": 1000000,
+    "contextTokens": 78685,
+    "percentage": 8,
+    "contextWindowIsAuthoritative": true
+  }
+}
