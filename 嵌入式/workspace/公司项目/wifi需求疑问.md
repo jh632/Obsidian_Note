@@ -33,3 +33,6 @@ register 的 code=1 定义成“设备已存在（旧连接被踢）”，见 47
 # 5 websocket地址不确定
 
 - WebSocket 最终连接地址到底是哪一个：ws://collector.local:8080/ws，还是 /ws/device/{device_id}
+
+问题一:当设备重复注册,返回code=1(旧连接踢掉,建立新连接)时,websocket实际上连接上了,但是前端和api无法查询到设备信息  
+问题二:服务端开送开始采集后,没有收到回复的ack,服务端可以增加一个调试接口查看收到的所有json文件,其余命令测试无误

@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "6133a26fcb3fae42",
+        "id": "e1c6cfb945b277dd",
         "type": "tabs",
         "children": [
           {
-            "id": "944e8eb66afda8f2",
+            "id": "f3514c97d9683ebd",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "embed_note/架构/嵌入式设计模式-观察者.md",
-                "mode": "preview",
+                "file": "embed_note/常用库/cJSON.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "嵌入式设计模式-观察者"
+              "title": "cJSON"
             }
           }
         ]
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "embed_note/架构/嵌入式设计模式-观察者.md",
+                "file": "embed_note/常用库/cJSON.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "嵌入式设计模式-观察者 的大纲"
+              "title": "cJSON 的大纲"
             }
           },
           {
@@ -176,11 +176,11 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 471.5
+    "width": 392.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -195,44 +195,44 @@
       "realclaudian:Open Claudian": false
     }
   },
-  "active": "944e8eb66afda8f2",
+  "active": "f3514c97d9683ebd",
   "lastOpenFiles": [
-    "workspace/公司项目/wifi设备接口文档.md",
-    "embed_note/通信协议/websocket.md",
-    "embed_note/esp_idf/websocket.md",
-    "daily_todo/2026-06-04.md",
-    "daily_todo/2026-06-03.md",
-    "workspace/wifi需求todolist.md",
-    "embed_note/esp_idf/wifi.md",
-    "embed_note/嵌入式八股文.md",
-    "embed_note/嵌入式存储器体系速查笔记.md",
-    "embed_note/rtos_note/互斥锁_suspendall和临界区.md",
-    "embed_note/zephyr/Zephyr-环境搭建.md",
+    "daily_todo/2026-06-15.md",
+    "embed_note/低功耗/esp32低功耗支持.md",
+    "embed_note/esp_idf/睡眠模式.md",
     "daily_todo/2026-06-01.md",
-    "embed_note/常用库/cJSON.md",
+    "embed_note/esp_idf/blueteeth.md",
+    "embed_note/esp_idf/wifi.md",
+    "embed_note/esp_idf/usb.md",
+    "embed_note/esp_idf/websocket.md",
+    "embed_note/esp_idf/ota升级方案.md",
     "embed_note/esp_idf/nvs api.md",
+    "embed_note/esp_idf/esp 挂载USB.md",
+    "embed_note/esp_idf/esp32 bootloader.md",
+    "embed_note/esp_idf/固件打包.md",
+    "embed_note/esp_idf/常用idf命令.md",
+    "terminal/winget包管理器.md",
+    "workspace/htmlbug.md",
+    "terminal",
+    "embed_note/低功耗/低功耗的评估标准.md",
+    "embed_note/rtos_note/Tickless IDLE.md",
+    "embed_note/rtos_note/TaskNotify.md",
+    "embed_note/rtos_note/任务和协程.md",
+    "embed_note/rtos_note/互斥锁_suspendall和临界区.md",
+    "embed_note/rtos_note/侵入式链表.md",
+    "embed_note/嵌入式八股文.md",
+    "embed_note/rtos_note/队列集.md",
+    "workspace/myinfo/蒋瀚_嵌入式软件工程师_简历.md",
+    "workspace/公司项目/评估配网方案.md",
+    "embed_note/低功耗/低功耗的评估标准.md.tmp.9312.07dce3668eb9",
+    "embed_note/rtos_note/Tickless IDLE.md.tmp.35492.bd9e943972e6",
+    "embed_note/低功耗",
+    "embed_note/架构/嵌入式设计模式-桥接.md.tmp.35024.15604618ee42",
     "embed_note/zephyr",
-    "workspace/公司项目/wifi需求疑问.md",
     "workspace/公司项目",
-    "workspace/公司项目/USB挂载U盘实现ota升级方案.md",
-    "workspace/ui数据来源.md",
-    "workspace/公司项目/psa项目驱动层重构方案.md",
-    "workspace/公司项目/ota升级状态机.md",
-    "workspace/AI热量工具计划书.md",
-    "workspace/音乐盒作业.md",
-    "workspace/测试ui规划.md",
-    "workspace/公司项目/测试ui数据来源.md",
     "embed_note/常用库/cJSON.md.tmp.32804.fa8afd14c2c1",
     "embed_note/常用库",
-    "embed_note/架构/嵌入式设计模式-状态机.md",
-    "embed_note/架构/嵌入式设计模式总览.md",
-    "embed_note/工具链/clang-format-Linux内核风格.md",
     "工具链",
-    "embed_note/架构/_append_observer.py",
-    "embed_note/架构/_sm_test.exe",
-    "embed_note/架构/_sm_test.exe.tmpdd57e52",
-    "embed_note/架构/_sm_test.exe.tmp69ab268",
-    "embed_note/架构/_sm_test.c",
     "未命名.canvas",
     "Pasted image 20260512173040.png",
     "Pasted image 20260512163454.png",
