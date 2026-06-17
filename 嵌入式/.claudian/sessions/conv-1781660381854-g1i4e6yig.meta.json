@@ -1,0 +1,24 @@
+{
+  "id": "conv-1781660381854-g1i4e6yig",
+  "providerId": "claude",
+  "title": "Document ESP32 memory layout",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781660381855,
+  "updatedAt": 1781660431346,
+  "lastResponseAt": 1781660431346,
+  "sessionId": "60344341-bc44-4e4c-bddd-f94133b9a1ff",
+  "providerState": {
+    "providerSessionId": "60344341-bc44-4e4c-bddd-f94133b9a1ff"
+  },
+  "currentNote": "embed_note/程序构建原理/编译链接与内存布局.md",
+  "usage": {
+    "model": "sonnet",
+    "inputTokens": 233,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 35200,
+    "contextWindow": 1000000,
+    "contextTokens": 35433,
+    "percentage": 4,
+    "contextWindowIsAuthoritative": true
+  }
+}
