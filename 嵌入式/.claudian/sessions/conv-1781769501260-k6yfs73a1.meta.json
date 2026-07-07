@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781769501260-k6yfs73a1",
+  "providerId": "claude",
+  "title": "Research USB setup in WSL",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781769501262,
+  "updatedAt": 1781770264061,
+  "lastResponseAt": 1781770264061,
+  "sessionId": "a9e9c9e6-9195-4994-a476-eb65c79083d0",
+  "providerState": {
+    "providerSessionId": "a9e9c9e6-9195-4994-a476-eb65c79083d0"
+  },
+  "currentNote": "embed_note/esp_idf/wsl usb配置.md",
+  "usage": {
+    "model": "sonnet",
+    "inputTokens": 395,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 57792,
+    "contextWindow": 200000,
+    "contextTokens": 58187,
+    "percentage": 29
+  }
+}

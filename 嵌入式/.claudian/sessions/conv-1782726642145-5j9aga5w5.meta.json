@@ -1,0 +1,14 @@
+{
+  "id": "conv-1782726642145-5j9aga5w5",
+  "providerId": "claude",
+  "title": "lvgl的适配在espidf分为好几层 lvgl",
+  "titleGenerationStatus": "pending",
+  "createdAt": 1782726642150,
+  "updatedAt": 1782726649231,
+  "lastResponseAt": 1782726647514,
+  "sessionId": "b2f0f585-a9ab-41e9-a02f-a3f18e8d5c52",
+  "providerState": {
+    "providerSessionId": "b2f0f585-a9ab-41e9-a02f-a3f18e8d5c52"
+  },
+  "currentNote": "embed_note/esp_idf/lvgl适配.md"
+}

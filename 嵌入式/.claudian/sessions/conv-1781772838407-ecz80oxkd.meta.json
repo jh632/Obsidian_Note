@@ -1,0 +1,24 @@
+{
+  "id": "conv-1781772838407-ecz80oxkd",
+  "providerId": "claude",
+  "title": "将心率血氧数据转为MD表格",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781772838407,
+  "updatedAt": 1782319922520,
+  "lastResponseAt": 1781772998426,
+  "sessionId": "9ded52c5-4d8b-4ac3-96fa-e634a4cd43c5",
+  "providerState": {
+    "providerSessionId": "9ded52c5-4d8b-4ac3-96fa-e634a4cd43c5"
+  },
+  "currentNote": "workspace/gh3220_fix_req.md",
+  "usage": {
+    "model": "sonnet",
+    "inputTokens": 310,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 36032,
+    "contextWindow": 1000000,
+    "contextTokens": 36342,
+    "percentage": 4,
+    "contextWindowIsAuthoritative": true
+  }
+}

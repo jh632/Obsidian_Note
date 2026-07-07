@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "aacdd3dcdcea315e",
+        "id": "64804eaca889805c",
         "type": "tabs",
         "children": [
           {
-            "id": "19d217cdf75fc1cc",
+            "id": "596f72ba2f4b0b26",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "embed_note/程序构建原理/编译链接与内存布局.md",
-                "mode": "source",
+                "file": "daily_todo/2026-07-02.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "编译链接与内存布局"
+              "title": "2026-07-02"
             }
           }
         ]
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "embed_note/程序构建原理/编译链接与内存布局.md",
+                "file": "embed_note/esp_idf/lvgl适配.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "编译链接与内存布局 的大纲"
+              "title": "lvgl适配 的大纲"
             }
           },
           {
@@ -180,7 +180,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 608.5
+    "width": 560.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -191,48 +191,47 @@
       "graph:查看关系图谱": false,
       "command-palette:打开命令面板": false,
       "bases:新建数据库": false,
-      "terminal:Open terminal": false,
       "realclaudian:Open Claudian": false
     }
   },
-  "active": "376b00463bf2e9de",
+  "active": "596f72ba2f4b0b26",
   "lastOpenFiles": [
-    "daily_todo/2026-06-17.md",
-    "daily_todo/2026-06-16.md",
-    "embed_note/程序构建原理/编译链接与内存布局.md",
-    "embed_note/低功耗/悬空引脚与贯通电流.md",
-    "embed_note/工具链/编译链接与内存布局.md",
-    "embed_note/程序构建原理",
-    "embed_note/工具链/编译链接与内存布局.md.tmp.16312.269f09df12fc",
-    "embed_note/低功耗/esp32低功耗支持.md",
-    "embed_note/低功耗/悬空引脚与贯通电流.md.tmp.16312.8be9045aef5d",
-    "embed_note/低功耗/低功耗的评估标准.md",
-    "daily_todo/2026-05-13.md",
-    "embed_note/架构/嵌入式设计模式总览.md",
-    "embed_note/esp_idf/常用idf命令.md",
-    "draft/草稿本.md",
-    "draft/草稿2.md",
-    "daily_todo/模板.md",
-    "daily_todo/2026-06-12.md",
-    "daily_todo/2026-06-15.md",
-    "embed_note/算法/滤波实现/S-G滤波.md",
-    "embed_note/算法/消抖算法的选择.md",
-    "AGENT/claude-plungin.md",
-    "embed_note/算法/滤波实现/RC-低通滤波器原理.md",
+    "daily_todo/2026-07-01.md",
+    "daily_todo/2026-06-30.md",
+    "daily_todo/2026-06-29.md",
+    "embed_note/zephyr/west工具核心用法.md",
+    "daily_todo/2026-07-02.md",
+    "embed_note/zephyr/Zephyr-环境搭建.md",
+    "课程/数字图像处理",
+    "课程",
+    "embed_note/esp_idf/lvgl适配.md",
+    "embed_note/esp_idf/esp 挂载USB.md",
+    "embed_note/esp_idf/esp32 bootloader.md",
     "embed_note/esp_idf/ESP32-GPIO-速查表.md",
-    "embed_note/通信协议/I2C-protocol.md",
-    "AGENT/claude-plungin.md.tmp.32064.43685a499914",
-    "AGENT",
-    "embed_note/lvgl_note/lvgl_config.md",
-    "embed_note/lvgl_note/LVGL-显示原理.md",
-    "embed_note/lvgl_note/lvgl内存config.md",
-    "daily_todo/2026-05-19.md",
-    "daily_todo/2026-05-27.md",
-    "terminal",
-    "embed_note/低功耗/低功耗的评估标准.md.tmp.9312.07dce3668eb9",
-    "embed_note/rtos_note/Tickless IDLE.md.tmp.35492.bd9e943972e6",
-    "embed_note/低功耗",
-    "embed_note/架构/嵌入式设计模式-桥接.md.tmp.35024.15604618ee42",
+    "embed_note/esp_idf/idf button组件.md",
+    "embed_note/esp_idf/nvs api.md",
+    "embed_note/esp_idf/ota升级方案.md",
+    "embed_note/esp_idf/websocket.md",
+    "embed_note/esp_idf/wifi.md",
+    "embed_note/工具链/wsl/wsl usb配置.md",
+    "embed_note/esp_idf/lvgl适配.md.tmp.38924.eb0d4cd62db2",
+    "workspace/dev_display设计.md",
+    "workspace/ws错误日志分析.md",
+    "workspace/gh3220_config_old.md",
+    "workspace/gh3220 bug finding.md",
+    "workspace/ADT 佩戴检测原理.md",
+    "workspace/佩戴检测config.md",
+    "workspace/myinfo/简历.pdf",
+    "daily_todo/2026-06-24.md",
+    "daily_todo/2026-06-23.md",
+    "daily_todo/2026-06-22.md",
+    "embed_note/esp_idf/usb.md",
+    "embed_note/esp_idf/idf button组件.md.tmp.30732.641b28d87a95",
+    "embed_note/esp_idf/idf button组件.md.tmp.30732.6edfaeaf257d",
+    "embed_note/esp_idf/idf button组件.md.tmp.30732.6d8d30498b35",
+    "embed_note/工具链/linux常用命令.md.tmp.32312.909ccde938cd",
+    "embed_note/嵌入式八股文.md.tmp.23288.e1b0fee3c6b4",
+    "embed_note/fix_script.py",
     "未命名.canvas",
     "Pasted image 20260512173040.png",
     "Pasted image 20260512163454.png",

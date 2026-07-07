@@ -1,9 +1,9 @@
 {
   "userName": "",
   "permissionMode": "yolo",
-  "model": "sonnet",
+  "model": "opus[1m]",
   "thinkingBudget": "low",
-  "effortLevel": "high",
+  "effortLevel": "max",
   "serviceTier": "default",
   "enableAutoTitleGeneration": true,
   "titleGenerationModel": "",
@@ -14,6 +14,7 @@
   "sharedEnvironmentVariables": "",
   "envSnippets": [],
   "customContextLimits": {},
+  "customModelAliases": {},
   "keyboardNavigation": {
     "scrollUpKey": "w",
     "scrollDownKey": "s",
@@ -32,7 +33,7 @@
       "enableOpus1M": true,
       "enableSonnet1M": false,
       "customModels": "",
-      "lastModel": "sonnet",
+      "lastModel": "opus[1m]",
       "environmentVariables": "",
       "environmentHash": ""
     },
@@ -61,27 +62,38 @@
       "selectedMode": "",
       "thinkingOptionsByModel": {},
       "visibleModels": []
+    },
+    "pi": {
+      "cliPath": "",
+      "cliPathsByHost": {},
+      "discoveredModels": [],
+      "enabled": false,
+      "environmentHash": "",
+      "environmentVariables": "",
+      "modelAliases": {},
+      "preferredThinkingByModel": {},
+      "toolMode": "all",
+      "visibleModels": []
     }
   },
   "settingsProvider": "claude",
   "savedProviderModel": {
-    "claude": "sonnet"
+    "claude": "opus[1m]"
   },
   "savedProviderEffort": {
-    "claude": "high"
+    "claude": "max"
   },
   "savedProviderServiceTier": {},
-  "savedProviderThinkingBudget": {
-    "claude": "low"
-  },
+  "savedProviderThinkingBudget": {},
   "savedProviderPermissionMode": {
     "claude": "yolo"
   },
   "lastCustomModel": "",
   "maxTabs": 3,
-  "tabBarPosition": "input",
   "enableAutoScroll": true,
   "deferMathRenderingDuringStreaming": true,
+  "expandFileEditsByDefault": false,
   "chatViewPlacement": "right-sidebar",
-  "hiddenProviderCommands": {}
+  "hiddenProviderCommands": {},
+  "tabBarPosition": "input"
 }

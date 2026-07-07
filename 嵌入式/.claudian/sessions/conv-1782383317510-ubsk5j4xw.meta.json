@@ -1,0 +1,23 @@
+{
+  "id": "conv-1782383317510-ubsk5j4xw",
+  "providerId": "claude",
+  "title": "Create ESP-IDF Button tutorial",
+  "titleGenerationStatus": "success",
+  "createdAt": 1782383317510,
+  "updatedAt": 1782726649993,
+  "lastResponseAt": 1782434820465,
+  "sessionId": "d23b15e3-0766-4930-b41b-ba6926c6603e",
+  "providerState": {
+    "providerSessionId": "d23b15e3-0766-4930-b41b-ba6926c6603e"
+  },
+  "usage": {
+    "model": "sonnet",
+    "inputTokens": 74981,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 1000000,
+    "contextTokens": 74981,
+    "percentage": 7,
+    "contextWindowIsAuthoritative": true
+  }
+}

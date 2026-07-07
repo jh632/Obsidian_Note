@@ -1,0 +1,24 @@
+{
+  "id": "conv-1782208861784-e3rc004nm",
+  "providerId": "claude",
+  "title": "Reformat messy notes",
+  "titleGenerationStatus": "success",
+  "createdAt": 1782208861785,
+  "updatedAt": 1782319921872,
+  "lastResponseAt": 1782208928859,
+  "sessionId": "4818a9ec-9b9b-4522-ab18-d2332b317c9e",
+  "providerState": {
+    "providerSessionId": "4818a9ec-9b9b-4522-ab18-d2332b317c9e"
+  },
+  "currentNote": "embed_note/嵌入式八股文.md",
+  "usage": {
+    "model": "sonnet",
+    "inputTokens": 4360,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 39872,
+    "contextWindow": 1000000,
+    "contextTokens": 44232,
+    "percentage": 4,
+    "contextWindowIsAuthoritative": true
+  }
+}
