@@ -4,6 +4,20 @@
   "title": "Commit code changes",
   "titleGenerationStatus": "success",
   "createdAt": 1783389978834,
-  "updatedAt": 1783389985514,
-  "sessionId": null
+  "updatedAt": 1783396889175,
+  "lastResponseAt": 1783390013387,
+  "sessionId": "e6054d96-88ff-44ac-ae51-fe354b4ce82f",
+  "providerState": {
+    "providerSessionId": "e6054d96-88ff-44ac-ae51-fe354b4ce82f"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 1165,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 34816,
+    "contextWindow": 1000000,
+    "contextTokens": 35981,
+    "percentage": 4,
+    "contextWindowIsAuthoritative": true
+  }
 }

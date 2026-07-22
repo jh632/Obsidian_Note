@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "64804eaca889805c",
+        "id": "dd485bb2b28b15a7",
         "type": "tabs",
         "children": [
           {
-            "id": "596f72ba2f4b0b26",
+            "id": "12e28554effa8d07",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily_todo/2026-07-02.md",
-                "mode": "preview",
+                "file": "daily_todo/2026-07-22.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-07-02"
+              "title": "2026-07-22"
             }
           }
         ]
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "embed_note/esp_idf/lvgl适配.md",
+                "file": "daily_todo/2026-07-22.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "lvgl适配 的大纲"
+              "title": "2026-07-22 的大纲"
             }
           },
           {
@@ -176,11 +176,11 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 560.5
+    "width": 505.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -194,49 +194,54 @@
       "realclaudian:Open Claudian": false
     }
   },
-  "active": "596f72ba2f4b0b26",
+  "active": "12e28554effa8d07",
   "lastOpenFiles": [
-    "daily_todo/2026-07-01.md",
-    "daily_todo/2026-06-30.md",
-    "daily_todo/2026-06-29.md",
-    "embed_note/zephyr/west工具核心用法.md",
-    "daily_todo/2026-07-02.md",
-    "embed_note/zephyr/Zephyr-环境搭建.md",
-    "课程/数字图像处理",
-    "课程",
-    "embed_note/esp_idf/lvgl适配.md",
-    "embed_note/esp_idf/esp 挂载USB.md",
-    "embed_note/esp_idf/esp32 bootloader.md",
-    "embed_note/esp_idf/ESP32-GPIO-速查表.md",
+    "daily_todo/2026-07-21.md",
+    "daily_todo/2026-07-22.md",
+    "draft/草稿4.md",
+    "draft/草稿5.md",
+    "draft/草稿本.md",
+    "draft/蓝牙草稿.md",
+    "workspace/psa_w_webui/vite.config.js.timestamp-1784620767756-ac6da9e8d2824.mjs",
+    "workspace/psa_w_webui/vite.config.js.timestamp-1784620711938-dc6424451c6d9.mjs",
+    "workspace/psa_w_webui/vite.config.js.timestamp-1784620187209-b368962cb8308.mjs",
+    "daily_todo/2026-07-10.md",
+    "daily_todo/2026-07-14.md",
+    "embed_note/cmake语法.md",
+    "workspace/psa_w_webui/vite.config.js.timestamp-1784516525510-3a13b0c68f20a.mjs",
+    "workspace/psa_w_webui/vite.config.js.timestamp-1784516015909-ed8c18b9cc248.mjs",
+    "workspace/psa_w_webui/node_modules/vite-plugin-singlefile/dist/esm/declarations/index.d.ts",
+    "workspace/psa_w_webui/node_modules/vite-plugin-singlefile/dist/cjs/declarations/index.d.ts",
+    "workspace/psa_w_webui/node_modules/vite-plugin-singlefile/dist/esm/package.json",
+    "workspace/psa_w_webui/node_modules/vite-plugin-singlefile/dist/esm/index.js",
+    "workspace/psa_w_webui/node_modules/vite-plugin-singlefile/dist/esm/declarations",
+    "workspace/psa_w_webui/node_modules/vite-plugin-singlefile/README.md",
+    "workspace/psa_w_webui/node_modules/picomatch/README.md",
+    "workspace/psa_w_webui/node_modules/is-number/README.md",
+    "workspace/psa_w_webui/node_modules/@esbuild/win32-x64/README.md",
+    "workspace/psa_w_webui/node_modules/@rollup/rollup-win32-x64-gnu/README.md",
+    "workspace/psa_w_webui/src/source/wifi/wifi-weak.png",
+    "workspace/psa_w_webui/src/source/wifi/wifi-very-weak.png",
+    "workspace/psa_w_webui/src/source/wifi/wifi-none.png",
+    "workspace/psa_w_webui/src/source/wifi/wifi-none-green.png",
+    "workspace/psa_w_webui/src/source/wifi/wifi-medium.png",
+    "workspace/psa_w_webui/src/source/wifi/wifi-low.png",
+    "workspace/psa_w_webui/src/source/wifi/wifi-high.png",
+    "workspace/psa_w_webui/src/source/wifi/wifi-full.png",
+    "workspace/psa_w_webui/src/source/wifi/wifi-connected.png",
+    "workspace/psa_w_webui/src/source/wifi/wifi-connected-green.png",
+    "embed_note/bluetooth/02-NimBLE-API基础.md",
     "embed_note/esp_idf/idf button组件.md",
-    "embed_note/esp_idf/nvs api.md",
+    "embed_note/bluetooth/01-蓝牙入门.md",
+    "embed_note/esp_idf/lvgl适配.md",
+    "workspace/psa_w内存占用分析报告.md",
+    "embed_note/esp_idf/blueteeth.md",
+    "workspace/公司项目/ota升级状态机.md",
+    "embed_note/ota/ota如何保障真正的安全.md",
     "embed_note/esp_idf/ota升级方案.md",
+    "embed_note/esp_idf/usb.md",
     "embed_note/esp_idf/websocket.md",
     "embed_note/esp_idf/wifi.md",
-    "embed_note/工具链/wsl/wsl usb配置.md",
-    "embed_note/esp_idf/lvgl适配.md.tmp.38924.eb0d4cd62db2",
-    "workspace/dev_display设计.md",
-    "workspace/ws错误日志分析.md",
-    "workspace/gh3220_config_old.md",
-    "workspace/gh3220 bug finding.md",
-    "workspace/ADT 佩戴检测原理.md",
-    "workspace/佩戴检测config.md",
-    "workspace/myinfo/简历.pdf",
-    "daily_todo/2026-06-24.md",
-    "daily_todo/2026-06-23.md",
-    "daily_todo/2026-06-22.md",
-    "embed_note/esp_idf/usb.md",
-    "embed_note/esp_idf/idf button组件.md.tmp.30732.641b28d87a95",
-    "embed_note/esp_idf/idf button组件.md.tmp.30732.6edfaeaf257d",
-    "embed_note/esp_idf/idf button组件.md.tmp.30732.6d8d30498b35",
-    "embed_note/工具链/linux常用命令.md.tmp.32312.909ccde938cd",
-    "embed_note/嵌入式八股文.md.tmp.23288.e1b0fee3c6b4",
-    "embed_note/fix_script.py",
-    "未命名.canvas",
-    "Pasted image 20260512173040.png",
-    "Pasted image 20260512163454.png",
-    "Pasted image 20260512172941.png",
-    "Pasted image 20260512163302.png",
-    "Pasted image 20260512173437.png"
+    "未命名.canvas"
   ]
 }

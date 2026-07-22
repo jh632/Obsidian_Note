@@ -28,6 +28,11 @@ west (meta-tool)
 
 ## 核心命令
 
+```bash
+# 激活zephyr环境
+source ~/zephyrproject/.venv/bin/activate
+```
+
 ### west init — 初始化工作区
 
 ```bash

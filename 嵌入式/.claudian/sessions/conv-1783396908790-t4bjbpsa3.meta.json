@@ -1,0 +1,24 @@
+{
+  "id": "conv-1783396908790-t4bjbpsa3",
+  "providerId": "claude",
+  "title": "Document Rust Cargo usage",
+  "titleGenerationStatus": "success",
+  "createdAt": 1783396908792,
+  "updatedAt": 1783396951075,
+  "lastResponseAt": 1783396951075,
+  "sessionId": "f71c6e00-13ae-44ac-8d97-66bc10abd6f0",
+  "providerState": {
+    "providerSessionId": "f71c6e00-13ae-44ac-8d97-66bc10abd6f0"
+  },
+  "currentNote": "Rust/cargo.md",
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 171,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 31360,
+    "contextWindow": 1000000,
+    "contextTokens": 31531,
+    "percentage": 3,
+    "contextWindowIsAuthoritative": true
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "conv-1783397280650-v80wx16fa",
+  "providerId": "claude",
+  "title": "Create Rust syntax notes for C devs",
+  "titleGenerationStatus": "success",
+  "createdAt": 1783397280650,
+  "updatedAt": 1783399116630,
+  "lastResponseAt": 1783397445015,
+  "sessionId": "76ad12f2-62d0-4a3c-8628-157bcaa0b0c2",
+  "providerState": {
+    "providerSessionId": "76ad12f2-62d0-4a3c-8628-157bcaa0b0c2"
+  },
+  "currentNote": "Rust/Rust高级功能.md",
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 95,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 41984,
+    "contextWindow": 1000000,
+    "contextTokens": 42079,
+    "percentage": 4,
+    "contextWindowIsAuthoritative": true
+  }
+}

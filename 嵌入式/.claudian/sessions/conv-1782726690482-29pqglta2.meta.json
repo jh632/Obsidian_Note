@@ -4,7 +4,7 @@
   "title": "Analyze LVGL ESP-IDF adapter layer stack",
   "titleGenerationStatus": "success",
   "createdAt": 1782726690482,
-  "updatedAt": 1782876202735,
+  "updatedAt": 1783390747939,
   "lastResponseAt": 1782876202735,
   "sessionId": "70255b70-4205-4b62-9a36-72cdf57c232b",
   "providerState": {
@@ -737,7 +737,6 @@
       }
     }
   },
-  "currentNote": "embed_note/esp_idf/lvgl适配.md",
   "usage": {
     "model": "opus[1m]",
     "inputTokens": 1687,
