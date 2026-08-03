@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 *)",
+      "Bash(clang -std=c99 -Wall -Wextra -o \"D:/蒋瀚/Documents/嵌入式/嵌入式/embed_note/架构/_sm_test.exe\" \"D:/蒋瀚/Documents/嵌入式/嵌入式/embed_note/架构/_sm_test.c\")",
+      "Bash(\"D:/蒋瀚/Documents/嵌入式/嵌入式/embed_note/架构/_sm_test.exe\")"
+    ]
+  }
+}
