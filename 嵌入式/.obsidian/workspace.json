@@ -13,15 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily_todo/2026-07-22.md",
+                "file": "embed_note/ota/ESP32启动流程与Bootloader.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-07-22"
+              "title": "ESP32启动流程与Bootloader"
+            }
+          },
+          {
+            "id": "b8224b974b6e30ef",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "embed_note/通信协议/RS485与RS232.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "RS485与RS232"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -41,7 +56,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": true
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -156,13 +173,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily_todo/2026-07-22.md",
+                "file": "embed_note/通信协议/RS485与RS232.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2026-07-22 的大纲"
+              "title": "大纲"
             }
           },
           {
@@ -194,32 +211,44 @@
       "realclaudian:Open Claudian": false
     }
   },
-  "active": "12e28554effa8d07",
+  "active": "b8224b974b6e30ef",
   "lastOpenFiles": [
-    "daily_todo/2026-07-21.md",
-    "daily_todo/2026-07-22.md",
-    "draft/草稿4.md",
-    "draft/草稿5.md",
-    "draft/草稿本.md",
-    "draft/蓝牙草稿.md",
-    "workspace/psa_w_webui/vite.config.js.timestamp-1784620767756-ac6da9e8d2824.mjs",
-    "workspace/psa_w_webui/vite.config.js.timestamp-1784620711938-dc6424451c6d9.mjs",
-    "workspace/psa_w_webui/vite.config.js.timestamp-1784620187209-b368962cb8308.mjs",
-    "daily_todo/2026-07-10.md",
-    "daily_todo/2026-07-14.md",
+    "embed_note/ota/ESP32启动流程与Bootloader.md",
+    "embed_note/通信协议/RS485与RS232.md",
+    "embed_note/ota/嵌入式系统启动流程与 Bootloader 核心笔记.md",
+    "embed_note/ota/ota为什么需要双分区.md",
+    "embed_note/zephyr/设备树.md",
+    "embed_note/通信协议/websocket.md",
+    "embed_note/通信协议/modbus.md",
+    "embed_note/通信协议/can总线.md",
+    "embed_note/bluetooth/01-蓝牙入门.md",
+    "embed_note/bluetooth/02-NimBLE-API基础.md",
+    "embed_note/嵌入式八股文.md",
+    "embed_note/zephyr/west工具核心用法.md",
+    "embed_note/zephyr/zephyr核心api.md",
+    "embed_note/嵌入式存储器体系速查笔记.md",
     "embed_note/cmake语法.md",
-    "workspace/psa_w_webui/vite.config.js.timestamp-1784516525510-3a13b0c68f20a.mjs",
-    "workspace/psa_w_webui/vite.config.js.timestamp-1784516015909-ed8c18b9cc248.mjs",
-    "workspace/psa_w_webui/node_modules/vite-plugin-singlefile/dist/esm/declarations/index.d.ts",
-    "workspace/psa_w_webui/node_modules/vite-plugin-singlefile/dist/cjs/declarations/index.d.ts",
-    "workspace/psa_w_webui/node_modules/vite-plugin-singlefile/dist/esm/package.json",
-    "workspace/psa_w_webui/node_modules/vite-plugin-singlefile/dist/esm/index.js",
-    "workspace/psa_w_webui/node_modules/vite-plugin-singlefile/dist/esm/declarations",
-    "workspace/psa_w_webui/node_modules/vite-plugin-singlefile/README.md",
-    "workspace/psa_w_webui/node_modules/picomatch/README.md",
-    "workspace/psa_w_webui/node_modules/is-number/README.md",
-    "workspace/psa_w_webui/node_modules/@esbuild/win32-x64/README.md",
-    "workspace/psa_w_webui/node_modules/@rollup/rollup-win32-x64-gnu/README.md",
+    "embed_note/rtos_note/互斥锁_suspendall和临界区.md",
+    "workspace/活体佩戴检测时长.md",
+    "draft/空表格.md",
+    "draft/蓝牙草稿.md",
+    "workspace/gh3220_fix_req.md",
+    "workspace/gh3220_config_old.md",
+    "workspace/gh3220 bug finding.md",
+    "workspace/gh3220 配置记录.md",
+    "workspace/佩戴检测config.md",
+    "embed_note/数据结构/环形缓冲区.md",
+    "embed_note/数据结构/双缓冲.md",
+    "workspace/psa_w_webui/vite.config.js.timestamp-1785132590237-936e0f3fcaf88.mjs",
+    "workspace/psa_w_webui/vite.config.js.timestamp-1785132556821-92d168c3cfac6.mjs",
+    "workspace/psa_w_webui/vite.config.js.timestamp-1785131815325-e19b933bffd37.mjs",
+    "workspace/psa_w_webui/vite.config.js.timestamp-1785129862575-932677da4cfc5.mjs",
+    "workspace/psa_w_webui/vite.config.js.timestamp-1784879990373-9912283e5336c.mjs",
+    "workspace/psa_w_webui/vite.config.js.timestamp-1784879873769-b37b8d57f845f.mjs",
+    "workspace/psa_w_webui/vite.config.js.timestamp-1784879571199-f6eb2da45e263.mjs",
+    "embed_note/数据结构/未命名",
+    "embed_note/数据结构",
+    "skills",
     "workspace/psa_w_webui/src/source/wifi/wifi-weak.png",
     "workspace/psa_w_webui/src/source/wifi/wifi-very-weak.png",
     "workspace/psa_w_webui/src/source/wifi/wifi-none.png",
@@ -230,18 +259,6 @@
     "workspace/psa_w_webui/src/source/wifi/wifi-full.png",
     "workspace/psa_w_webui/src/source/wifi/wifi-connected.png",
     "workspace/psa_w_webui/src/source/wifi/wifi-connected-green.png",
-    "embed_note/bluetooth/02-NimBLE-API基础.md",
-    "embed_note/esp_idf/idf button组件.md",
-    "embed_note/bluetooth/01-蓝牙入门.md",
-    "embed_note/esp_idf/lvgl适配.md",
-    "workspace/psa_w内存占用分析报告.md",
-    "embed_note/esp_idf/blueteeth.md",
-    "workspace/公司项目/ota升级状态机.md",
-    "embed_note/ota/ota如何保障真正的安全.md",
-    "embed_note/esp_idf/ota升级方案.md",
-    "embed_note/esp_idf/usb.md",
-    "embed_note/esp_idf/websocket.md",
-    "embed_note/esp_idf/wifi.md",
     "未命名.canvas"
   ]
 }

@@ -1,7 +1,7 @@
 {
   "userName": "",
   "permissionMode": "yolo",
-  "model": "opus[1m]",
+  "model": "opus",
   "thinkingBudget": "low",
   "effortLevel": "max",
   "serviceTier": "default",
@@ -30,10 +30,10 @@
       "loadUserSettings": true,
       "enableChrome": false,
       "enableBangBash": false,
-      "enableOpus1M": true,
-      "enableSonnet1M": false,
       "customModels": "",
-      "lastModel": "opus[1m]",
+      "lastModel": "opus",
+      "modelEnvironmentType": "",
+      "titleModelEnvironmentType": "",
       "environmentVariables": "",
       "environmentHash": ""
     },
@@ -49,7 +49,12 @@
       "installationMethodsByHost": {
         "device:1289efd4-b39b-475c-82b7-4670a4d56231": "native-windows"
       },
-      "wslDistroOverridesByHost": {}
+      "wslDistroOverridesByHost": {},
+      "discoveredModels": [],
+      "modelAliases": {},
+      "visibleModels": null,
+      "catalogTimestamp": 0,
+      "catalogFingerprint": ""
     },
     "opencode": {
       "cliPath": "",
@@ -74,11 +79,23 @@
       "preferredThinkingByModel": {},
       "toolMode": "all",
       "visibleModels": []
+    },
+    "grok": {
+      "catalogsByHost": {},
+      "cliPath": "",
+      "cliPathsByHost": {},
+      "enabled": false,
+      "environmentHash": "",
+      "environmentVariables": "",
+      "modelAliases": {},
+      "planBasePermissionMode": "normal",
+      "preferredReasoningByModel": {},
+      "visibleModels": null
     }
   },
   "settingsProvider": "claude",
   "savedProviderModel": {
-    "claude": "opus[1m]"
+    "claude": "opus"
   },
   "savedProviderEffort": {
     "claude": "max"
@@ -88,6 +105,7 @@
   "savedProviderPermissionMode": {
     "claude": "yolo"
   },
+  "pendingProviderSessionInvalidations": {},
   "lastCustomModel": "",
   "maxTabs": 3,
   "enableAutoScroll": true,
