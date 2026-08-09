@@ -1,13 +1,11 @@
 {
-  "cssTheme": "Minimal",
+  "cssTheme": "Blue Topaz",
   "theme": "moonstone",
-  "accentColor": "#b60ed8",
-  "interfaceFontFamily": "Maple Mono NF CN",
-  "textFontFamily": "Maple Mono NF CN",
+  "accentColor": "",
+  "interfaceFontFamily": "Inter",
+  "textFontFamily": "HarmonyOS Sans SC",
   "monospaceFontFamily": "Maple Mono NF CN",
   "baseFontSizeAction": true,
-  "baseFontSize": 18,
-  "enabledCssSnippets": [
-    "heading-color"
-  ]
+  "baseFontSize": 16,
+  "enabledCssSnippets": []
 }

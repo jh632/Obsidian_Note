@@ -1,0 +1,11 @@
+{
+  "blue-topaz-theme@@color-scheme-options": "color-scheme-options-autumn-topaz",
+  "blue-topaz-theme@@background-image-settings-switch": false,
+  "blue-topaz-theme@@background-notebook-liked-switch": false,
+  "blue-topaz-theme@@toggle-fixed-pattern": false,
+  "blue-topaz-theme@@background-image-settings-markdown-page-options": "background-image-settings-markdown-page-transparent",
+  "blue-topaz-theme@@bg-markdown-page-opacity-cp": 0.45,
+  "blue-topaz-theme@@toggle-nonoverlapping-bg": false,
+  "blue-topaz-theme@@simple-p-kanban": false,
+  "blue-topaz-theme@@blur-p-kanban-frosted-glass": 1
+}

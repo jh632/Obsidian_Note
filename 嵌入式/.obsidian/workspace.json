@@ -13,30 +13,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "embed_note/ota/ESP32启动流程与Bootloader.md",
-                "mode": "source",
+                "file": "网络协议/网络传输的可靠协议GBN,SR到TCP.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ESP32启动流程与Bootloader"
-            }
-          },
-          {
-            "id": "b8224b974b6e30ef",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "embed_note/通信协议/RS485与RS232.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "RS485与RS232"
+              "title": "网络传输的可靠协议GBN,SR到TCP"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -55,7 +40,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byModifiedTime",
                 "autoReveal": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -111,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "embed_note/lvgl_note/lvgl_config.md",
+                "file": "面向对象/C++语法映射-class与封装.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -121,7 +106,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "lvgl_config 的反向链接列表"
+              "title": "反向链接"
             }
           },
           {
@@ -130,12 +115,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "embed_note/lvgl_note/lvgl_config.md",
+                "file": "面向对象/C++语法映射-class与封装.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "lvgl_config 的出链列表"
+              "title": "出链"
             }
           },
           {
@@ -173,23 +158,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "embed_note/通信协议/RS485与RS232.md",
+                "file": "网络协议/网络传输的可靠协议GBN,SR到TCP.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
               "title": "大纲"
-            }
-          },
-          {
-            "id": "376b00463bf2e9de",
-            "type": "leaf",
-            "state": {
-              "type": "claudian-view",
-              "state": {},
-              "icon": "bot",
-              "title": "Claudian"
             }
           }
         ],
@@ -201,44 +176,49 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "random-note:开始漫游笔记": false,
       "daily-notes:打开/创建今天的日记": false,
       "switcher:打开快速切换": false,
       "canvas:新建白板": false,
       "templates:插入模板": false,
       "graph:查看关系图谱": false,
       "command-palette:打开命令面板": false,
-      "bases:新建数据库": false,
-      "realclaudian:Open Claudian": false
+      "bases:新建数据库": false
     }
   },
-  "active": "b8224b974b6e30ef",
+  "active": "12e28554effa8d07",
   "lastOpenFiles": [
-    "embed_note/ota/ESP32启动流程与Bootloader.md",
-    "embed_note/通信协议/RS485与RS232.md",
-    "embed_note/ota/嵌入式系统启动流程与 Bootloader 核心笔记.md",
-    "embed_note/ota/ota为什么需要双分区.md",
-    "embed_note/zephyr/设备树.md",
-    "embed_note/通信协议/websocket.md",
-    "embed_note/通信协议/modbus.md",
-    "embed_note/通信协议/can总线.md",
-    "embed_note/bluetooth/01-蓝牙入门.md",
-    "embed_note/bluetooth/02-NimBLE-API基础.md",
-    "embed_note/嵌入式八股文.md",
-    "embed_note/zephyr/west工具核心用法.md",
-    "embed_note/zephyr/zephyr核心api.md",
-    "embed_note/嵌入式存储器体系速查笔记.md",
-    "embed_note/cmake语法.md",
-    "embed_note/rtos_note/互斥锁_suspendall和临界区.md",
-    "workspace/活体佩戴检测时长.md",
-    "draft/空表格.md",
-    "draft/蓝牙草稿.md",
-    "workspace/gh3220_fix_req.md",
-    "workspace/gh3220_config_old.md",
-    "workspace/gh3220 bug finding.md",
-    "workspace/gh3220 配置记录.md",
-    "workspace/佩戴检测config.md",
+    "未命名.canvas",
+    "网络协议/网络传输的可靠协议GBN,SR到TCP.md",
+    "网络协议/网络传输的五层架构.md",
+    "待学习清单.md",
+    "面向对象/面向对象核心概念速查-LED驱动为例.md",
+    "面向对象/C++语法映射-继承与虚析构.md",
+    "面向对象/C++语法映射-class与封装.md",
+    "workspace/核对清单.md",
+    "面向对象/C++语法映射-多态与虚函数.md",
+    "面向对象/C++语法映射-新增关键字速查.md",
+    "workspace/psa_w网络测试指标.md",
+    "网络协议",
     "embed_note/数据结构/环形缓冲区.md",
-    "embed_note/数据结构/双缓冲.md",
+    "workspace/psa_w_webui/node_modules/vite/LICENSE.md",
+    "embed_note/cmake语法.md",
+    "workspace/psa项目总结.md",
+    "embed_note/工具链/wsl/wsl usb配置.md",
+    "embed_note/ota/ota为什么需要双分区.md",
+    "Rust/impl 与方法.md",
+    "Rust/trait.md",
+    "面向对象/C++语法映射-01-class与封装.md",
+    "workspace/活体佩戴检测时长.md",
+    "workspace/psa_w新功能增加方案.md",
+    "workspace/gh3220 bug finding.md",
+    "embed_note/架构/嵌入式设计模式-状态机.md",
+    "embed_note/架构/嵌入式设计模式-观察者.md",
+    "embed_note/架构/嵌入式设计模式总览.md",
+    "面向对象",
+    "嵌入式学习导图-平台与系统.canvas",
+    "嵌入式学习导图-通用技术.canvas",
+    "嵌入式笔记导图.canvas",
     "workspace/psa_w_webui/vite.config.js.timestamp-1785132590237-936e0f3fcaf88.mjs",
     "workspace/psa_w_webui/vite.config.js.timestamp-1785132556821-92d168c3cfac6.mjs",
     "workspace/psa_w_webui/vite.config.js.timestamp-1785131815325-e19b933bffd37.mjs",
@@ -247,8 +227,6 @@
     "workspace/psa_w_webui/vite.config.js.timestamp-1784879873769-b37b8d57f845f.mjs",
     "workspace/psa_w_webui/vite.config.js.timestamp-1784879571199-f6eb2da45e263.mjs",
     "embed_note/数据结构/未命名",
-    "embed_note/数据结构",
-    "skills",
     "workspace/psa_w_webui/src/source/wifi/wifi-weak.png",
     "workspace/psa_w_webui/src/source/wifi/wifi-very-weak.png",
     "workspace/psa_w_webui/src/source/wifi/wifi-none.png",
@@ -258,7 +236,6 @@
     "workspace/psa_w_webui/src/source/wifi/wifi-high.png",
     "workspace/psa_w_webui/src/source/wifi/wifi-full.png",
     "workspace/psa_w_webui/src/source/wifi/wifi-connected.png",
-    "workspace/psa_w_webui/src/source/wifi/wifi-connected-green.png",
-    "未命名.canvas"
+    "workspace/psa_w_webui/src/source/wifi/wifi-connected-green.png"
   ]
 }
