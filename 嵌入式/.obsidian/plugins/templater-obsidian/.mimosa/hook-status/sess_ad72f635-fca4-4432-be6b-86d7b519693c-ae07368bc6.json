@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "mimosa-hook-status/v1",
+  "recordedAt": "2026-08-12T09:49:40.780Z",
+  "sessionId": "sess_ad72f635-fca4-4432-be6b-86d7b519693c",
+  "event": "PostToolUse",
+  "toolName": "Edit",
+  "file": "D:\\蒋瀚\\Documents\\嵌入式\\嵌入式\\Templates\\每日待办.md",
+  "outcome": "clear",
+  "coverage": "complete",
+  "findingCount": 0,
+  "durationMs": 5,
+  "hostState": "hook_complete",
+  "reportHint": ".mimosa/reports/"
+}

@@ -261,15 +261,15 @@ ota_1,    app,  ota_1,   0x210000, 1M,
 
 点击题目跳转到 [[#九答案与解析|答案与解析]]：
 
-- [ ] [[#9.1 ESP32 为什么需要两级引导（ROM + 可编程）？一级引导能修改吗？|ESP32 为什么需要两级引导（ROM + 可编程）？一级引导能修改吗？]]
-- [ ] [[#9.2 GPIO0 拉低和拉高分别进入什么模式？经典款还有哪些 strapping 引脚？|GPIO0 拉低和拉高分别进入什么模式？经典款还有哪些 strapping 引脚？]]
-- [ ] [[#9.3 二级引导的加载流程：RAM 段和 flash 映射段分别怎么处理？|二级引导的加载流程：RAM 段和 flash 映射段分别怎么处理？]]
-- [ ] [[#9.4 分区表里 otadata 的作用？二级引导如何决定启动 factory 还是 ota_x？|分区表里 otadata 的作用？二级引导如何决定启动 factory 还是 ota_x？]]
-- [ ] [[#9.5 ESP32 镜像头和 Cortex-M 向量表有什么本质区别？|ESP32 镜像头和 Cortex-M 向量表有什么本质区别？]]
-- [ ] [[#9.6 call_start_cpu0 和 Cortex-M 的 startup.s 职责有何异同？|call_start_cpu0 和 Cortex-M 的 startup.s 职责有何异同？]]
-- [ ] [[#9.7 PRO CPU 和 APP CPU 谁先启动？APP CPU 何时被解除复位？|PRO CPU 和 APP CPU 谁先启动？APP CPU 何时被解除复位？]]
-- [ ] [[#9.8 flash 默认布局：bootloader、分区表、factory 各在什么偏移？|flash 默认布局：bootloader、分区表、factory 各在什么偏移？]]
-- [ ] [[#9.9 为什么 app 分区必须 64KB 对齐？|为什么 app 分区必须 64KB 对齐？]]
+- [x] [[#9.1 ESP32 为什么需要两级引导（ROM + 可编程）？一级引导能修改吗？|ESP32 为什么需要两级引导（ROM + 可编程）？一级引导能修改吗？]] ✅ 2026-08-12
+- [x] [[#9.2 GPIO0 拉低和拉高分别进入什么模式？经典款还有哪些 strapping 引脚？|GPIO0 拉低和拉高分别进入什么模式？经典款还有哪些 strapping 引脚？]] ✅ 2026-08-12
+- [x] [[#9.3 二级引导的加载流程：RAM 段和 flash 映射段分别怎么处理？|二级引导的加载流程：RAM 段和 flash 映射段分别怎么处理？]] ✅ 2026-08-12
+- [x] [[#9.4 分区表里 otadata 的作用？二级引导如何决定启动 factory 还是 ota_x？|分区表里 otadata 的作用？二级引导如何决定启动 factory 还是 ota_x？]] ✅ 2026-08-12
+- [x] [[#9.5 ESP32 镜像头和 Cortex-M 向量表有什么本质区别？|ESP32 镜像头和 Cortex-M 向量表有什么本质区别？]] ✅ 2026-08-12
+- [x] [[#9.6 call_start_cpu0 和 Cortex-M 的 startup.s 职责有何异同？|call_start_cpu0 和 Cortex-M 的 startup.s 职责有何异同？]] ✅ 2026-08-12
+- [x] [[#9.7 PRO CPU 和 APP CPU 谁先启动？APP CPU 何时被解除复位？|PRO CPU 和 APP CPU 谁先启动？APP CPU 何时被解除复位？]] ✅ 2026-08-12
+- [x] [[#9.8 flash 默认布局：bootloader、分区表、factory 各在什么偏移？|flash 默认布局：bootloader、分区表、factory 各在什么偏移？]] ✅ 2026-08-12
+- [x] [[#9.9 为什么 app 分区必须 64KB 对齐？|为什么 app 分区必须 64KB 对齐？]] ✅ 2026-08-12
 
 ---
 

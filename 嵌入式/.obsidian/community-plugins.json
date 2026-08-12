@@ -1,4 +1,7 @@
 [
   "obsidian-tasks-plugin",
-  "obsidian-style-settings"
+  "obsidian-style-settings",
+  "obsidian-linter",
+  "obsidian-excalidraw-plugin",
+  "templater-obsidian"
 ]
