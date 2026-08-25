@@ -8,3 +8,6 @@ Thumbs.db
 
 # Trash
 .trash/
+
+# Tool session state
+.mimosa/

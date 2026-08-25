@@ -3,5 +3,9 @@
   "obsidian-style-settings",
   "obsidian-linter",
   "obsidian-excalidraw-plugin",
-  "templater-obsidian"
+  "templater-obsidian",
+  "calendar",
+  "table-editor-obsidian",
+  "mousewheel-image-zoom",
+  "better-mermaid"
 ]

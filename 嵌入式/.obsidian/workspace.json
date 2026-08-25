@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "34061f28f447d73b",
+        "id": "155e665849ba677b",
         "type": "tabs",
         "children": [
           {
-            "id": "bda4a134efcc2e85",
+            "id": "721f48b37a12e548",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily_todo/2026-08-12.md",
-                "mode": "preview",
+                "file": "Linux/linux常用命令.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-08-12"
+              "title": "linux常用命令"
             }
           }
         ]
@@ -96,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "面向对象/C++语法映射-class与封装.md",
+                "file": "draft/草稿.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "面向对象/C++语法映射-多态与虚函数.md",
+                "file": "draft/草稿.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               },
@@ -158,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily_todo/2026-08-12.md",
+                "file": "Excalidraw/USBOTA流程图.png",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -168,19 +168,49 @@
             }
           },
           {
+            "id": "3fa106974c52d2b5",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          },
+          {
+            "id": "e51f3b923e8b8830",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
+            }
+          },
+          {
             "id": "2a3a243d659456ae",
             "type": "leaf",
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "daily_todo/2026-08-12.md"
+                "file": "workspace/测试用例.md"
               },
               "icon": "lucide-info",
               "title": "笔记属性"
             }
+          },
+          {
+            "id": "8a1b5e174d392bf2",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw-sidepanel",
+              "state": {},
+              "icon": "excalidraw-icon",
+              "title": "Excalidraw 侧边面板"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -188,67 +218,69 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "random-note:开始漫游笔记": false,
       "daily-notes:打开/创建今天的日记": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false,
+      "templater-obsidian:Templater": false,
+      "random-note:开始漫游笔记": false,
+      "templates:插入模板": true,
+      "graph:查看关系图谱": false,
+      "bases:新建数据库": true,
       "switcher:打开快速切换": false,
       "canvas:新建白板": false,
-      "templates:插入模板": false,
-      "graph:查看关系图谱": false,
       "command-palette:打开命令面板": false,
-      "bases:新建数据库": false,
-      "obsidian-excalidraw-plugin:新建绘图文件": false,
-      "templater-obsidian:Templater": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "bda4a134efcc2e85",
+  "active": "721f48b37a12e548",
   "lastOpenFiles": [
+    "Rust/cargo.md",
     "待学习清单.md",
-    "daily_todo/2026-08-12.md",
-    "未命名.md",
-    "未命名",
-    "Templates/空白笔记.md",
-    "Templates/每日待办.md",
-    "Templates/学习笔记.md",
-    "Templates",
-    "任务清单.md",
-    "Linux/linux常用命令.md",
-    "embed_note/ota/嵌入式系统启动流程与 Bootloader 核心笔记.md",
-    "daily_todo/2026-05-13.md",
-    "Excalidraw/PSA架构.md",
-    "Rust/impl 与方法.md",
-    "Excalidraw/Drawing 2026-08-12 17.22.32.excalidraw.md",
-    "Excalidraw/Drawing 2026-08-12 17.23.09.excalidraw.md",
-    "Excalidraw",
-    "workspace/核对清单.md",
-    "workspace/gh3220_fix_req.md",
-    "workspace/gh3220_config_old.md",
-    "workspace/gh3220 bug finding.md",
-    "workspace/gh3220 配置记录.md",
-    "workspace/ADT 佩戴检测原理.md",
-    "workspace/活体佩戴检测时长.md",
-    "workspace/佩戴检测config.md",
-    "面向对象/C++语法映射-多态与虚函数.md",
-    "网络协议/网络传输的可靠协议GBN,SR到TCP.md",
-    "workspace/psa_w网络测试指标.md",
-    "image/13775c906162d7d8b284026162801516.jpg",
-    "image",
-    "workspace/未命名",
-    "workspace/psa_w内存占用分析报告.md",
-    "Linux",
-    "image/Pasted image 20260811151753.png",
-    "workspace/publish_wiki.py",
-    "image/Pasted image 20260811145833.png",
-    "image/Pasted image 20260811145338.png",
-    "image/Pasted image 20260811144716.png",
-    "image/Pasted image 20260811144237.png",
-    "image/Pasted image 20260811143805.png",
-    "image/Pasted image 20260811143251.png",
-    "image/Pasted image 20260811142205.png",
-    "workspace/psa_w网络测试指标.md.tmp.13884.7a8fff0685a5",
-    "image/Pasted image 20260811140750.png",
-    "embed_note/bluetooth/03-BLE协议栈.md.tmp.19060.36d51f1ad266",
+    "常用命令.md",
+    "workspace/测试用例.md",
+    "Excalidraw/USBOTA流程图.png",
+    "embed_note/架构/嵌入式设计模式-状态机.md",
+    "embed_note/架构/嵌入式设计模式总览.md",
+    "embed_note/架构/嵌入式设计模式-事件总线.md",
+    "embed_note/嵌入式文件存储体系/SD卡体系.md",
+    "embed_note/嵌入式文件存储体系/VFS文件管理系统API.md",
+    "embed_note/嵌入式文件存储体系/VFS文件管理系统.md",
+    "embed_note/bluetooth/03-BLE协议栈.md",
+    "embed_note/bluetooth/03-BLE协议栈-复习.canvas",
     "未命名.canvas",
-    "网络协议",
+    "embed_note/嵌入式文件存储体系",
+    "embed_note/文件管理系统.md",
+    "Excalidraw/PSA架构.md",
+    "Excalidraw/PSA架构.png",
+    "Excalidraw/PSA事件总线架构.md",
+    "embed_note/算法/滤波实现/均值滤波.md",
+    "embed_note/算法/滤波实现/高斯滤波.md",
+    "workspace/服务端丢包率计算说明.md",
+    "workspace/psav2.3.5服务端改动建议.md",
+    "embed_note/算法/滤波实现/卡尔曼滤波.md",
+    "embed_note/算法/滤波实现/EWMA.md",
+    "daily_todo/2026-05-25.md",
+    "draft/草稿4.md",
+    "workspace/psa_w_webui/node_modules/vite/README.md",
+    "workspace/psa_w_webui/node_modules/rollup/LICENSE.md",
+    "workspace/psa_w_webui/node_modules/@esbuild/win32-x64/README.md",
+    "workspace/ADT 佩戴检测原理.md",
+    "workspace/psa_w_webui/vite.config.js.timestamp-1787124282022-73c2f67ea31de.mjs",
+    "workspace/psa_w_webui/vite.config.js.timestamp-1787124142659-53162e0235a48.mjs",
+    "workspace/psa_w_webui/vite.config.js.timestamp-1787124054689-e1beb45a6a409.mjs",
+    "workspace/psa_w_webui/src/pages/usb-ota.js",
+    "embed_note/USB/USB协议栈架构 图示.png",
+    "image/Pasted Image 20260819143001_455.png",
+    "image/Pasted Image 20260819140529_510.png",
+    "embed_note/USB",
+    "Excalidraw/PSA事件总线架构.mmd",
+    "Excalidraw/PSA事件总线架构.mermaid",
+    "image/c679a8e56af5214bf19755d74719cc5e.jpg",
+    "image/0936d0ca1483b5dd4d8b187d8178a94c.jpg",
+    "image/Pasted image 20260814135409.png",
+    "image/Pasted image 20260814135003.png",
+    "image/Pasted image 20260814135000.png",
+    "workspace/测试用例.md.bak",
+    "未命名 1.base",
     "嵌入式学习导图-平台与系统.canvas",
     "嵌入式学习导图-通用技术.canvas",
     "嵌入式笔记导图.canvas"
