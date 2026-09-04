@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "embed_note/低功耗/悬空引脚与贯通电流.md",
+                "file": "embed_note/常用库/cJSON.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "悬空引脚与贯通电流"
+              "title": "cJSON"
             }
           }
         ]
@@ -117,7 +117,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "embed_note/低功耗/悬空引脚与贯通电流.md",
+            "file": "embed_note/常用库/cJSON.md",
             "collapseAll": true,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -189,6 +189,14 @@
   },
   "active": "b7981747539ed35f",
   "lastOpenFiles": [
+    "embed_note/zephyr/设备树.md",
+    "embed_note/嵌入式文件存储体系/SD卡体系.md",
+    "embed_note/工具链/clang-format-Linux内核风格.md",
+    "embed_note/常用库/tinyUSB.md",
+    "embed_note/USB/USB协议栈架构 图示.md",
+    "embed_note/USB/USB设备的类型.md",
+    "embed_note/USB/USB协议栈架构 图示.png",
+    "embed_note/低功耗/悬空引脚与贯通电流.md",
     "网络协议/网络传输的可靠协议GBN,SR到TCP.md",
     "Excalidraw/USBOTA流程图.png",
     "Excalidraw/USBOTA流程图.md",
