@@ -318,4 +318,4 @@ int eeprom_read_byte(uint16_t addr, uint8_t *out)
 
 - [[can总线]]
 - [[modbus]]
-- [[websocket]]
+- [[embed_note/esp_idf/04-ESP-IDF-WiFi与网络]]
