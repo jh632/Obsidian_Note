@@ -346,16 +346,16 @@ Flash 只能擦除后整体写、不能覆写单字节，所以一个 sector 的
 
 ## 10. 对照 ESP-IDF OTA
 
-| MCUboot | ESP-IDF OTA |
-|---|---|
-| Primary Slot | 当前 running 分区（factory / ota_0 / ota_1） |
-| Secondary Slot | 非活动 OTA 分区（`esp_ota_get_next_update_partition`） |
-| Image Header | ESP 镜像头 |
-| Trailer | otadata 分区 |
+| MCUboot                           | ESP-IDF OTA                                                        |
+| --------------------------------- | ------------------------------------------------------------------ |
+| Primary Slot                      | 当前 running 分区（factory / ota_0 / ota_1）                             |
+| Secondary Slot                    | 非活动 OTA 分区（`esp_ota_get_next_update_partition`）                    |
+| Image Header                      | ESP 镜像头                                                            |
+| Trailer                           | otadata 分区                                                         |
 | IMAGE_OK / `boot_set_confirmed()` | `esp_ota_mark_app_valid_cancel_rollback()`（PENDING_VERIFY → VALID） |
-| TEST Swap | 新固件启动后不调用 mark_app_valid |
-| REVERT | 自动回滚旧固件 |
-| Swap 决策 | bootloader 读 otadata 选分区 |
+| TEST Swap                         | 新固件启动后不调用 mark_app_valid                                           |
+| REVERT                            | 自动回滚旧固件                                                            |
+| Swap 决策                           | bootloader 读 otadata 选分区                                           |
 
 **本质区别：搬数据 vs 切指针。**
 
