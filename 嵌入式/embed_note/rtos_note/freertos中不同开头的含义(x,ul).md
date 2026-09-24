@@ -1,8 +1,5 @@
 ---
-tags:
-  - freertos
-  - rtos
-  - coding_style
+tags: [embed_note, rtos_note]
 created: 2026-07-14
 ---
 

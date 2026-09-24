@@ -1,6 +1,6 @@
 ---
 date: 2026-08-03
-tags: [oop, c, embedded-systems, led, 面向对象]
+tags: [面向对象]
 aliases: [OOP Cheatsheet with LED, 面向对象速查]
 ---
 

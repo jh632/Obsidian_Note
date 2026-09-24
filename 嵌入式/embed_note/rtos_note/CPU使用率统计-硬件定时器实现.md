@@ -1,6 +1,6 @@
 ---
 date: 2026-07-24
-tags: [rtos, cpu-usage, statistics, hardware-timer, cortex-m, context-switch, embedded]
+tags: [embed_note, rtos_note]
 aliases: [CPU使用率怎么算, 资源统计, CPU利用率统计]
 ---
 

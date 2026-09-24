@@ -1,6 +1,6 @@
 ---
 date: 2026-08-06
-tags: [cpp, keywords, explicit, override, embedded]
+tags: [面向对象]
 aliases: [C++语法映射 速查篇, C++ 新增关键字]
 ---
 

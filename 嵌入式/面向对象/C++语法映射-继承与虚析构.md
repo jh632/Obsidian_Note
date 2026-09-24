@@ -1,6 +1,6 @@
 ---
 date: 2026-08-06
-tags: [cpp, oop, inheritance, virtual-destructor, embedded]
+tags: [面向对象]
 aliases: [C++语法映射 第2章, C++ 继承与虚析构]
 ---
 

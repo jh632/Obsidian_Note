@@ -1,5 +1,5 @@
 ---
-tags: [esp-idf, esp32, gpio, nvs, 存储, 低功耗, 睡眠]
+tags: [embed_note, esp_idf]
 date: 2026-09-01
 aliases: [ESP32-GPIO-速查表, nvs api, 睡眠模式, ESP-IDF外设速查, GPIO参考]
 ---

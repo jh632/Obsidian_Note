@@ -1,6 +1,6 @@
 ---
 date: 2026-06-25
-tags: [esp-idf, input-device, button, esp-iot-solution]
+tags: [embed_note, esp_idf, _archive]
 aliases: [idf-button, iot-button, 按钮组件]
 ---
 

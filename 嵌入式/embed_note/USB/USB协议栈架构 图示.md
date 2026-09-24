@@ -1,7 +1,7 @@
 ---
 
 excalidraw-plugin: parsed
-tags: [excalidraw]
+tags: [embed_note, USB]
 
 ---
 ==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠== You can decompress Drawing data with the command palette: 'Decompress current Excalidraw file'. For more info check in plugin settings under 'Saving'
@@ -126,7 +126,7 @@ BULK传输多用于大容量存储(U盘) ，传输速率受系统占用率影响
 DcZoFaAx: [[USB设备的类型]]
 
 ## Embedded Files
-cc0970558dde8ccdae921f739e5132bc55711e61: [[Pasted Image 20260819140529_510.png]]
+cc0970558dde8ccdae921f739e5132bc55711e61: [[USB帧数据结构.png]]
 
 1beb383fe5719f0818ce174812fe8c93b9f2c38f: markdown-image
 

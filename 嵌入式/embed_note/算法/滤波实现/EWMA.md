@@ -1,6 +1,6 @@
 ---
 date: 2026-05-26
-tags: [滤波, EWMA, embedded-c]
+tags: [embed_note, 算法, 滤波实现]
 aliases: [exponential-weighted-moving-average, 指数加权移动平均]
 ---
 

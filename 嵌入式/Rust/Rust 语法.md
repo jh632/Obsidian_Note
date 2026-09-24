@@ -1,3 +1,7 @@
+---
+tags: [Rust]
+---
+
 # Rust 基础语法 — C 开发者视角
 
 > **C 有而 Rust 无的**：隐式类型转换、`NULL`、野指针、手动内存管理（malloc/free）、头文件、`#define` 宏、`goto`

@@ -1,6 +1,6 @@
 ---
 date: 2026-09-01
-tags: [zephyr, zbus, publish-subscribe, 事件总线]
+tags: [embed_note, zephyr, _archive]
 aliases: [zbus, Zephyr bus, zbus笔记]
 ---
 

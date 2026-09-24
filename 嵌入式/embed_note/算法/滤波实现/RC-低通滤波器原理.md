@@ -1,6 +1,6 @@
 ---
 date: 2026-06-16
-tags: [低通滤波, rc-filter, embedded-c]
+tags: [embed_note, 算法, 滤波实现]
 aliases: [rc-low-pass-filter, 一阶低通滤波, 软件低通滤波]
 ---
 

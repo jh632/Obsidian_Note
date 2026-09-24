@@ -1,6 +1,6 @@
 ---
 date: 2026-06-16
-tags: [esp32, gpio, esp-idf]
+tags: [embed_note, esp_idf, _archive]
 aliases: [ESP32-GPIO-cheatsheet, ESP32-GPIO-参考]
 ---
 

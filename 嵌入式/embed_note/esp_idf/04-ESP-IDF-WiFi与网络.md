@@ -1,5 +1,5 @@
 ---
-tags: [esp-idf, esp32, wifi, websocket, 网络, 射频]
+tags: [embed_note, esp_idf]
 date: 2026-09-01
 aliases: [ESP32 WiFi, WiFi API, 射频竞争, esp32射频竞争, WiFi射频]
 ---

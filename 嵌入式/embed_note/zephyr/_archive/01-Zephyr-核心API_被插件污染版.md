@@ -1,3 +1,7 @@
+---
+tags: [embed_note, zephyr, _archive]
+---
+
 ***
 
 tags: \[zephyr, rtos, api, 内核，线程，信号量，消息队列，日志，shell]

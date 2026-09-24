@@ -1,5 +1,5 @@
 ---
-tags: [zephyr, 驱动, devicetree, kconfig, 工作流]
+tags: [embed_note, zephyr, _archive]
 ---
 
 # Zephyr 驱动查找方法

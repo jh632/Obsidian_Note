@@ -1,7 +1,6 @@
 ---
 date: 2026-08-21
-tags:
-  - "#VFS"
+tags: [embed_note, 嵌入式文件存储体系]
 aliases: []
 ---
 

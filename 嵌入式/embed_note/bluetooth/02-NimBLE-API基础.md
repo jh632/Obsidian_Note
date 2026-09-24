@@ -1,6 +1,6 @@
 ---
 date: 2026-07-17
-tags: [nimble, esp32, ble, gatt, api]
+tags: [embed_note, bluetooth]
 aliases: [NimBLE API, NimBLE 基础]
 ---
 

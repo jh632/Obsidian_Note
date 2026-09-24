@@ -1,3 +1,7 @@
+---
+tags: [Rust]
+---
+
 # impl 与方法 — C 开发者视角
 
 > `struct` = 数据，`impl` = 给数据添加行为

@@ -1,5 +1,5 @@
 ---
-tags: [esp-idf, lvgl, esp-lcd, button, gui, 显示, 输入]
+tags: [embed_note, esp_idf]
 date: 2026-09-01
 aliases: [LVGL适配, idf button组件, LVGL-ESP-IDF-porting, esp_lvgl_adapter, esp_lvgl_port, IDF Button]
 ---
@@ -1148,5 +1148,5 @@ iot_button_register_power_save_cb(&config);
 ## 相关笔记
 
 - [[02-ESP-IDF-核心外设速查]] — GPIO、低功耗（RTC GPIO 唤醒）
-- [[lvgl_note/LVGL-显示原理]]、[[lvgl_note/lvgl_config]] — LVGL 基础笔记
+- [[LVGL-显示原理]]、[[lvgl_config]] — LVGL 基础笔记
 - [[架构/嵌入式设计模式-事件总线]] — 按键事件分发可参考

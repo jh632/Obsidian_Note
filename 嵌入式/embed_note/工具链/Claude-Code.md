@@ -1,6 +1,6 @@
 ---
 date: 2026-05-25
-tags: [claude-code, cli, ai-tool, dev-tools]
+tags: [embed_note, 工具链]
 aliases: [Claude Code CLI]
 ---
 

@@ -1,6 +1,6 @@
 ---
 date: 2026-06-01
-tags: [wifi, esp32, esp-idf, networking]
+tags: [embed_note, esp_idf, _archive]
 aliases: [ESP32 WiFi, WiFi API]
 ---
 

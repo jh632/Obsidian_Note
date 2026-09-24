@@ -1,5 +1,5 @@
 ---
-tags: [zephyr, rtos, api, 内核, 线程, 信号量, 消息队列, 日志, shell]
+tags: [embed_note, zephyr]
 date: 2026-09-01
 aliases: [Zephyr核心API, Zephyr RTOS API, zephyr核心api]
 ---
@@ -510,8 +510,11 @@ void read_data(void)
 ```
 
 ### 7.2 日志级别
-
-> ⚠️ 勘误（2026-09-01 整理时修正）：原笔记此处写 `LOG_ERR=0`，与官方 `log_core.h` 及 [[02-Zephyr-项目结构与构建配置]] 中的定义矛盾。官方日志级别为 **0=关闭、1=ERR、2=WRN、3=INF、4=DBG**，修正如下。
+日志基础使用方法
+```c
+#include <zephyr/logging/log.h>
+LOG_MODULE_REGISTER(my_sensor, LOG_LEVEL_INF);
+```
 
 | 宏 | 级别 | 说明 |
 |----|------|------|

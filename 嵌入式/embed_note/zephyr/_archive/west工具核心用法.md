@@ -1,3 +1,7 @@
+---
+tags: [embed_note, zephyr, _archive]
+---
+
 # West 工具核心用法
 
 > 来源：https://x-gen-lab.github.io/zephyr-learning-system/stage1-foundation/west-tool/

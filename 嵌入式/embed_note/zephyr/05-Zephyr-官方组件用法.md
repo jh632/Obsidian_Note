@@ -1,5 +1,5 @@
 ---
-tags: [zephyr, 组件, 子系统, zbus, 官方组件, publish-subscribe, 事件总线]
+tags: [embed_note, zephyr]
 date: 2026-09-01
 aliases: [Zephyr官方组件, 子系统用法, zbus, Zephyr bus]
 ---
@@ -22,7 +22,7 @@ aliases: [Zephyr官方组件, 子系统用法, zbus, Zephyr bus]
 | Device Tree / 驱动模型 | 描述硬件、匹配驱动 | ✅ 见 [[03-Zephyr-设备树与驱动开发]] |
 | Kconfig / prj.conf | 编译期配置 | ✅ 见 [[02-Zephyr-项目结构与构建配置]] |
 | Settings（NVS 持久化配置） | KV 配置读写、掉电保存 | ⏳ 待补充 |
-| Sensor API | 统一传感器驱动访问接口 | ⏳ 待补充 |
+| Sensor API | 统一传感器驱动访问接口 | ✅ 见 [[06-Zephyr-Sensor-API]] |
 | Work Queue | 延迟执行 / 异步任务调度 | ⏳ 待补充 |
 | Mailbox | 跨线程消息收发 | ⏳ 待补充 |
 | Pipe | 流式（大块）数据传递 | ⏳ 待补充 |

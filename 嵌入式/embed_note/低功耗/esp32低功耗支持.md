@@ -1,8 +1,6 @@
 ---
 date: 2026-06-15
-tags:
-  - esp32
-  - 低功耗
+tags: [embed_note, 低功耗]
 aliases:
   - eps32
 ---

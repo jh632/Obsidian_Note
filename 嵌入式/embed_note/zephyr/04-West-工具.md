@@ -1,5 +1,5 @@
 ---
-tags: [zephyr, west, 构建, 烧录, 调试, esp32, 工具]
+tags: [embed_note, zephyr]
 date: 2026-09-01
 aliases: [west, West工具, west常用命令]
 ---

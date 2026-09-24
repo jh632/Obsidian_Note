@@ -1,3 +1,7 @@
+---
+tags: [embed_note, esp_idf, _archive]
+---
+
 # 1.usb基础世界观
 ## 1.1 USB 里谁是主，谁是从
 最重要的一句：

@@ -1,5 +1,5 @@
 ---
-tags: [zephyr, 项目结构, cmake, kconfig, prj.conf, 构建]
+tags: [embed_note, zephyr]
 date: 2026-09-01
 aliases: [Zephyr项目结构, 项目结构, prj.conf, CMakeLists]
 ---

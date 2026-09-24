@@ -1,5 +1,5 @@
 ---
-tags: [esp-idf, esp32, idf.py, esptool, 构建, 固件打包, 分区表]
+tags: [embed_note, esp_idf]
 date: 2026-09-01
 aliases: [常用idf命令, esptool, merge-bin, ESP-IDF构建工具, idf.py]
 ---

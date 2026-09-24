@@ -1,3 +1,7 @@
+---
+tags: [embed_note, zephyr, _archive]
+---
+
 一个标准的 Zephyr 应用项目通常包含以下目录和文件：
 ```
 my_zephyr_app/

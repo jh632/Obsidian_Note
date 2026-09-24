@@ -1,3 +1,7 @@
+---
+tags: [embed_note, ota]
+---
+
 # 嵌入式系统启动流程与 Bootloader 核心笔记
 
 > 本笔记梳理嵌入式系统从上电复位到进入 `main()` 的完整执行路径，以及 Bootloader / IAP 升级的核心原理与安全规范。

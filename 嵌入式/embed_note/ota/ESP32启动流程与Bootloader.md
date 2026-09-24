@@ -1,3 +1,7 @@
+---
+tags: [embed_note, ota]
+---
+
 # ESP32 启动流程与 Bootloader 笔记
 
 > 本笔记介绍 ESP32 从上电复位到运行 `app_main()` 的完整启动流程（以 ESP32 经典款 / Xtensa LX6 双核为例，末尾附新系列差异）。

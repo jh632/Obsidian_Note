@@ -1,6 +1,6 @@
 ---
 date: 2026-06-09
-tags: [rtos, freertos, power-management, tickless-idle, low-power, cortex-m]
+tags: [embed_note, rtos_note]
 aliases: [Tickless Idle Mode, 无Tick空闲模式, configUSE_TICKLESS_IDLE]
 ---
 

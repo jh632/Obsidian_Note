@@ -1,6 +1,6 @@
 ---
 date: 2026-08-06
-tags: [cpp, oop, polymorphism, vtable, virtual, embedded]
+tags: [面向对象]
 aliases: [C++语法映射 第3章, C++ 多态与虚函数]
 ---
 

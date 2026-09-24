@@ -1,6 +1,6 @@
 ---
 date: 2026-05-26
-tags: [滤波, S-G滤波, embedded-c]
+tags: [embed_note, 算法, 滤波实现]
 aliases: [savitzky-golay, SG-smoothing, Savitzky-Golay]
 ---
 

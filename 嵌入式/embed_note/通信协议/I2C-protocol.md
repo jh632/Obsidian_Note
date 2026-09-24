@@ -1,6 +1,6 @@
 ---
 date: 2026-06-16
-tags: [i2c-bus, communication-protocol, embedded]
+tags: [embed_note, 通信协议]
 aliases: [I2C-协议, I2C-protocol]
 ---
 

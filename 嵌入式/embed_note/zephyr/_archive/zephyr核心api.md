@@ -1,3 +1,7 @@
+---
+tags: [embed_note, zephyr, _archive]
+---
+
 # Zephyr RTOS 核心 API 参考手册
 
 > 适用版本：Zephyr ≥ 4.x  

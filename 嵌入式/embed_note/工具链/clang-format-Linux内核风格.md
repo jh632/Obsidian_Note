@@ -1,6 +1,6 @@
 ---
 date: 2026-05-25
-tags: [clang-format, linux-kernel, 代码格式化]
+tags: [embed_note, 工具链]
 aliases: [Linux-kernel-clang-format-style]
 ---
 

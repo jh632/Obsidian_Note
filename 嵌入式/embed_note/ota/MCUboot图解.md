@@ -1,7 +1,7 @@
 ---
 
 excalidraw-plugin: parsed
-tags: [excalidraw]
+tags: [embed_note, ota]
 
 ---
 ==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠== You can decompress Drawing data with the command palette: 'Decompress current Excalidraw file'. For more info check in plugin settings under 'Saving'
@@ -101,7 +101,7 @@ SWAP_STATUS:
 TEST UPGRADE ^eRhwVc3q
 
 ## Embedded Files
-fd63a39a23cd804d0a7afc508e6d59e33ac71c89: [[Pasted Image 20260904173348_584.png]]
+fd63a39a23cd804d0a7afc508e6d59e33ac71c89: [[MCU_BOOT工作流程.png]]
 
 %%
 ## Drawing

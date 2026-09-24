@@ -1,3 +1,7 @@
+---
+tags: [embed_note, esp_idf, _archive]
+---
+
 ESP-IDF 提供了两种主要的自定义方式，你可以根据需求的复杂程度来选择：
 
 | 特性       | **方式一：钩子 (Hooks)**                                                                                                                                                                                | **方式二：完全覆盖 (Override)**                                                                                                                                                                                                                                                                                        |     |

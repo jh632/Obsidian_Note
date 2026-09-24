@@ -1,3 +1,7 @@
+---
+tags: [embed_note, 常用库]
+---
+
 # MCUboot - 安全 Bootloader
 
 ## 简介

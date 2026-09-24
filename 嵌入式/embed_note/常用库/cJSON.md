@@ -1,6 +1,6 @@
 ---
 date: 2026-06-01
-tags: [cjson, json, c-library]
+tags: [embed_note, 常用库]
 aliases: [cJSON]
 ---
 

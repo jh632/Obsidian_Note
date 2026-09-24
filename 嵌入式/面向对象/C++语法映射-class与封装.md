@@ -1,6 +1,6 @@
 ---
 date: 2026-08-04
-tags: [cpp, oop, class, encapsulation, embedded]
+tags: [面向对象]
 aliases: [C++语法映射 第1章, C++ class 与封装]
 ---
 

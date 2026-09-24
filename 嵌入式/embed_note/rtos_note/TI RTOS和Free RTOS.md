@@ -1,3 +1,7 @@
+---
+tags: [embed_note, rtos_note]
+---
+
 # TI-RTOS 和 FreeRTOS API 映射速查
 
 ## 1. 使用范围和假设

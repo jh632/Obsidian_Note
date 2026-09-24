@@ -1,7 +1,6 @@
 ---
 date: 2026-08-14
-tags:
-  - "#命令"
+tags: [embed_note, zephyr, _archive]
 aliases: []
 ---
 

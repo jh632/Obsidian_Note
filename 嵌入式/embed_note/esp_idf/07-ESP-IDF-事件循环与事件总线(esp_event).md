@@ -1,6 +1,6 @@
 ---
 date: 2026-09-02
-tags: [esp-idf, esp32, esp_event, event-loop, 事件总线, publish-subscribe]
+tags: [embed_note, esp_idf]
 aliases: [esp_event, ESP-IDF事件循环, 事件循环库, ESP-IDF事件总线]
 ---
 

@@ -1,6 +1,6 @@
 ---
 date: 2026-06-18
-tags: [how-to, wsl2, usb, esp32, esp-idf]
+tags: [embed_note, 工具链, wsl]
 aliases: [WSL2 USB passthrough, WSL2 USB透传]
 updated: 2026-06-18
 ---

@@ -1,5 +1,5 @@
 ---
-tags: [esp-idf, esp32, usb, tinyusb, cdc, msc, hid]
+tags: [embed_note, esp_idf]
 date: 2026-09-01
 aliases: [USB, TinyUSB, ESP32 USB, esp_tinyusb, USB协议]
 ---

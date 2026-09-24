@@ -1,9 +1,6 @@
 ---
 date: 2026-08-07
-tags:
-  - 网络协议
-  - 可靠传输
-  - ARQ
+tags: [网络协议]
 aliases:
   - GBN
   - 停止等待

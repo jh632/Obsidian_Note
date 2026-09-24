@@ -1,5 +1,5 @@
 ---
-tags: [mcuboot, bootloader, ota, 状态机, 掉电恢复, 签名]
+tags: [embed_note, ota]
 date: 2026-09-04
 aliases: [MCUboot, mcuboot设计, swap状态机, 镜像trailer]
 ---

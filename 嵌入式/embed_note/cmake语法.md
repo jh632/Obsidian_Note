@@ -1,3 +1,7 @@
+---
+tags: [embed_note]
+---
+
 # CMake 语法笔记
 
 ## 1. 基础概念

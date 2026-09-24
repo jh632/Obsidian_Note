@@ -1,3 +1,7 @@
+---
+tags: [embed_note, rtos_note]
+---
+
 ## 1 TaskNotify本质:
 来自每个任务创建都会自带的TCB
 ```c

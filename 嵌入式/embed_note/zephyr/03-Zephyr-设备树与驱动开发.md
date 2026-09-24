@@ -1,5 +1,5 @@
 ---
-tags: [zephyr, devicetree, 设备树, 驱动, binding, kconfig, dts, 工作流]
+tags: [embed_note, zephyr]
 date: 2026-09-01
 aliases: [设备树, 驱动查找, devicetree, dts]
 ---

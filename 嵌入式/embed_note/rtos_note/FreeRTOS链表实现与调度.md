@@ -1,6 +1,6 @@
 ---
 date: 2026-08-03
-tags: [freertos, rtos, linked-list, 源码解析, 面试]
+tags: [embed_note, rtos_note]
 aliases: [FreeRTOS链表, 就绪链表, 延时链表, xLIST_ITEM, vListInsert]
 ---
 

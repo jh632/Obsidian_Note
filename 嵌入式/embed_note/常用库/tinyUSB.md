@@ -1,3 +1,7 @@
+---
+tags: [embed_note, 常用库]
+---
+
 # TinyUSB - 嵌入式 USB 协议栈
 
 ## 简介

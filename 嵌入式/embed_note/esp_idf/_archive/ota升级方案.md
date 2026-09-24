@@ -1,3 +1,7 @@
+---
+tags: [embed_note, esp_idf, _archive]
+---
+
 # 1 ota分区方案
 ## 1.1 常见ota分区表
 
