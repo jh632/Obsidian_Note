@@ -1,6 +1,6 @@
 ---
 date: 2026-07-24
-tags: [embed_note, rtos_note]
+tags: [embed_note, RTOS]
 aliases: [CPU使用率怎么算, 资源统计, CPU利用率统计]
 ---
 

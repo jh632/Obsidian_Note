@@ -1,6 +1,6 @@
 ---
 date: 2026-09-25
-tags: [embed_note, 程序构建原理, CMake]
+tags: [embed_note, 程序构建与内存优化, CMake]
 ---
 
 # CMake 基础语法

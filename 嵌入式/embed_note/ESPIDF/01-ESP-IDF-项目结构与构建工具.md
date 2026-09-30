@@ -1,5 +1,5 @@
 ---
-tags: [embed_note, esp_idf]
+tags: [embed_note, ESPIDF]
 date: 2026-09-01
 aliases: [常用idf命令, esptool, merge-bin, ESP-IDF构建工具, idf.py]
 ---

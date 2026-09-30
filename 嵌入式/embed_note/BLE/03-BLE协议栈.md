@@ -1,6 +1,6 @@
 ---
 date: 2026-08-10
-tags: [embed_note, bluetooth]
+tags: [embed_note, BLE]
 aliases: [蓝牙协议栈, BLE 协议栈]
 ---
 

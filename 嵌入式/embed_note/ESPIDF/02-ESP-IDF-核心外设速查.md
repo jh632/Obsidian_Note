@@ -1,5 +1,5 @@
 ---
-tags: [embed_note, esp_idf]
+tags: [embed_note, ESPIDF]
 date: 2026-09-01
 aliases: [ESP32-GPIO-速查表, nvs api, 睡眠模式, ESP-IDF外设速查, GPIO参考]
 ---

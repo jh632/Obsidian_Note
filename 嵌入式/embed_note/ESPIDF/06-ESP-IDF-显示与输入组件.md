@@ -1,5 +1,5 @@
 ---
-tags: [embed_note, esp_idf]
+tags: [embed_note, ESPIDF]
 date: 2026-09-01
 aliases: [LVGL适配, idf button组件, LVGL-ESP-IDF-porting, esp_lvgl_adapter, esp_lvgl_port, IDF Button]
 ---

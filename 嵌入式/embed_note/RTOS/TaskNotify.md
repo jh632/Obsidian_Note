@@ -1,5 +1,5 @@
 ---
-tags: [embed_note, rtos_note]
+tags: [embed_note, RTOS]
 ---
 
 ## 1 TaskNotify本质:

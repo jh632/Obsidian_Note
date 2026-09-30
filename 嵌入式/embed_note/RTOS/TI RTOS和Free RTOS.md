@@ -1,5 +1,5 @@
 ---
-tags: [embed_note, rtos_note]
+tags: [embed_note, RTOS]
 ---
 
 # TI-RTOS 和 FreeRTOS API 映射速查

@@ -1,5 +1,5 @@
 ---
-tags: [embed_note, esp_idf, _archive]
+tags: [embed_note, ESPIDF, _archive]
 ---
 
 ESP-IDF 提供了两种主要的自定义方式，你可以根据需求的复杂程度来选择：

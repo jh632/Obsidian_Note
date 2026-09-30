@@ -1,5 +1,5 @@
 ---
-tags: [embed_note, esp_idf]
+tags: [embed_note, ESPIDF]
 date: 2026-09-01
 aliases: [USB, TinyUSB, ESP32 USB, esp_tinyusb, USB协议]
 ---

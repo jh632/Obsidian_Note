@@ -1,5 +1,5 @@
 ---
-tags: [embed_note, esp_idf, _archive]
+tags: [embed_note, ESPIDF, _archive]
 ---
 
 `idf.py save-defconfig` :保存sdkconfig的更改到sdkconfig.defaults

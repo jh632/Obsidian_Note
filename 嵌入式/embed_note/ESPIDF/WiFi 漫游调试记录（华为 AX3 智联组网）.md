@@ -1,5 +1,5 @@
 ---
-tags: [embed_note, esp_idf]
+tags: [embed_note, ESPIDF]
 ---
 
 # WiFi 漫游调试记录（华为 AX3 智联组网）

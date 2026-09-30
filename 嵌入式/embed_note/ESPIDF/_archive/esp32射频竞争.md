@@ -1,5 +1,5 @@
 ---
-tags: [embed_note, esp_idf, _archive]
+tags: [embed_note, ESPIDF, _archive]
 ---
 
 好，从底层开始讲整个原理。

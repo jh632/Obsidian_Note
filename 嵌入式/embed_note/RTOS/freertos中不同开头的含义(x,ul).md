@@ -1,5 +1,5 @@
 ---
-tags: [embed_note, rtos_note]
+tags: [embed_note, RTOS]
 created: 2026-07-14
 ---
 

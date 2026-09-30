@@ -1,5 +1,5 @@
 ---
-tags: [embed_note, esp_idf, _archive]
+tags: [embed_note, ESPIDF, _archive]
 ---
 
 # 1 ota分区方案
