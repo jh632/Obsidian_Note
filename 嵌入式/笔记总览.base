@@ -1,0 +1,13 @@
+views:
+  - type: table
+    name: 表格
+    filters:
+      not:
+        - file.folder == "daily_todo"
+    groupBy:
+      property: file.folder
+      direction: ASC
+    order:
+      - file.name
+      - file.path
+      - tags

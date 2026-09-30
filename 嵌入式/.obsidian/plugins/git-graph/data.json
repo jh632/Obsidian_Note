@@ -1,0 +1,7 @@
+{
+  "gitPath": "git",
+  "refFilter": "all",
+  "pageSize": 200,
+  "showDirtyRow": true,
+  "dateFormat": "relative"
+}

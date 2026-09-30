@@ -1,0 +1,380 @@
+/*
+THIS FILE IS GENERATED from styles/ by scripts/styles-assemble.mjs — edit the partial, not
+this. The import order in styles/index.css is load-bearing and states why.
+*/
+
+/* === styles/base.css === */
+
+/* The view root, and the lane palette every other partial reads through currentColor.
+   Colors come from Obsidian's theme variables; the eight lane colors are overridable by a
+   user CSS snippet through --git-graph-lane-0 … --git-graph-lane-7, which is why they are
+   declared here as variables rather than inlined at the .git-graph-lane-N rules. */
+
+.git-graph-view,
+.git-graph-mount {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	min-height: 0;
+	--git-graph-lane-0: var(--color-blue);
+	--git-graph-lane-1: var(--color-green);
+	--git-graph-lane-2: var(--color-orange);
+	--git-graph-lane-3: var(--color-purple);
+	--git-graph-lane-4: var(--color-pink);
+	--git-graph-lane-5: var(--color-cyan);
+	--git-graph-lane-6: var(--color-yellow);
+	--git-graph-lane-7: var(--color-red);
+}
+
+/* === styles/header.css === */
+
+/* header */
+.git-graph-header {
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-4-1);
+	padding: var(--size-4-2) var(--size-4-3);
+	border-bottom: 1px solid var(--background-modifier-border);
+}
+.git-graph-title {
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-1);
+	font-size: var(--font-ui-small);
+	font-weight: var(--font-semibold);
+	min-width: 0;
+}
+.git-graph-repo {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.git-graph-branch,
+.git-graph-history-file {
+	color: var(--text-muted);
+	font-weight: var(--font-normal);
+}
+.git-graph-branch::before,
+.git-graph-history-file::before {
+	content: '·';
+	margin-right: var(--size-4-1);
+}
+/* Only the file label truncates: a path is long, a branch name is the header's own subject. */
+.git-graph-history-file {
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.git-graph-tools {
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-1);
+}
+.git-graph-tools .git-graph-ref-filter {
+	flex: 0 0 auto;
+	font-size: var(--font-ui-smaller);
+}
+.git-graph-tools .git-graph-filter {
+	flex: 1 1 auto;
+	min-width: 0;
+	font-size: var(--font-ui-smaller);
+}
+.git-graph-history-toggle.is-active {
+	color: var(--text-accent);
+}
+
+/* === styles/banner.css === */
+
+/* banner */
+.git-graph-banner {
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-2);
+	margin: var(--size-4-2);
+	padding: var(--size-4-2);
+	border-radius: var(--radius-s);
+	background: var(--background-modifier-error);
+	color: var(--text-on-accent);
+	font-size: var(--font-ui-smaller);
+}
+.git-graph-banner-text {
+	flex: 1 1 auto;
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+/* === styles/emptyStates.css === */
+
+/* empty states */
+.git-graph-empty {
+	padding: var(--size-4-4);
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+	text-align: center;
+}
+
+/* === styles/rows.css === */
+
+/* list and rows */
+.git-graph-list {
+	flex: 1 1 auto;
+	min-height: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+	position: relative;
+}
+.git-graph-list-spacer {
+	position: relative;
+	width: 100%;
+}
+.git-graph-item {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	will-change: transform;
+}
+.git-graph-row {
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-2);
+	height: 22px;
+	padding: 0 var(--size-4-3) 0 var(--size-4-2);
+	font-size: var(--font-ui-smaller);
+	line-height: 22px;
+	white-space: nowrap;
+	cursor: pointer;
+	user-select: none;
+}
+.git-graph-row:hover,
+.git-graph-row:focus-visible {
+	background: var(--background-modifier-hover);
+	outline: none;
+}
+.git-graph-row-expanded {
+	background: var(--background-secondary);
+	font-weight: var(--font-semibold);
+}
+.git-graph-row-head .git-graph-subject {
+	font-weight: var(--font-semibold);
+}
+.git-graph-row-dirty {
+	color: var(--text-muted);
+	font-style: italic;
+	cursor: pointer;
+}
+.git-graph-subject {
+	flex: 1 1 auto;
+	min-width: 4em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.git-graph-refs {
+	display: flex;
+	gap: var(--size-2-1);
+	flex: 0 1 auto;
+	min-width: 0;
+	overflow: hidden;
+}
+.git-graph-author {
+	flex: 0 0 auto;
+	max-width: 9em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: var(--text-muted);
+}
+.git-graph-date {
+	flex: 0 0 auto;
+	color: var(--text-faint);
+}
+
+/* === styles/lanes.css === */
+
+/* lanes */
+.git-graph-lanes {
+	flex: 0 0 auto;
+	display: block;
+	overflow: visible;
+}
+.git-graph-segment {
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 2;
+}
+.git-graph-segment-dirty {
+	stroke-dasharray: 2 3;
+}
+.git-graph-node {
+	fill: currentColor;
+	stroke: var(--background-primary);
+	stroke-width: 1.5;
+}
+.git-graph-node-merge {
+	fill: var(--background-primary);
+	stroke: currentColor;
+	stroke-width: 2;
+}
+.git-graph-node-head {
+	stroke: currentColor;
+	stroke-width: 2;
+	fill: var(--background-primary);
+	r: 4.5;
+}
+.git-graph-node-dirty {
+	fill: var(--background-primary);
+	stroke: currentColor;
+	stroke-dasharray: 2 2;
+}
+.git-graph-lane-0 { color: var(--git-graph-lane-0); }
+.git-graph-lane-1 { color: var(--git-graph-lane-1); }
+.git-graph-lane-2 { color: var(--git-graph-lane-2); }
+.git-graph-lane-3 { color: var(--git-graph-lane-3); }
+.git-graph-lane-4 { color: var(--git-graph-lane-4); }
+.git-graph-lane-5 { color: var(--git-graph-lane-5); }
+.git-graph-lane-6 { color: var(--git-graph-lane-6); }
+.git-graph-lane-7 { color: var(--git-graph-lane-7); }
+
+/* === styles/refs.css === */
+
+/* ref badges */
+.git-graph-ref {
+	display: inline-flex;
+	align-items: center;
+	gap: 2px;
+	max-width: 12em;
+	padding: 0 var(--size-2-2);
+	border-radius: var(--radius-s);
+	border: 1px solid var(--background-modifier-border);
+	background: var(--background-secondary);
+	color: var(--text-muted);
+	font-size: var(--font-ui-smaller);
+	line-height: 16px;
+	overflow: hidden;
+}
+.git-graph-ref-name {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.git-graph-ref-head {
+	background: var(--interactive-accent);
+	border-color: var(--interactive-accent);
+	color: var(--text-on-accent);
+}
+.git-graph-ref-upstream {
+	border-color: var(--interactive-accent);
+	color: var(--interactive-accent);
+}
+.git-graph-ref-tag {
+	color: var(--color-yellow);
+}
+.git-graph-icon {
+	display: inline-flex;
+	align-items: center;
+}
+.git-graph-icon svg {
+	width: 12px;
+	height: 12px;
+}
+
+/* === styles/details.css === */
+
+/* details */
+.git-graph-details {
+	padding: var(--size-4-2) var(--size-4-3) var(--size-4-3) var(--size-4-4);
+	background: var(--background-secondary);
+	border-bottom: 1px solid var(--background-modifier-border);
+	font-size: var(--font-ui-smaller);
+	white-space: normal;
+}
+/* The changes block has no hash/author/message above its file list, so it sits tighter. */
+.git-graph-dirty-details {
+	padding-top: var(--size-4-1);
+}
+.git-graph-details-hash {
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-1);
+	font-family: var(--font-monospace);
+}
+.git-graph-details-hash code {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.git-graph-details-people {
+	color: var(--text-muted);
+	margin: var(--size-4-1) 0;
+}
+.git-graph-details-body {
+	margin: var(--size-4-2) 0;
+	padding: var(--size-4-2);
+	background: var(--background-primary);
+	border-radius: var(--radius-s);
+	white-space: pre-wrap;
+	word-break: break-word;
+	font-family: var(--font-text);
+	font-size: var(--font-ui-smaller);
+}
+.git-graph-details-error {
+	color: var(--text-error);
+}
+.git-graph-details-loading,
+.git-graph-files-empty {
+	color: var(--text-faint);
+}
+.git-graph-files {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.git-graph-file {
+	list-style: none;
+}
+.git-graph-file-link {
+	display: flex;
+	width: 100%;
+	gap: var(--size-4-2);
+	align-items: baseline;
+	line-height: 1.6;
+	font-family: var(--font-monospace);
+	overflow: hidden;
+	cursor: pointer;
+	border-radius: var(--radius-s);
+}
+.git-graph-file-link:hover {
+	background: var(--background-modifier-hover);
+}
+.git-graph-file-link:hover .git-graph-file-path {
+	color: var(--text-accent);
+}
+.git-graph-file-link:focus-visible {
+	outline: 2px solid var(--background-modifier-border-focus);
+	outline-offset: -2px;
+}
+.git-graph-file-deleted {
+	cursor: default;
+}
+.git-graph-file-deleted:hover {
+	background: none;
+}
+.git-graph-file-deleted .git-graph-file-path,
+.git-graph-file-deleted:hover .git-graph-file-path {
+	color: var(--text-faint);
+	text-decoration: line-through;
+}
+.git-graph-file-path {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.git-graph-file-status {
+	flex: 0 0 1.2em;
+	font-weight: var(--font-bold);
+	text-align: center;
+}
+.git-graph-file-status-A { color: var(--color-green); }
+.git-graph-file-status-M { color: var(--color-orange); }
+.git-graph-file-status-D { color: var(--color-red); }
+.git-graph-file-status-R,
+.git-graph-file-status-C { color: var(--color-blue); }
+.git-graph-file-status-T { color: var(--color-purple); }

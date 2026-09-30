@@ -1,0 +1,10 @@
+{
+  "id": "git-graph",
+  "name": "Git Graph",
+  "version": "0.3.0",
+  "minAppVersion": "1.13.0",
+  "description": "VS Code's source control graph as a side pane: lanes, refs, and commit details for the vault's git repository.",
+  "author": "Luis85",
+  "authorUrl": "https://github.com/Luis85",
+  "isDesktopOnly": true
+}
