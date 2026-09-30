@@ -1,6 +1,6 @@
 ---
 date: 2026-06-29
-tags: [embed_note, esp_idf, _archive]
+tags: [embed_note, ESPIDF, _archive]
 aliases: [LVGL-ESP-IDF-porting, LVGL移植, esp_lvgl_adapter]
 ---
 

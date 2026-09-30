@@ -1,6 +1,6 @@
 ---
 date: 2026-06-09
-tags: [embed_note, rtos_note]
+tags: [embed_note, RTOS]
 aliases: [Tickless Idle Mode, 无Tick空闲模式, configUSE_TICKLESS_IDLE]
 ---
 

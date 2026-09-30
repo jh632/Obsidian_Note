@@ -1,6 +1,6 @@
 ---
 date: 2026-06-25
-tags: [embed_note, esp_idf, _archive]
+tags: [embed_note, ESPIDF, _archive]
 aliases: [idf-button, iot-button, 按钮组件]
 ---
 

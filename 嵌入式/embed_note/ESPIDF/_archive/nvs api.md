@@ -1,5 +1,5 @@
 ---
-tags: [embed_note, esp_idf, _archive]
+tags: [embed_note, ESPIDF, _archive]
 ---
 
 | API                          | Brief               | 常见用途                   | 备注                        |

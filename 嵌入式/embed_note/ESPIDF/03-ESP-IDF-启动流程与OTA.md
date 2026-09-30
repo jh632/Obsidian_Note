@@ -1,5 +1,5 @@
 ---
-tags: [embed_note, esp_idf]
+tags: [embed_note, ESPIDF]
 date: 2026-09-01
 aliases: [esp32 bootloader, ota升级方案, OTA, ESP-IDF启动流程, 启动流程]
 ---

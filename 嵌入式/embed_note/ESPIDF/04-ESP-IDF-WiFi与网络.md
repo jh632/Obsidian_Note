@@ -1,5 +1,5 @@
 ---
-tags: [embed_note, esp_idf]
+tags: [embed_note, ESPIDF]
 date: 2026-09-01
 aliases: [ESP32 WiFi, WiFi API, 射频竞争, esp32射频竞争, WiFi射频]
 ---

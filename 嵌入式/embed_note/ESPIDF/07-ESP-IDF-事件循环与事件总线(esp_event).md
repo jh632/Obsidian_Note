@@ -1,6 +1,6 @@
 ---
 date: 2026-09-02
-tags: [embed_note, esp_idf]
+tags: [embed_note, ESPIDF]
 aliases: [esp_event, ESP-IDF事件循环, 事件循环库, ESP-IDF事件总线]
 ---
 

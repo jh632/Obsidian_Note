@@ -1,6 +1,6 @@
 ---
 date: 2026-08-03
-tags: [embed_note, rtos_note]
+tags: [embed_note, RTOS]
 aliases: [FreeRTOS链表, 就绪链表, 延时链表, xLIST_ITEM, vListInsert]
 ---
 
