@@ -6,7 +6,7 @@ aliases: [esp32 bootloader, ota升级方案, OTA, ESP-IDF启动流程, 启动流
 
 # ESP-IDF 启动流程与 OTA
 
-> 2026-09-01 由原《esp32 bootloader》《ota升级方案》整理合并。完整的启动流程分析见 [[ota/ESP32启动流程与Bootloader]]，本篇聚焦 bootloader 自定义与 OTA 实战。
+> 2026-09-01 由原《esp32 bootloader》《ota升级方案》整理合并。完整的启动流程分析见 [[ESP32启动流程与Bootloader]]，本篇聚焦 bootloader 自定义与 OTA 实战。
 
 ---
 
@@ -43,7 +43,7 @@ ESP32 采用**三级启动架构**：
 | 0x9000 | nvs |
 | 0x10000 | factory app（app 分区必须 64KB 对齐） |
 
-> 完整细节（strapping 引脚、镜像格式、与 Cortex-M 对比）见 [[ota/ESP32启动流程与Bootloader]]。
+> 完整细节（strapping 引脚、镜像格式、与 Cortex-M 对比）见 [[ESP32启动流程与Bootloader]]。
 
 ---
 
@@ -253,6 +253,6 @@ esp_restart();
 ## 相关笔记
 
 - [[01-ESP-IDF-项目结构与构建工具]] — 烧录地址与 merge-bin
-- [[ota/ESP32启动流程与Bootloader]] — 完整启动流程分析
-- [[ota/ota为什么需要双分区]]、[[ota/ota如何保障真正的安全]]
+- [[ESP32启动流程与Bootloader]] — 完整启动流程分析
+- [[ota为什么需要双分区]]、[[ota如何保障真正的安全]]
 - [[架构/嵌入式设计模式-状态机]] — OTA 状态机设计

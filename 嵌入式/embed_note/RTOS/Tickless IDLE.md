@@ -290,4 +290,4 @@ void vApplicationSleep( TickType_t xExpectedIdleTime )
 
 - [[../低功耗/esp32低功耗支持.md]] — ESP32 低功耗模式（DFS / Light-sleep / Deep-sleep），含 Auto Light-sleep 与 Tickless IDLE 的结合
 - [[../低功耗/低功耗的评估标准.md]] — 低功耗评估方法与指标
-- [[任务和协程.md]] — FreeRTOS 任务调度基础（Idle 任务是触发 Tickless 的前提）
+- [[任务和协程]] — FreeRTOS 任务调度基础（Idle 任务是触发 Tickless 的前提）

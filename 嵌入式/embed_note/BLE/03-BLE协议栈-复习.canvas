@@ -28,7 +28,7 @@
 		{"id":"b1e0c0de0000001a","type":"text","x":1020,"y":1040,"width":500,"height":240,"color":"1","text":"### CCCD（0x2902）订阅开关 ⭐\n支持 Notify/Indicate 的特征必须带它，客户端写入 2 字节：\n- `0x0001` 开通知　`0x0002` 开指示　`0x0000` 关\n- 两者互斥，只能写其一\n- 不写 = 服务器不会推送\n例：手机写心率 CCCD=0x0001 → 持续上报心率"},
 		{"id":"b1e0c0de0000001b","type":"text","x":1020,"y":1320,"width":500,"height":260,"text":"### Notify vs Indicate\n都是服务器 → 客户端主动推送，都需要 CCCD\n**Notify**：无确认 · 可能丢 · 快、可连续发\n→ 高频实时数据（心率、电量）\n**Indicate**：必须回 Confirmation · 不丢不漏不重 · 同一时刻只有一条在途\n→ 重要事件（告警、指令结果）\n💡 高频用 Notify，必达用 Indicate"},
 		{"id":"b1e0c0de0000001c","type":"text","x":620,"y":-260,"width":560,"height":110,"text":"# 📘 BLE 协议栈 · 复习画布\n路线：分层架构 → 五大协议 → 数据模型 → UUID → 交互机制"},
-		{"id":"b1e0c0de0000001d","type":"file","x":1240,"y":-250,"width":420,"height":90,"file":"embed_note/bluetooth/03-BLE协议栈.md"},
+		{"id":"b1e0c0de0000001d","type":"file","x":1240,"y":-250,"width":420,"height":90,"file":"embed_note/BLE/03-BLE协议栈.md"},
 		{"id":"b1e0c0de0000001e","type":"text","x":0,"y":980,"width":440,"height":360,"color":"1","text":"## 🎯 复习自测\n1. Host 五大协议各管什么？\n2. 一个特征由哪三部分组成？\n3. 向 CCCD 写 `0x0002` 是什么效果？\n4. UUID 和 handle 有什么区别？\n5. 心率数据用 Notify 还是 Indicate？为什么？\n6. 16 位 UUID 怎么变 128 位？基础 UUID 是？\n7. handle 从几开始编号？\n\n答案都在右边对应分区里 🔍"}
 	],
 	"edges":[

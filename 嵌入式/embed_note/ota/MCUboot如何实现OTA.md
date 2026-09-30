@@ -374,8 +374,8 @@ Flash 只能擦除后整体写、不能覆写单字节，所以一个 sector 的
 
 ## 相关笔记
 
-- [[ota/ota为什么需要双分区]] — A/B 槽动机
-- [[ota/ota如何保障真正的安全]] — 安全链路
-- [[esp_idf/03-ESP-IDF-启动流程与OTA]] — ESP-IDF OTA API 与回滚流程
+- [[ota为什么需要双分区]] — A/B 槽动机
+- [[ota如何保障真正的安全]] — 安全链路
+- [[03-ESP-IDF-启动流程与OTA]] — ESP-IDF OTA API 与回滚流程
 - [[架构/嵌入式设计模式-状态机]] — OTA 状态机设计
-- [[zephyr/05-Zephyr-官方组件用法]] — Zephyr MCUboot 组件（待补充）
+- [[05-Zephyr-官方组件用法]] — Zephyr MCUboot 组件（待补充）
