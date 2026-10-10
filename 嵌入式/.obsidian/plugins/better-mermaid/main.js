@@ -36,7 +36,8 @@ var DEFAULT_SETTINGS = {
   enableClickToZoom: true,
   modalWidthPercent: 80,
   modalHeightPercent: 80,
-  defaultZoomLevel: 100
+  defaultZoomLevel: 100,
+  enhanceReadability: true
 };
 var STRINGS = {
   en: {
@@ -57,7 +58,15 @@ var STRINGS = {
     zoom: "Zoom",
     converting: "Converting...",
     defaultZoomLevel: "Default zoom level",
-    defaultZoomLevelDesc: "Initial zoom level when opening a Mermaid diagram (percentage)"
+    defaultZoomLevelDesc: "Initial zoom level when opening a Mermaid diagram (percentage)",
+    zoomIn: "Zoom in",
+    zoomOut: "Zoom out",
+    fitView: "Fit",
+    savePng: "Save PNG",
+    savedToVault: "Saved to vault: ",
+    pngSaveFailed: "Failed to save PNG",
+    enhanceReadability: "Enhance diagram readability",
+    enhanceReadabilityDesc: "Thicken connector lines and, in dark mode, brighten lines and darken subgraph backgrounds. Turn off to match reading view colors exactly"
   },
   zh: {
     settingsTitle: "Better Mermaid \u8BBE\u7F6E",
@@ -77,7 +86,15 @@ var STRINGS = {
     zoom: "\u7F29\u653E",
     converting: "\u8F6C\u6362\u4E2D...",
     defaultZoomLevel: "\u9ED8\u8BA4\u7F29\u653E\u7EA7\u522B",
-    defaultZoomLevelDesc: "\u6253\u5F00 Mermaid \u56FE\u8868\u65F6\u7684\u521D\u59CB\u7F29\u653E\u7EA7\u522B\uFF08\u767E\u5206\u6BD4\uFF09"
+    defaultZoomLevelDesc: "\u6253\u5F00 Mermaid \u56FE\u8868\u65F6\u7684\u521D\u59CB\u7F29\u653E\u7EA7\u522B\uFF08\u767E\u5206\u6BD4\uFF09",
+    zoomIn: "\u653E\u5927",
+    zoomOut: "\u7F29\u5C0F",
+    fitView: "\u9002\u5E94",
+    savePng: "\u4FDD\u5B58 PNG",
+    savedToVault: "\u5DF2\u4FDD\u5B58\u5230\u4ED3\u5E93: ",
+    pngSaveFailed: "PNG \u4FDD\u5B58\u5931\u8D25",
+    enhanceReadability: "\u589E\u5F3A\u56FE\u8868\u53EF\u8BFB\u6027",
+    enhanceReadabilityDesc: "\u52A0\u7C97\u8FDE\u7EBF\uFF0C\u5E76\u5728\u6DF1\u8272\u6A21\u5F0F\u4E0B\u63D0\u4EAE\u8FDE\u7EBF\u3001\u6697\u8272\u5316 subgraph \u533A\u5757\u3002\u5173\u95ED\u540E\u5F39\u7A97\u914D\u8272\u4E0E\u9605\u8BFB\u89C6\u56FE\u5B8C\u5168\u4E00\u81F4"
   }
 };
 function i18n(lang, key) {
@@ -93,69 +110,110 @@ var BetterMermaidSettingTab = class extends import_obsidian.PluginSettingTab {
   t(key) {
     return i18n(this.plugin.settings.language, key);
   }
-  display() {
-    const { containerEl } = this;
-    containerEl.empty();
-    const s = this.plugin.settings;
-    new import_obsidian.Setting(containerEl).setName(this.t("settingsTitle")).setHeading();
-    new import_obsidian.Setting(containerEl).setName(this.t("languageLabel")).setDesc(this.t("languageDesc")).addDropdown(
-      (dropdown) => dropdown.addOption("en", "English").addOption("zh", "\u4E2D\u6587").setValue(s.language).onChange(async (value) => {
-        s.language = value;
-        await this.plugin.saveSettings();
-        this.display();
-      })
-    );
-    new import_obsidian.Setting(containerEl).setName(this.t("enableClickToZoom")).setDesc(this.t("enableClickToZoomDesc")).addToggle(
-      (toggle) => toggle.setValue(s.enableClickToZoom).onChange(async (value) => {
-        s.enableClickToZoom = value;
-        await this.plugin.saveSettings();
-      })
-    );
-    const modalWidthSetting = new import_obsidian.Setting(containerEl).setName(this.t("modalWidth")).setDesc(`${this.t("modalWidthDesc")} (${s.modalWidthPercent}%)`).addSlider(
-      (slider) => slider.setLimits(30, 100, 5).setValue(s.modalWidthPercent).setDynamicTooltip().onChange(async (value) => {
-        s.modalWidthPercent = value;
-        modalWidthSetting.descEl.innerText = `${this.t("modalWidthDesc")} (${value}%)`;
-        await this.plugin.saveSettings();
-      })
-    ).addButton(
-      (btn) => btn.setButtonText(this.t("reset")).onClick(async () => {
-        s.modalWidthPercent = DEFAULT_SETTINGS.modalWidthPercent;
-        await this.plugin.saveSettings();
-        this.display();
-      })
-    );
-    const modalHeightSetting = new import_obsidian.Setting(containerEl).setName(this.t("modalHeight")).setDesc(`${this.t("modalHeightDesc")} (${s.modalHeightPercent}%)`).addSlider(
-      (slider) => slider.setLimits(30, 100, 5).setValue(s.modalHeightPercent).setDynamicTooltip().onChange(async (value) => {
-        s.modalHeightPercent = value;
-        modalHeightSetting.descEl.innerText = `${this.t("modalHeightDesc")} (${value}%)`;
-        await this.plugin.saveSettings();
-      })
-    ).addButton(
-      (btn) => btn.setButtonText(this.t("reset")).onClick(async () => {
-        s.modalHeightPercent = DEFAULT_SETTINGS.modalHeightPercent;
-        await this.plugin.saveSettings();
-        this.display();
-      })
-    );
-    const zoomSetting = new import_obsidian.Setting(containerEl).setName(this.t("defaultZoomLevel")).setDesc(`${this.t("defaultZoomLevelDesc")} (${s.defaultZoomLevel}%)`).addSlider(
-      (slider) => slider.setLimits(20, 200, 5).setValue(s.defaultZoomLevel).setDynamicTooltip().onChange(async (value) => {
-        s.defaultZoomLevel = value;
-        zoomSetting.descEl.innerText = `${this.t("defaultZoomLevelDesc")} (${value}%)`;
-        await this.plugin.saveSettings();
-      })
-    ).addButton(
-      (btn) => btn.setButtonText(this.t("reset")).onClick(async () => {
-        s.defaultZoomLevel = DEFAULT_SETTINGS.defaultZoomLevel;
-        await this.plugin.saveSettings();
-        this.display();
-      })
-    );
-    new import_obsidian.Setting(containerEl).setName(this.t("customCss")).setDesc(this.t("customCssDesc")).addTextArea(
-      (textarea) => textarea.setPlaceholder(this.t("customCssPlaceholder")).setValue(s.customCss).onChange(async (value) => {
-        s.customCss = value;
-        await this.plugin.saveSettings();
-      })
-    );
+  /**
+   * Declarative settings (Obsidian 1.13+): the definitions are rendered by
+   * Obsidian and indexed into the settings search.  This requires
+   * minAppVersion 1.13.0; older runtimes are no longer supported.
+   */
+  getSettingDefinitions() {
+    const reset = (key) => ({
+      name: this.t("reset"),
+      action: () => {
+        const settings = this.plugin.settings;
+        const defaults = DEFAULT_SETTINGS;
+        settings[key] = defaults[key];
+        void this.plugin.saveSettings();
+        this.update();
+      }
+    });
+    return [
+      {
+        type: "group",
+        heading: this.t("settingsTitle"),
+        items: [
+          {
+            name: this.t("languageLabel"),
+            desc: this.t("languageDesc"),
+            control: {
+              type: "dropdown",
+              key: "language",
+              options: { en: "English", zh: "\u4E2D\u6587" }
+            }
+          },
+          {
+            name: this.t("enableClickToZoom"),
+            desc: this.t("enableClickToZoomDesc"),
+            control: { type: "toggle", key: "enableClickToZoom" }
+          },
+          {
+            name: this.t("enhanceReadability"),
+            desc: this.t("enhanceReadabilityDesc"),
+            control: { type: "toggle", key: "enhanceReadability" }
+          },
+          {
+            name: this.t("modalWidth"),
+            desc: this.t("modalWidthDesc"),
+            control: {
+              type: "slider",
+              key: "modalWidthPercent",
+              min: 30,
+              max: 100,
+              step: 5,
+              displayFormat: (value) => `${value}%`
+            }
+          },
+          reset("modalWidthPercent"),
+          {
+            name: this.t("modalHeight"),
+            desc: this.t("modalHeightDesc"),
+            control: {
+              type: "slider",
+              key: "modalHeightPercent",
+              min: 30,
+              max: 100,
+              step: 5,
+              displayFormat: (value) => `${value}%`
+            }
+          },
+          reset("modalHeightPercent"),
+          {
+            name: this.t("defaultZoomLevel"),
+            desc: this.t("defaultZoomLevelDesc"),
+            control: {
+              type: "slider",
+              key: "defaultZoomLevel",
+              min: 20,
+              max: 200,
+              step: 5,
+              displayFormat: (value) => `${value}%`
+            }
+          },
+          reset("defaultZoomLevel"),
+          {
+            name: this.t("customCss"),
+            desc: this.t("customCssDesc"),
+            control: {
+              type: "textarea",
+              key: "customCss",
+              rows: 8,
+              placeholder: this.t("customCssPlaceholder")
+            }
+          }
+        ]
+      }
+    ];
+  }
+  getControlValue(key) {
+    const settings = this.plugin.settings;
+    return settings[key];
+  }
+  async setControlValue(key, value) {
+    const settings = this.plugin.settings;
+    settings[key] = value;
+    await this.plugin.saveSettings();
+    if (key === "language") {
+      this.update();
+    }
   }
 };
 
@@ -167,6 +225,11 @@ var ZOOM_OPTIONS = [
   { label: "75%", value: 0.75 },
   { label: "100%", value: 1 }
 ];
+var MIN_SCALE = 0.1;
+var MAX_SCALE = 10;
+var ZOOM_STEP = 1.5;
+var DOUBLE_TAP_MS = 300;
+var TAP_MOVE_TOLERANCE = 12;
 var MermaidImageModal = class extends import_obsidian2.Modal {
   constructor(app, svg, settings) {
     super(app);
@@ -174,53 +237,125 @@ var MermaidImageModal = class extends import_obsidian2.Modal {
     this.panX = 0;
     this.panY = 0;
     this.isDragging = false;
+    this.dragMoved = false;
     this.dragStartX = 0;
     this.dragStartY = 0;
     this.panStartX = 0;
     this.panStartY = 0;
+    this.resizeObserver = null;
+    // Active touch/pen/mouse pointers (coordinates relative to the viewport).
+    this.pointers = /* @__PURE__ */ new Map();
+    this.pinchStartDist = 0;
+    this.pinchStartScale = 1;
+    this.lastTapTime = 0;
+    this.lastTapX = 0;
+    this.lastTapY = 0;
     this.onWheel = (e) => {
       e.preventDefault();
-      if (e.ctrlKey) {
-        const rect = this.viewport.getBoundingClientRect();
-        const mx = e.clientX - rect.left;
-        const my = e.clientY - rect.top;
-        const factor = 1 - e.deltaY * 5e-3;
-        const newScale = Math.max(0.1, Math.min(10, this.scale * factor));
-        this.panX = mx - (mx - this.panX) * (newScale / this.scale);
-        this.panY = my - (my - this.panY) * (newScale / this.scale);
-        this.scale = newScale;
-        this.syncZoomDisplay(newScale);
-      } else if (e.shiftKey) {
+      if (e.shiftKey && !e.ctrlKey) {
         this.panX -= e.deltaY;
-      } else {
-        this.panY -= e.deltaY;
+        this.updateTransform();
+        return;
       }
-      this.applyTransform();
+      const rect = this.viewport.getBoundingClientRect();
+      const mx = e.clientX - rect.left - rect.width / 2;
+      const my = e.clientY - rect.top - rect.height / 2;
+      const factor = 1 - e.deltaY * 5e-3;
+      const newScale = this.clampScale(this.scale * factor);
+      const ratio = newScale / this.scale;
+      this.panX = mx + (this.panX - mx) * ratio;
+      this.panY = my + (this.panY - my) * ratio;
+      this.scale = newScale;
+      this.applyView();
+      this.syncZoomDisplay(newScale);
     };
-    this.onMouseDown = (e) => {
-      if (e.button !== 0)
+    this.onPointerDown = (e) => {
+      if (e.pointerType === "mouse" && e.button !== 0)
         return;
       const target = e.target;
       if (target.closest(".better-mermaid-controls"))
         return;
-      this.isDragging = true;
-      this.dragStartX = e.clientX;
-      this.dragStartY = e.clientY;
-      this.panStartX = this.panX;
-      this.panStartY = this.panY;
-      this.viewport.addClass("better-mermaid-grabbing");
+      const pos = this.pointerPos(e);
+      this.pointers.set(e.pointerId, pos);
+      try {
+        this.viewport.setPointerCapture(e.pointerId);
+      } catch (e2) {
+      }
+      if (this.pointers.size === 1) {
+        this.isDragging = true;
+        this.dragMoved = false;
+        this.dragStartX = pos.x;
+        this.dragStartY = pos.y;
+        this.panStartX = this.panX;
+        this.panStartY = this.panY;
+        this.viewport.addClass("better-mermaid-grabbing");
+      } else if (this.pointers.size === 2) {
+        this.pinchStartDist = this.pointerDistance();
+        this.pinchStartScale = this.scale;
+      }
     };
-    this.onMouseMove = (e) => {
-      if (!this.isDragging)
+    this.onPointerMove = (e) => {
+      if (!this.pointers.has(e.pointerId))
         return;
-      this.panX = this.panStartX + (e.clientX - this.dragStartX);
-      this.panY = this.panStartY + (e.clientY - this.dragStartY);
-      this.applyTransform();
+      const pos = this.pointerPos(e);
+      this.pointers.set(e.pointerId, pos);
+      if (this.pointers.size >= 2 && this.pinchStartDist > 0) {
+        const dist = this.pointerDistance();
+        if (dist <= 0)
+          return;
+        this.dragMoved = true;
+        const newScale = this.clampScale(
+          this.pinchStartScale * (dist / this.pinchStartDist)
+        );
+        const rect = this.viewport.getBoundingClientRect();
+        const mid = this.pointerMidpoint();
+        const mx = mid.x - rect.width / 2;
+        const my = mid.y - rect.height / 2;
+        const ratio = newScale / this.scale;
+        this.panX = mx + (this.panX - mx) * ratio;
+        this.panY = my + (this.panY - my) * ratio;
+        this.scale = newScale;
+        this.applyView();
+        this.syncZoomDisplay(newScale);
+      } else if (this.pointers.size === 1 && this.isDragging) {
+        if (Math.hypot(pos.x - this.dragStartX, pos.y - this.dragStartY) > TAP_MOVE_TOLERANCE) {
+          this.dragMoved = true;
+        }
+        if (e.cancelable)
+          e.preventDefault();
+        this.panX = this.panStartX + (pos.x - this.dragStartX);
+        this.panY = this.panStartY + (pos.y - this.dragStartY);
+        this.updateTransform();
+      }
     };
-    this.onMouseUp = () => {
-      if (!this.isDragging)
-        return;
+    this.onPointerUp = (e) => {
+      const tracked = this.pointers.delete(e.pointerId);
+      const upTarget = e.target;
+      const inControls = !!upTarget.closest(".better-mermaid-controls");
+      if (this.pointers.size === 0) {
+        const wasPinching = this.pinchStartDist > 0;
+        this.isDragging = false;
+        this.pinchStartDist = 0;
+        this.viewport.removeClass("better-mermaid-grabbing");
+        if (tracked && !wasPinching && !this.dragMoved && !inControls) {
+          this.handleTap(e);
+        }
+        this.dragMoved = false;
+      } else if (this.pointers.size === 1) {
+        this.pinchStartDist = 0;
+        this.isDragging = true;
+        const rest = Array.from(this.pointers.values())[0];
+        this.dragStartX = rest.x;
+        this.dragStartY = rest.y;
+        this.panStartX = this.panX;
+        this.panStartY = this.panY;
+      }
+    };
+    this.onPointerCancel = (e) => {
+      this.pointers.delete(e.pointerId);
       this.isDragging = false;
+      this.pinchStartDist = 0;
+      this.dragMoved = false;
       this.viewport.removeClass("better-mermaid-grabbing");
     };
     this.svg = svg;
@@ -238,10 +373,19 @@ var MermaidImageModal = class extends import_obsidian2.Modal {
     this.svgEl = this.svg.cloneNode(true);
     this.svgEl.removeAttribute("width");
     this.svgEl.removeAttribute("height");
+    this.svgEl.removeAttribute("style");
+    this.svgEl.setAttribute("preserveAspectRatio", "xMidYMid meet");
     this.svgEl.addClass("better-mermaid-svg");
     this.viewport = contentEl.createDiv({ cls: "better-mermaid-viewport" });
     this.viewport.appendChild(this.svgEl);
-    const controls = this.viewport.createDiv({ cls: "better-mermaid-controls" });
+    window.requestAnimationFrame(() => {
+      this.applyView();
+    });
+    this.resizeObserver = new ResizeObserver(() => {
+      this.applyView();
+    });
+    this.resizeObserver.observe(this.viewport);
+    const controls = contentEl.createDiv({ cls: "better-mermaid-controls" });
     controls.createEl("label", { text: this.t("zoom") });
     this.zoomSelect = controls.createEl("select");
     ZOOM_OPTIONS.forEach((opt) => {
@@ -256,36 +400,70 @@ var MermaidImageModal = class extends import_obsidian2.Modal {
         gen.remove();
       this.setZoom(parseFloat(this.zoomSelect.value));
     });
-    this.applyTransform();
-    this.syncZoomDisplay(this.scale);
-    const btn = controls.createEl("button", { text: this.t("downloadPng") });
+    this.addZoomButton(
+      controls,
+      "\u2212",
+      "zoomOut",
+      () => this.zoomBy(1 / ZOOM_STEP)
+    );
+    this.addZoomButton(controls, "+", "zoomIn", () => this.zoomBy(ZOOM_STEP));
+    const fitBtn = controls.createEl("button", { text: this.t("fitView") });
+    fitBtn.addEventListener("click", () => this.resetView());
+    const btn = controls.createEl("button", {
+      text: import_obsidian2.Platform.isMobile ? this.t("savePng") : this.t("downloadPng")
+    });
     btn.addEventListener("click", () => {
       void this.handleDownload(btn);
     });
-    const doc = this.viewport.ownerDocument;
     this.viewport.addEventListener("wheel", this.onWheel, { passive: false });
-    this.viewport.addEventListener("mousedown", this.onMouseDown);
-    doc.addEventListener("mousemove", this.onMouseMove);
-    doc.addEventListener("mouseup", this.onMouseUp);
+    this.viewport.addEventListener("pointerdown", this.onPointerDown);
+    this.viewport.addEventListener("pointermove", this.onPointerMove);
+    this.viewport.addEventListener("pointerup", this.onPointerUp);
+    this.viewport.addEventListener("pointercancel", this.onPointerCancel);
   }
   onClose() {
-    const doc = this.viewport.ownerDocument;
-    doc.removeEventListener("mousemove", this.onMouseMove);
-    doc.removeEventListener("mouseup", this.onMouseUp);
+    if (this.resizeObserver) {
+      this.resizeObserver.disconnect();
+      this.resizeObserver = null;
+    }
+    this.viewport.removeEventListener("wheel", this.onWheel);
+    this.viewport.removeEventListener("pointerdown", this.onPointerDown);
+    this.viewport.removeEventListener("pointermove", this.onPointerMove);
+    this.viewport.removeEventListener("pointerup", this.onPointerUp);
+    this.viewport.removeEventListener("pointercancel", this.onPointerCancel);
+    this.pointers.clear();
+    this.pinchStartDist = 0;
     this.contentEl.empty();
     this.scale = 1;
     this.panX = 0;
     this.panY = 0;
     this.isDragging = false;
+    this.dragMoved = false;
+  }
+  addZoomButton(parent, text, ariaKey, onClick) {
+    const button = parent.createEl("button", { text });
+    button.setAttribute("aria-label", this.t(ariaKey));
+    button.addEventListener("click", onClick);
+  }
+  zoomBy(factor) {
+    this.setZoom(this.clampScale(this.scale * factor));
+  }
+  resetView() {
+    this.panX = 0;
+    this.panY = 0;
+    this.scale = 1;
+    this.applyView();
+    this.syncZoomDisplay(1);
+  }
+  clampScale(scale) {
+    return Math.max(MIN_SCALE, Math.min(MAX_SCALE, scale));
   }
   setZoom(scale) {
-    const rect = this.viewport.getBoundingClientRect();
-    const cx = rect.width / 2;
-    const cy = rect.height / 2;
-    this.panX = cx - (cx - this.panX) * (scale / this.scale);
-    this.panY = cy - (cy - this.panY) * (scale / this.scale);
+    const ratio = scale / this.scale;
+    this.panX *= ratio;
+    this.panY *= ratio;
     this.scale = scale;
-    this.applyTransform();
+    this.applyView();
     this.syncZoomDisplay(scale);
   }
   syncZoomDisplay(scale) {
@@ -305,27 +483,169 @@ var MermaidImageModal = class extends import_obsidian2.Modal {
     this.zoomSelect.appendChild(opt);
     this.zoomSelect.value = String(scale);
   }
-  applyTransform() {
-    this.svgEl.style.transform = `translate(${this.panX}px, ${this.panY}px) scale(${this.scale})`;
+  /**
+   * Toggle between the fitted view (scale 1) and 2x zoom on a quick tap
+   * without significant movement.  Works for both touch and mouse
+   * (double-click).
+   */
+  handleTap(e) {
+    const now = Date.now();
+    const dx = e.clientX - this.lastTapX;
+    const dy = e.clientY - this.lastTapY;
+    const isDoubleTap = now - this.lastTapTime < DOUBLE_TAP_MS && Math.hypot(dx, dy) < TAP_MOVE_TOLERANCE;
+    if (isDoubleTap) {
+      if (this.scale > 1.01) {
+        this.panX = 0;
+        this.panY = 0;
+        this.scale = 1;
+      } else {
+        const pos = this.pointerPos(e);
+        const rect = this.viewport.getBoundingClientRect();
+        const mx = pos.x - rect.width / 2;
+        const my = pos.y - rect.height / 2;
+        const target = 2;
+        const ratio = target / this.scale;
+        this.panX = mx + (this.panX - mx) * ratio;
+        this.panY = my + (this.panY - my) * ratio;
+        this.scale = target;
+      }
+      this.applyView();
+      this.syncZoomDisplay(this.scale);
+      this.lastTapTime = 0;
+    } else {
+      this.lastTapTime = now;
+      this.lastTapX = e.clientX;
+      this.lastTapY = e.clientY;
+    }
+  }
+  pointerPos(e) {
+    const rect = this.viewport.getBoundingClientRect();
+    return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+  }
+  pointerDistance() {
+    const pts = Array.from(this.pointers.values());
+    if (pts.length < 2)
+      return 0;
+    return Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
+  }
+  pointerMidpoint() {
+    const pts = Array.from(this.pointers.values());
+    return {
+      x: (pts[0].x + pts[1].x) / 2,
+      y: (pts[0].y + pts[1].y) / 2
+    };
+  }
+  /**
+   * Reposition the SVG (translate only — never CSS scale).  Scaling is done
+   * by changing the SVG's pixel size in applyView(), so the browser
+   * re-renders the vector content at the exact target size instead of
+   * upscaling a raster texture (which would blur text and strokes).
+   */
+  updateTransform() {
+    this.svgEl.style.transform = `translate(${this.panX}px, ${this.panY}px)`;
+  }
+  /**
+   * Size the SVG to the viewport-fit dimensions (derived from the viewBox
+   * attribute, aspect ratio preserved) multiplied by the current zoom level.
+   * The viewport flex-centers the SVG (see styles.css); pan offsets from
+   * updateTransform() are applied on top of that centering.
+   */
+  applyView() {
+    const viewBox = this.svgEl.getAttribute("viewBox");
+    if (!viewBox)
+      return;
+    const parts = viewBox.split(/\s+/).map(Number);
+    if (parts.length !== 4)
+      return;
+    const vbWidth = parts[2];
+    const vbHeight = parts[3];
+    if (!vbWidth || !vbHeight)
+      return;
+    const vpRect = this.viewport.getBoundingClientRect();
+    const vpWidth = vpRect.width;
+    const vpHeight = vpRect.height;
+    if (!vpWidth || !vpHeight)
+      return;
+    const svgAspect = vbWidth / vbHeight;
+    const vpAspect = vpWidth / vpHeight;
+    let fitWidth;
+    let fitHeight;
+    if (svgAspect > vpAspect) {
+      fitWidth = vpWidth;
+      fitHeight = vpWidth / svgAspect;
+    } else {
+      fitHeight = vpHeight;
+      fitWidth = vpHeight * svgAspect;
+    }
+    this.svgEl.style.width = `${fitWidth * this.scale}px`;
+    this.svgEl.style.height = `${fitHeight * this.scale}px`;
+    this.updateTransform();
   }
   async handleDownload(btn) {
+    const originalText = import_obsidian2.Platform.isMobile ? this.t("savePng") : this.t("downloadPng");
     btn.setText(this.t("converting"));
     btn.disabled = true;
     try {
       const pngDataUrl = await this.svgToPng();
-      const doc = this.contentEl.ownerDocument;
-      const link = doc.createElement("a");
-      link.download = "mermaid-diagram.png";
-      link.href = pngDataUrl;
-      link.click();
+      if (import_obsidian2.Platform.isMobile) {
+        await this.savePngOnMobile(pngDataUrl);
+      } else {
+        const doc = this.contentEl.ownerDocument;
+        const link = doc.createElement("a");
+        link.download = "mermaid-diagram.png";
+        link.href = pngDataUrl;
+        link.click();
+      }
     } catch (e) {
       console.error("Failed to convert SVG to PNG:", e);
+      new import_obsidian2.Notice(this.t("pngSaveFailed"));
     }
-    btn.setText(this.t("downloadPng"));
+    btn.setText(originalText);
     btn.disabled = false;
   }
+  /**
+   * Mobile webviews can't download <a download> data URLs, so try the
+   * system share sheet first (save to Files/Photos, send to other apps)
+   * and fall back to writing the PNG into the vault when sharing is
+   * unavailable or fails.
+   */
+  async savePngOnMobile(pngDataUrl) {
+    const blob = this.dataUrlToBlob(pngDataUrl);
+    const fileName = `mermaid-${Date.now()}.png`;
+    const file = new File([blob], fileName, { type: "image/png" });
+    const shareable = navigator;
+    if (shareable.canShare && shareable.share) {
+      if (shareable.canShare({ files: [file] })) {
+        try {
+          await shareable.share({ files: [file], title: fileName });
+          return;
+        } catch (err) {
+          if (err instanceof DOMException && err.name === "AbortError") {
+            return;
+          }
+        }
+      }
+    }
+    const arrayBuffer = await blob.arrayBuffer();
+    await this.app.vault.createBinary(fileName, arrayBuffer);
+    new import_obsidian2.Notice(`${this.t("savedToVault")}${fileName}`);
+  }
+  dataUrlToBlob(dataUrl) {
+    const comma = dataUrl.indexOf(",");
+    const mimeMatch = /^data:([^;]+);/.exec(dataUrl.slice(0, comma));
+    const mime = mimeMatch ? mimeMatch[1] : "image/png";
+    const binary = atob(dataUrl.slice(comma + 1));
+    const bytes = new Uint8Array(binary.length);
+    for (let i = 0; i < binary.length; i++) {
+      bytes[i] = binary.charCodeAt(i);
+    }
+    return new Blob([bytes], { type: mime });
+  }
   svgToPng() {
-    const cloned = this.svg.cloneNode(true);
+    const cloned = this.svgEl.cloneNode(true);
+    cloned.style.removeProperty("transform");
+    cloned.style.removeProperty("width");
+    cloned.style.removeProperty("height");
     const viewBox = cloned.getAttribute("viewBox");
     if (viewBox) {
       const parts = viewBox.split(/\s+/).map(Number);
@@ -334,6 +654,13 @@ var MermaidImageModal = class extends import_obsidian2.Modal {
         cloned.setAttribute("height", String(parts[3]));
       }
     }
+    const fixCss = "foreignObject{font-size:13px;line-height:1.35}foreignObject div,foreignObject p,foreignObject span{overflow-wrap:break-word;word-break:break-word;white-space:normal}";
+    const styleEl = cloned.ownerDocument.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "style"
+    );
+    styleEl.textContent = fixCss;
+    cloned.insertBefore(styleEl, cloned.firstChild);
     const serializer = new XMLSerializer();
     const svgString = serializer.serializeToString(cloned);
     const dataUrl = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svgString);
@@ -416,9 +743,34 @@ var BetterMermaidPlugin = class extends import_obsidian3.Plugin {
 .better-mermaid-modal-size {
   width: ${this.settings.modalWidthPercent}vw;
   max-width: ${this.settings.modalWidthPercent}vw;
+  height: ${this.settings.modalHeightPercent}vh;
   max-height: ${this.settings.modalHeightPercent}vh;
 }`;
-    const allCss = sizing + "\n" + (this.settings.customCss || "");
+    const readability = this.settings.enhanceReadability ? `
+.better-mermaid-viewport path,
+.better-mermaid-viewport line,
+.better-mermaid-viewport polyline {
+  stroke-width: 2.5px !important;
+}
+.theme-dark .better-mermaid-viewport path,
+.theme-dark .better-mermaid-viewport line,
+.theme-dark .better-mermaid-viewport polyline {
+  stroke: var(--text-normal) !important;
+}
+/* Direct-child selectors keep node rects inside clusters untouched. */
+.theme-dark .better-mermaid-viewport g.cluster > rect,
+.theme-dark .better-mermaid-viewport g.cluster > polygon {
+  fill: rgba(255, 255, 255, 0.05) !important;
+  stroke: var(--text-muted) !important;
+}
+.theme-dark .better-mermaid-viewport g.cluster .cluster-label text {
+  fill: var(--text-normal) !important;
+}
+.theme-dark .better-mermaid-viewport g.cluster .cluster-label div,
+.theme-dark .better-mermaid-viewport g.cluster .cluster-label span {
+  color: var(--text-normal) !important;
+}` : "";
+    const allCss = sizing + "\n" + readability + "\n" + (this.settings.customCss || "");
     if (!allCss.trim())
       return;
     try {
