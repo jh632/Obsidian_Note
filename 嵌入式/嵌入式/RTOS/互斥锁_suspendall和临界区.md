@@ -4,7 +4,7 @@ tags: [嵌入式, RTOS]
 
 ## 互斥锁和临界区
 
-互斥锁和临界区的实现与区别详见[[嵌入式八股文]]
+互斥锁和临界区的实现与区别详见[[嵌入式面试八股文]]
 
 ## vTaskSuspendAll和xTaskResumeAll
 `vTaskSuspendAll()` 的实现为:暂停调度器（Scheduler），但不关闭中断。
